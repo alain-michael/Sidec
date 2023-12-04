@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>sidec</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="images/Asset 6.png" alt="sidec org">
+            <span class="logo_name">Sidec</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class="ri-rocket-2-fill"></i>
+                    <span class="link_name">Discover</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="#" class="link_name">Discover</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="ri-layout-grid-fill"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="#" class="link_name">Dashboard</a></li>
+                </ul>
+            </li>
+            <!--Drop down nav item-->
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class="ri-book-open-fill"></i>
+                        <span class="link_name">Courses</span>
+                    </a>
+                    <i class="ri-arrow-down-s-line arrow"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Courses</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Arts</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Specialization</a></li>
+                </ul>
+            </li>
+
+                <li>
+                    <div class="iocn-link">
+                        <a href="#">
+                            <i class="ri-archive-drawer-fill"></i>
+                            <span class="link_name">Resources</span>
+                        </a>
+                        <i class="ri-arrow-down-s-line arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="link_name">Resources</a></li>
+                        <li><a href="#">Questions</a></li>
+                        <li><a href="#">Solutions</a></li>
+                    </ul>
+             </li>
+
+               
+             <li>
+                     <div class="iocn-link">
+                        <a href="#">
+                            <i class="ri-service-fill"></i>
+                            <span class="link_name">Tutors</span>
+                        </a>
+                             <i class="ri-arrow-down-s-line arrow"></i>
+                     </div>
+                         <ul class="sub-menu">
+                             <li><a href="#" class="link_name">Tutors</a></li>
+                             <li><a href="#">Science</a></li>
+                             <li><a href="#">Arts</a></li>
+                             <li><a href="#">University</a></li>
+                         </ul>
+                 </li>
+
+                 <li>
+                    <a href="#">
+                        <i class="ri-bar-chart-box-fill"></i>
+                        <span class="link_name">Analytics</span>
+                       
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a href="#" class="link_name">Analytics</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="iocn-link">
+                       <a href="#">
+                        <i class="ri-school-fill"></i>
+                           <span class="link_name">Schorlaships</span>
+                       </a>
+                            <i class="ri-arrow-down-s-line arrow"></i>
+                    </div>
+                        <ul class="sub-menu">
+                            <li><a href="#" class="link_name">Schorlaships</a></li>
+                            <li><a href="#">Undergraduate</a></li>
+                            <li><a href="#">Masters</a></li>
+                            <li><a href="#">Doctorate</a></li>
+                        </ul>
+                </li>
+
+                
+                <li>
+                    <a href="#">
+                        <i class="ri-settings-fill"></i>
+                        <span class="link_name">Settings</span> 
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a href="#" class="link_name">Settings</a></li>
+                    </ul>
+                </li>
+                <!--Profile details-->
+                <li>
+                    <div class="profile-details">
+                        <div class="profile-content">
+                            <img src="images/1.png" alt="profile">
+                        </div>
+                        <div class="name-job">
+                            <div class="profile_name">Joe Nathan</div>
+                        <div class="job">Student | UB</div>
+                        </div>
+                        <i class="ri-logout-circle-line"></i>
+                    </div>
+                    
+                </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <i class="ri-menu-unfold-fill ham_menu"></i>
+        </div>
+    </section>
+
+
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+
+for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e) => {
+        let arrowParent = e.target.parentElement.parentElement;
+        arrowParent.classList.toggle("ShowMenu");
+    });
+}
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarbtn = document.querySelector(".ham_menu");
+    sidebarbtn.addEventListener("click", () => {
+        sidebar.classList.toggle("close")
+    })
+
+    </script>
+</body>
+</html>
