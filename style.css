@@ -482,10 +482,10 @@ body {
     }
     .home-section .home-content {
         height: 60px;
-       width: 110%;
+       width: 100%;
     }
     .home-section .home-content .flex .icons {
-        margin-left: 20px;
+        margin-left: 30px;
     }
     .sidebar {
         z-index: 1500;
