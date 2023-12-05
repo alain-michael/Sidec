@@ -14,21 +14,36 @@ body {
     padding: 0 80px;
 }
 .heading {
-    padding: 20px 0 15px 20px;
+    padding: 20px 0 15px 15px;
     font-size: 18px;
     color: #393540;
     font-weight: 500;
     border-bottom: 1px solid #f4f0f7;
     margin-bottom: 20px;
 }
-.ri-fire-fill {
+.ri-fire-fill,
+.fa-bolt {
     margin-left: 5px;
     color: #9936ff;
 }
+
 .ri-verified-badge-fill {
     margin-left: 5px;
     font-size: 16px;
     color: #9936ff;
+}
+
+/* Botpress */
+.bpw-widget-btn {
+    background-color: #393540;
+    border-radius: 50%;
+    box-shadow: none;
+}
+.bpw-floating-button, .bpw-floating-button:hover {
+    background-color: #9936ff !important;
+}
+.hd2 {
+    margin-left: 40px;
 }
 
 
@@ -525,8 +540,64 @@ body {
     color: #fff;
 }
 
-
-
+/* Course styling */
+#courses .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+   
+}
+#courses .box-container .box {
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, .02);
+}
+#courses .box-container .box .tutor  {
+    margin-bottom: 20px;
+}
+#courses .box-container .box .tutor .names {
+    display: flex;
+    margin-top: -40px;
+    margin-left: 60px;
+}
+#courses .box-container .box .thumb {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+#courses .box-container .box .tutor .ima {
+    max-width: 100%;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#courses .box-container .box .tutor h3 {
+    font-size: 16px;
+    color: #393540;
+    margin-bottom: 20px;
+}
+#courses .box-container .box .tutor span {
+    font-size: 16px;
+    margin-top: -20px;
+}
+#courses .box-container .box .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #393540;
+    margin-top: 20px;
+    padding: 3px 0;
+}
+#courses .more-btn {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
 
 
 
@@ -581,6 +652,10 @@ body {
 
     #quick-select .box-container {
         grid-template-columns: 1fr; /* Set the grid to a single column for smaller screens */
+        gap: 1.5rem;
+    }
+    #courses .box-container {
+        grid-template-columns: 2fr;
         gap: 1.5rem;
     }
 }
