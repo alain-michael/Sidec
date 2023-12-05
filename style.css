@@ -8,7 +8,61 @@
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background-color: #f2efeb;
+    background-color: #f9feff;
+}
+.flex-btn {
+    display: flex;
+    gap: 1rem;
+}
+.btn,
+.option-btn,
+.delete-btn,
+.inline-btn, 
+.inline-option-btn,
+.inline-delete-btn {
+    text-decoration: none;
+    border-radius:10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center; 
+    transition: 0.3s ease;
+}
+.btn,
+.option-btn,
+.delete-btn {
+    display: block;
+    width: 100%;
+}
+.inline-btn, 
+.inline-option-btn,
+.inline-delete-btn {
+    display: inline-block;
+}
+.btn,
+.inline-btn {
+    background-color: #9936ff;
+}
+.option-btn,
+.inline-option-btn {
+    background-color: transparent;
+    border: 1px solid #393540;
+    color: #393540;
+}
+.delete-btn,
+.inline-delete-btn {
+    background-color: tomato;
+}
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover,
+.inline-btn:hover, 
+.inline-option-btn:hover,
+.inline-delete-btn:hover {
+    transform: translateY(-5px);
 }
 .sidebar {
     position: fixed;
@@ -17,7 +71,7 @@ body {
     background: #fff;
     height: 100%;
     width: 260px;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
     z-index: 100;
 }
 .sidebar.close {
@@ -56,7 +110,7 @@ body {
     height: 100%;
     padding-top: 30px 0 150px 0;
     overflow: auto;
-   
+    
 }
 .sidebar .nav-links {
     overflow: visible;
@@ -71,7 +125,7 @@ body {
    
 }
 .sidebar .nav-links li:hover {
-    background: #f2efeb;
+    background: #f4f0f7;
    
 }
 
@@ -91,7 +145,7 @@ body {
     min-width: 78px;
    line-height: 50px;
    font-size: 24px;
-  
+    transition: 0.3s ease;
    cursor: pointer;
 }
 .sidebar .nav-links li.ShowMenu i.arrow {
@@ -100,7 +154,6 @@ body {
 }
 .sidebar.close .nav-links  i.arrow {
     display: none;
-    transition: 0.3s ease;
     transition-delay: 0.2s;
    
 }
@@ -115,7 +168,7 @@ body {
     font-weight: 400;
     color: #393540;
     transition-delay: 0.2s;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 .sidebar.close .nav-links li a .link_name {
     opacity: 0;
@@ -201,7 +254,7 @@ body {
     align-items: center;
     bottom: 0;
     padding: 6px 0;
-    background-color: #f2efeb;
+    background-color: #f4f0f7;
     transition: all 0.5s ease;
 }
 
@@ -248,12 +301,19 @@ body {
     width: calc(100% - 260px);
     height: 100vh;
     transition: all 0.5s ease;
+
 }
 
 .home-section .home-content {
+  
     height: 60px;
     align-items: center;
     display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background-color: rgb(254, 254, 254);
    
 }
 .home-section .home-content .ham_menu {
@@ -266,4 +326,172 @@ body {
     left: 78px;
     width: calc(100% - 78px);
     transition: all 0.3s ease;
+}
+
+
+.home-section .home-content .flex {
+    padding: 1.5rem 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home-section .home-content .flex .search-form {
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 4px;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-left: 40px;
+    margin-right: 200px;
+}
+#search-btn {
+    display: none;
+}
+.home-section .home-content .flex .search-form input {
+    width: 100%;
+    background: none;
+    font-size: 16px;
+    flex: 1;
+    border: none;
+    outline: none;
+}
+.home-section .home-content .flex .search-form button {
+    background-color: #9936ff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    padding: 0.70rem 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.home-section .home-content .flex .search-form button:hover {
+    background-color: #393540;
+}
+.home-section .home-content .flex .icons {
+    display: flex;
+    align-items: center;
+    /* Adjust the gap between icons as needed */
+    margin-left: auto;
+    justify-content: flex-end;
+    margin-left: 180px;
+    color: #393540;
+    cursor: pointer;
+    gap: 0.75rem;
+}
+.home-section .home-content .flex .icons div {
+    border-radius: 4px;
+    height: 35px;
+    color:#fff;
+    text-align: center;
+    align-items: center;
+    width: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    background-color: #9936ff;
+    transition: all 0.3s ease;
+}
+.home-section .home-content .flex .icons div:hover {
+    background-color: #393540;
+}
+.home-section .home-content .flex .profile-2 img {
+   max-width: 100%; 
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+
+}
+.home-section .home-content .flex .profile-2 {
+    position: absolute;
+    top: 90%; right: 2rem;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    width: 20rem;
+    box-shadow: 4px 3px 10px rgba(0, 0, 0, .02);
+    transform: scale(0);
+    transform-origin: top right; transition: .2s linear;
+}
+.home-section .home-content .flex .profile-2.active {
+    transform: scale(1);
+}
+.home-section .home-content .flex .profile-2 h3 {
+    font-size: 20px;
+    color: #393540;
+}
+.home-section .home-content .flex .profile-2 span {
+    color: #979292;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media querries */
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media (max-width:768px) {
+   
+  #search-btn {
+    display: inline-block;
+  }
+
+    .home-section .home-content .flex .search-form {
+        position: absolute;
+        top: 110%; left: 0; right: 0;
+        width: 100%;
+        margin-left: -50px;
+        border-top: #979292;
+        border-bottom: #979292;
+        background-color: #fff;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+    .home-section .home-content .flex .search-form.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .home-section .home-content .flex .profile-2 {
+        width: 30rem;
+        top: 120%;
+    }
+
+}
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+    .home-section .home-content {
+        height: 60px;
+       width: 100%;
+    }
+    .home-section .home-content .flex .icons {
+        margin-left: 40px;
+    }
+    .sidebar {
+        z-index: 1500;
+    }
+    .home-section .home-content .ham_menu {
+    z-index: 1000;
+    }
+    
 }

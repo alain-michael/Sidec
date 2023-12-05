@@ -134,10 +134,10 @@
                 <li>
                     <div class="profile-details">
                         <div class="profile-content">
-                            <img src="images/4.png" alt="profile">
+                            <img src="images/1.png" alt="profile">
                         </div>
                         <div class="name-job">
-                            <div class="profile_name">Fred Joe</div>
+                            <div class="profile_name">Joe Nathan</div>
                         <div class="job">Student | UB</div>
                         </div>
                         <i class="ri-logout-circle-line"></i>
@@ -146,36 +146,22 @@
                 </li>
         </ul>
     </div>
-    <section class="home-section header">
+    <section class="home-section">
         <div class="home-content">
             <i class="ri-menu-unfold-fill ham_menu"></i>
-            <div class="flex">
-                <form action="" method="post" class="search-form">
-                    <input type="text" name="search_box" placeholder="Find courses..." required maxlength="100">
-                    <button type="submit" class="ri-search-line"></button>
-                </form>
-                <div class="icons">
-                    <div id="search-btn"  class="ri-search-line"></div>
-                    <div id="feed-btn"  class="ri-feedback-fill"></div>
-                    <div id="user-btn" class="ri-user-5-fill"></div>
-                    <div id="toggle-btn" class="ri-settings-3-fill"></div>
-                </div>
-
-                <div class="profile-2">
-                    <img src="images/4.png" alt="profile">
-                    <h3>Fred Joe</h3>
-                    <span>Student | Buea</span>
-                    <a href="profile.html" class="btn">View profile</a>
-                    <div class="flex-btn">
-                        <a href="login.html" class="option-btn">Log out</a>
-                        <a href="login.html" class="btn">Share</a>
-                    </div>
-                </div>
+            <form action="" method="post" class="search-form">
+                <input type="text" name="search_box" placeholder="Find courses..." required maxlength="100">
+                <button type="submit" class="ri-search-line"></button>
+            </form>
+            <div class="icons">
+                
             </div>
         </div>
     </section>
     <header>
-       
+        <section class="flex">
+          
+        </section>
     
     </header>
    
@@ -195,24 +181,6 @@ for (var i = 0; i < arrow.length; i++) {
         sidebar.classList.toggle("close")
     })
 
-    /* script for profile */
-    let profile = document.querySelector('.home-section .home-content .flex .profile-2');
-
-    document.querySelector('#user-btn').onclick = () =>{
-        profile.classList.toggle('active');
-        SearchForm.classList.remove('active');
-    }
-
-    let SearchForm = document.querySelector('.home-section .home-content .flex .search-form');
-
-document.querySelector('#search-btn').onclick = () =>{
-    SearchForm.classList.toggle('active');
-}
-
-    window.onscroll = () => {
-        profile.classList.remove('active');
-        SearchForm.classList.remove('active');
-    }
     </script>
 </body>
 </html>
