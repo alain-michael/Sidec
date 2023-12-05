@@ -476,13 +476,13 @@ body {
     }
 
 }
-@media (max-width:450px) {
+@media (max-width:499px) {
     html {
         font-size: 50%;
     }
     .home-section .home-content {
         height: 60px;
-       width: 120%;
+       width: 140%;
     }
     .home-section .home-content .flex .icons {
         margin-left: 5px;
@@ -493,5 +493,6 @@ body {
     .home-section .home-content .ham_menu {
     z-index: 1000;
     }
+   
     
 }
