@@ -32,3 +32,6 @@ document.querySelector('#search-btn').onclick = () =>{
         profile.classList.remove('active');
         SearchForm.classList.remove('active');
     }
+
+
+   
