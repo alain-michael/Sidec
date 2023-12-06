@@ -215,6 +215,13 @@ body {
     pointer-events: none;
     
 }
+.sidebar .nav-links a.active .link_name {
+    color: #9936ff;
+    
+}
+.sidebar .nav-links a.active i {
+    color: #9936ff;
+}
 .sidebar .nav-links li .sub-menu {
     padding: 6px 6px 14px 80px;
     margin-top: -10px;
@@ -367,6 +374,10 @@ body {
     width: calc(100% - 78px);
     transition: all 0.3s ease;
 }
+
+   
+
+
 
 
 .home-section .home-content .flex {

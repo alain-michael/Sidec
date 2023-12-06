@@ -34,4 +34,5 @@ document.querySelector('#search-btn').onclick = () =>{
     }
 
 
-   
+// script.js
+  
