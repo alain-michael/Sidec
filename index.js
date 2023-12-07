@@ -34,5 +34,26 @@ document.querySelector('#search-btn').onclick = () =>{
     }
 
 
-// script.js
-  
+// script.js to handle thank you message
+document.addEventListener("DOMContentLoaded", function () {
+    var contactForm = document.getElementById("contactForm");
+    var thankYouMessage = document.getElementById("thankYouMessage");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from submitting (for demo purposes)
+
+        // You can add code here to handle the actual form submission (e.g., using AJAX)
+
+        // Show the thank-you message
+        thankYouMessage.style.display = "block";
+
+        // Hide the thank-you message after a certain duration (e.g., 5 seconds)
+        setTimeout(function () {
+            thankYouMessage.style.display = "none";
+        }, 5000);
+    });
+});
+
+
+// script to handle review 
+
