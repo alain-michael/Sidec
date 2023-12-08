@@ -11,6 +11,7 @@
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/6e6052b8-a209-4509-8860-8e0dbac7b0e1/webchat/config.js" defer></script> 
     <title>sidec</title>
+    <link rel="icon" href="images/Asset 6.png" type="image/png">
 </head>
 <body>
     <div class="sidebar">
@@ -20,7 +21,7 @@
         </div>
         <ul class="nav-links">
             <li >
-                <a href="index.html">
+                <a href="discover.html">
                     <i class="ri-rocket-2-fill"></i>
                     <span class="link_name">Discover</span>
                 </a>
@@ -145,7 +146,7 @@
                             <div class="profile_name">Fred Joe</div>
                         <div class="job">Student | UB</div>
                         </div>
-                        <i class="ri-logout-circle-line"></i>
+                        <i class="ri-logout-circle-line" onclick="window.location.href='login.html'"></i>
                     </div>
                     
                 </li>
@@ -153,7 +154,7 @@
     </div>
     <section class="home-section header">
         <div class="home-content">
-            <i class="ri-menu-3-line ham_menu"></i>
+            <i class="ri-menu-3-line ham_menu" id="but_small"></i>
             <div class="flex">
                 <form action="" method="post" class="search-form">
                     <input type="text" name="search_box" placeholder="Find courses..." required maxlength="100">

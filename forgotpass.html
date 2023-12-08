@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/03ca4ba95f.js" crossorigin="anonymous"></script>
+    <title>Forgot Password</title>
+    <link rel="icon" href="images/Asset 6.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="forms form2">
+            <div class="form login">
+              <a href="login.html" id="bion"> <i class="fa-solid fa-arrow-left" id="bicon"></i></a><span class="title" id="rp">Reset your password</span>
+              <p id="pr">We will send you an email to reset your<br> password</p>
+                <form action="homepage.html">
+                    <div class="input-box">
+                        <label for="email" id="lab">Email</label>
+                        <input type="email" required>
+                       
+                    </div>
+                 
+                    <div class="input-field button">
+                        <input type="submit" id="em" onclick="window.location.href='resetpass.html'" value="Email me">
+                    </div>
+                    <div class="input-field button">
+                        <input type="submit" id="log" onclick="window.location.href='login.html'" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

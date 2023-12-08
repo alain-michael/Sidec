@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/03ca4ba95f.js" crossorigin="anonymous"></script>
+    <title>login</title>
+    <link rel="icon" href="images/Asset 6.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+                <form action="homepage.html">
+                    <div class="input-field">
+                        <input type="email" placeholder="Enter your email" required>
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <i class="fa-solid fa-lock icon"></i> 
+                        <i class="fa-solid fa-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+                        
+                        <a href="forgotpass.html" class="text">Forgot password?</a>
+                    </div>
+                    <div class="input-field button">
+                        <input type="submit" oneclick="window.location.href='discover.html'" value="Login">
+                    </div>
+                </form>
+                <div class="login-signup">
+                    <span class="text">Not a user?
+                        <a href="#" class="text signup-link">Sign up</a>
+                    </span>
+                </div>
+            </div>
+            <!--Registeration form-->
+            <div class="form signup">
+                <span class="title">Registration</span>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                        <i class="fa-solid fa-user icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" placeholder="Enter your email" required>
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-school"></i>
+                         <select name="education-level" id="education-level" required>
+                                        <option value="" disabled selected>Select your level of education</option>
+                                        <option value="Form 5">Form 5</option>
+                                        <option value="Lowersixth">Lowersixth</option>
+                                        <option value="Uppersixth">Uppersixth</option>
+                                        <option value="University">University</option>
+                                        <option value="No formal education">No formal education</option>
+                            </select>
+                      </div>
+                      
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter password" required>
+                        <i class="fa-solid fa-lock icon"></i> 
+                        <i class="fa-solid fa-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm password" required>
+                        <i class="fa-solid fa-lock icon"></i> 
+                        <i class="fa-solid fa-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">I agree to sidec's <a href="#">privacy and cookie policies</a></label>
+                        </div>
+                    </div>
+                    <div class="input-field button">
+                        <a href="discover.html">
+                        <input type="button" oneclick="window.location.href='discover.html'" value="Sign up">
+                        </a>
+                    </div>
+                </form>
+                <div class="login-signup">
+                    <span class="text">Already a user?
+                        <a href="#" class="text login-link">Login</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+    
+    
+</body>
+</html>
