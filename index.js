@@ -1,3 +1,23 @@
+
+
+// --------------------for responsive side bar
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+      document.querySelector(".ham_menu").click()
+    } 
+  }
+  
+  // Create a MediaQueryList object
+  var x = window.matchMedia("(max-width: 700px)")
+  
+  // Call listener function at run time
+  myFunction(x);
+  
+  // Attach listener function on state changes
+  x.addEventListener("change", function() {
+    myFunction(x);
+  });
+         
 /* Toggle menu */
 
 let arrow = document.querySelectorAll(".arrow");
@@ -152,23 +172,3 @@ function addTask() {
         newTaskInput.value = '';
     }
 }
-
-
-// --------------------for responsive side bar
-function myFunction(x) {
-    if (x.matches) { // If media query matches
-      document.querySelector(".ham_menu").click()
-    } 
-  }
-  
-  // Create a MediaQueryList object
-  var x = window.matchMedia("(max-width: 700px)")
-  
-  // Call listener function at run time
-  myFunction(x);
-  
-  // Attach listener function on state changes
-  x.addEventListener("change", function() {
-    myFunction(x);
-  });
-         
