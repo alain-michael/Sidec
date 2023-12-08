@@ -56,4 +56,99 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // script to handle review 
+var courseData = {
+    labels: ['Biology', 'Physics', 'Mathematics', 'Chemistry', 'History'],
+    scores: [80, 75, 90, 85, 70]
+};
 
+// Get the canvas element
+ // Sample data (replace this with your actual data)
+ var courseData = {
+    labels: ['Biology', 'Physics', 'Mathematics', 'Chemistry', 'History'],
+    scores: [80, 75, 90, 85, 70]
+};
+
+ // Sample data (replace this with your actual data)
+ var courseData = {
+    labels: ['Biology', 'Physics', 'Mathematics', 'Chemistry', 'History'],
+    scores: [80, 75, 90, 85, 70]
+};
+
+// Get the canvas element
+var ctx = document.getElementById('myChart').getContext('2d');
+
+// Create a styled bar chart with reduced bar width
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: courseData.labels,
+        datasets: [{
+            label: 'Your preformance, Fred',
+            data: courseData.scores,
+            backgroundColor: 'rgba(152, 53, 255, 0.8)', // Background color of bars
+            borderColor: 'rgba(152, 53, 255, 0.5)', // Border color of bars
+            borderWidth: 1 // Border width of bars
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100,
+                grid: {
+                    display: false // Remove grid lines on the y-axis
+                }
+            },
+            x: {
+                grid: {
+                    display: false // Remove grid lines on the x-axis
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top', // Position of the legend
+                labels: {
+                    font: {
+                        size: 12 // Font size of the legend labels
+                    }
+                }
+            }
+        },
+        layout: {
+            padding: {
+                left: 5, // Adjust left padding to make room for y-axis labels
+                right: 5 // Adjust right padding
+            }
+        }
+    }
+});
+
+
+//Function for to-do list
+
+function toggleTask(taskId) {
+    const checkbox = document.getElementById(taskId);
+    const label = checkbox.nextElementSibling;
+    label.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
+}
+
+function addTask() {
+    const newTaskInput = document.getElementById('new-task');
+    const newTaskText = newTaskInput.value.trim();
+
+    if (newTaskText !== '') {
+        const tasksList = document.getElementById('tasks-list');
+        const newTaskId = 'task' + (tasksList.children.length + 1);
+
+        const newTask = document.createElement('li');
+        newTask.innerHTML = `
+            <input type="checkbox" id="${newTaskId}" onclick="toggleTask('${newTaskId}')">
+            <label for="${newTaskId}">${newTaskText}</label>
+        `;
+
+        tasksList.appendChild(newTask);
+        newTaskInput.value = '';
+    }
+}
