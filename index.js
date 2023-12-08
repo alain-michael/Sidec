@@ -11,7 +11,10 @@ function myFunction(x) {
   var x = window.matchMedia("(max-width: 700px)")
   
   // Call listener function at run time
-  myFunction(x);
+  setTimeout(()=>{
+    myFunction(x);
+  },10)
+
   
   // Attach listener function on state changes
   x.addEventListener("change", function() {
