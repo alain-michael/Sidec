@@ -490,17 +490,27 @@ body {
   
     
 }
- #quick-select .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: 1.5rem;
-    align-items: flex-start;
-    justify-content: center;
-    
-}
-#quick-select a {
-    text-decoration: none;
-}
+
+#quick-select .box-container .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+ #quick-select .box-container .closebtn {
+    padding-left: 10px;
+    color: #888;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+ #quick-select .box-container .closebtn:hover {
+    color: #000;
+  }
 #quick-select .box-container .box {
     border-radius: 4px;
     background-color: #fff;
@@ -508,55 +518,38 @@ body {
    
     border: 1px solid #eee;
 }
-#quick-select .box-container .box .title {
-    font-size: 18px;
-    font-weight: 500;
-    color: #393540;
-}
-#quick-select .box-container .box p {
-    line-height: 1.5;
-    padding-top: 10px;
-    color: #8c8787;
-    font-size: 15px;
-}
-#quick-select .box-container .box p span {
-    color: #9936ff;
-}
-#quick-select .box-container .tutor  {
-    text-align: center;
-} 
-#quick-select .box-container p {
-    padding-bottom: 5px;
-}
-#quick-select .box-container .flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding-top: 5px;
-}
-#quick-select .box-container .flex a {
-    padding: 4px 8px;
-    border-radius: 5px;
+
+#quick-select .chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
     font-size: 16px;
-    background-color: #eee;
-    transition: all 0.3s ease;
-}
-#quick-select .box-container .flex a i {
-    margin-right: 10px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+  }
+  
+  #quick-select  .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  #quick-select .closebtn {
+    padding-left: 10px;
+    color: #888;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #quick-select .closebtn:hover {
     color: #393540;
-}
-#quick-select .box-container .flex a span {
-    color: #98969d;
-}
-#quick-select .box-container .flex a:hover {
-    background-color: #393540;
-}
-#quick-select .box-container .flex a:hover i {
-    color: white;
-}
-#quick-select .box-container .flex a:hover span {
-    color: #fff;
-}
+  }
+
+
 
 /* Course styling */
 #courses .box-container {
@@ -806,7 +799,7 @@ body {
 #tu_pro .details .subject-detail .price {
    font-weight: 500;
    color: #9835ff;
-   font-size: 14px;
+   font-size: 12px;
     text-align: right;
 }
 #tu_pro .details .subject-detail p, .subject-detail span {
@@ -883,88 +876,15 @@ body {
         justify-content: center;
     }
 
-    #quick-select .box-container {
-        grid-template-columns: 1fr; /* Set the grid to a single column for smaller screens */
-        gap: 1.5rem;
-    }
-    #courses .box-container {
-        grid-template-columns: 2fr;
-        gap: 1.5rem;
-    }
-   
-    #about .row {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex-wrap: wrap;
+    #quick-select .chip {
+        display: block;
+        margin-bottom: 20px;
+        width: 35%;
+        box-sizing: border-box;
+        margin-left: 20px;
     }
     
-    #about .row .image {
-        flex: 1 1 100%; /* Set full width for the image on smaller screens */
-        order: 1; /* Set the order to 1 to move it to the beginning */
-        margin-bottom: 1rem; /* Add margin for better separation */
-        margin-right: 40px;
-    }
-    #about .row .image img {
-        max-width: 100%;
-        height: auto;
-        margin-top: -80px;
-        
-    }
-    
-    #about .row .content {
-        flex: 1 1 100%; /* Set full width for the content on smaller screens */
-        order: 2; /* Set the order to 2 to place it after the image */
-        margin-top: -20px;
-        margin-left: 130px;
-        padding-right: -20px;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    #about .row .content h3 {
-        font-weight: 500;
-        line-height: 1;
-        font-size: 18px;
-        color: #393540;
-    }
-    
-    #about .row .content p {
-        color: #8c8787;
-        margin-top: 5px;
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 10px;
-    }
-    
-    #about .box-container {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 0.75rem;
-        margin-bottom: 40px;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-    
-    #about .box-container .box {
-        flex: 1 1 35%; /* Set full width for the box on smaller screens */
-        text-align: center;
-    }
-    #about .box-container .box i {
-       margin-left: 10px;
-    }
-    .hd2 {
-        margin-left: 15px;
-    }
-    #reviews .box-container {
-        grid-template-columns: 1fr; /* Display one item at a time */
-        margin-bottom: 0;
-        padding-bottom: 30px;
-    }
-    #reviews .inline-option-btn { 
-        margin-top:-20px ;
-    }
+  
 }
 
 
@@ -1010,5 +930,11 @@ body {
 }
 #spe {
     padding-top: 60px;
+}
+#quick-select .chip {
+   
+    margin-bottom: 20px;
+    width: 80%;
+   
 }
 }

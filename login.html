@@ -70,7 +70,7 @@
                       </div>
                       
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter password" required>
+                        <input type="password" class="password" id="psw" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required>
                         <i class="fa-solid fa-lock icon"></i> 
                         <i class="fa-solid fa-eye-slash showHidePw"></i>
                     </div>
@@ -99,6 +99,8 @@
             </div>
         </div>
     </div>
+
+   
     <script src="login.js"></script>
     
     
