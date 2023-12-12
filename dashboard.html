@@ -201,14 +201,17 @@
                     <li>
                         <input type="checkbox" id="task1" onclick="toggleTask('task1')">
                         <label for="task1">Complete HTML assignment</label>
+                        <span class="remove-btn" onclick="removeTask('task1')">&times;</span>
                     </li>
                     <li>
                         <input type="checkbox" id="task2" onclick="toggleTask('task2')">
                         <label for="task2">Review JavaScript notes</label>
+                        <span class="remove-btn" onclick="removeTask('task2')">&times;</span>
                     </li>
                     <li>
                         <input type="checkbox" id="task3" onclick="toggleTask('task3')">
                         <label for="task3">Submit project proposal</label>
+                        <span class="remove-btn" onclick="removeTask('task3')">&times;</span>
                     </li>
                 </ul>
                 <div id="add-task">
@@ -216,6 +219,7 @@
                     <button id="add-btn" onclick="addTask()">Add</button>
                 </div>
             </div>
+            
             <div id="achievement">
                 <h1 class="heading">You unlocked a new badge<i class="fa-solid fa-face-smile"></i></h1>
                 <div class="trophy">
@@ -332,6 +336,6 @@
 
     <!--Quick select-->
     
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

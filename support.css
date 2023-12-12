@@ -809,8 +809,7 @@ border-radius: 25px;
     color: #393540;
 }
 #faq .tab input:checked ~ label::after {
-    transform: rotate(135deg);
-    color: #fff;
+   display: none;
 }
 
 #faq .tab label h2 {
@@ -1029,11 +1028,231 @@ border-radius: 25px;
     background-color: #ccc;
     cursor: not-allowed;
 }
+#comments {
+    padding: 0 40px;
+    padding-bottom: 40px;
+}
+#comments .add-comment {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    
+}
+#comments .add-comment textarea {
+    border-radius: 5px;
+    border: 1px solid #eee;
+    padding: 10px;
+    width: 100%;
+    height: 10rem;
+    background-color: #f9feff;
+    resize: none;
+    color: #393540;
+    outline: none;
+}
+#comments .add-comment .inline-btn {
+    outline: none;
+    border: none;
+}
+#comments .show-comments {
+    background-color: #fff;
+    border-radius: 5px;
+    display: grid;
+    gap: 1.5rem;
+   
+}
+#comments .show-comments .user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+#comments .show-comments .user img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
 
+}
+#comments .show-comments .user h3 {
+    font-size: 16px;
+    color: #393540;
+    margin-bottom: 5px;
+}
+#comments .show-comments .user span {
+    color: #979292;
+    font-size: 14px;
+}
+#comments .show-comments .text {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px;
+    color: #393540;
+    margin: 5px 20px;
+    position: relative;
+    z-index: 0;
+    white-space: pre-line;
+}
+#comments .show-comments .text::before {
+    content: '';
+    position: absolute;
+    top: -1rem; left: 1.5rem;
+    height: 1rem;
+    width: 2rem;
+    background-color: #eee;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#comments .show-comments .inline-delete-btn-2,
+#comments .show-comments .inline-option-btn-2 {
+    width: 30px; /* Adjust the width and height as needed */
+    height: 30px;
+    border-radius: 50%; /* Set border-radius to half of the width and height */
+    text-align: center;
+    background-color: #9835ff; /* Button background color */
+    color: #ffffff; /* Icon color */
+    border: none; /* Remove border for a cleaner look */
+    cursor: pointer;
+    font-size: 16px; /* Adjust the font size of the icon */
+    margin-left: 20px;
+}
+#comments .show-comments .inline-delete-btn-2 {
+    background-color: tomato;
+    margin-left: -12px;
+}
+#enrol {
+    padding: 0 40px;
+}
+#enrol .row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 2px 3px 15px rgba(0, 0, 0, .02);
+} 
+#enrol .row .col {
+    flex:1 1 40rem;
+}
+#enrol .row .col .save-list button {
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    font-weight: 400;
+}
+#enrol .row .col .save-list button i {
+    color: #393540;
+    margin-right: 5px;
+}
+#enrol .row .col .save-list button span {
+    color: #737171;
+}
+#enrol .row .col .save-list button:hover {
+    background-color: #393540;
+    transition: .3s ease;
+}
+#enrol .row .col .save-list button:hover i {
+    color: #fff;
+}
+#enrol .row .col .save-list button:hover span {
+    color: #fff;
+}
+#enrol .row .col .thumb {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 50%;
+}
+#enrol .row .col .tutor {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#enrol .row .col .tutor img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#enrol .row .col .tutor h3 {
+    font-size: 14px;
+    color: #393540;
+   
+}
+#enrol .row .col .tutor span {
+    color: #9835ff;
+}
+#enrol .row .col .details {
+    padding-top: 1rem;
+}
+#enrol .row .col .details h3 {
+    font-size: 18px;
+    color: #393540;
+}
+#enrol .row .col .details p {
+    padding: 0.5rem 0;
+    line-height: 2;
+    color: #979292;
+    font-size: 14px;
+}
+#enrol .row .col .details .date {
+    font-size: 14px;
+    padding-top: 10px;
+}
+#enrol .row .col .details .date i {
+    color: #9835ff;
+    margin-right: 5px;
 
-
-
-
+}
+#enrol .row .col .details .date span {
+    color: #979292;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Set a maximum width for responsiveness */
+    border-radius: 10px;
+  }
+  
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .ri-play-fill {
+    font-size: 40px;
+    color: #393540;
+    background-color: #eee;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-left: 5px;
+    margin-top: 5px;
+    padding-top: 3px;
+  }
+  
 
 
 
@@ -1173,6 +1392,10 @@ border-radius: 25px;
         margin-left: 40px;
         width: 80%;
     }
+    #comments .show-comments .inline-delete-btn-2 {
+   
+        margin-left: -3px;
+    }
 }
 
 
@@ -1224,5 +1447,15 @@ border-radius: 25px;
 }
 #faq h1 {
     font-size: 18px;
+}
+#enrol {
+    padding: 0 20px;
+}
+#comments  {
+    padding: 0 20px;
+}
+#comments .show-comments .inline-delete-btn-2 {
+   margin-left: 60px;
+   margin-top: -30px;
 }
 }

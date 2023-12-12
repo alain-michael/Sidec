@@ -1122,6 +1122,13 @@ body {
            
   
 }
+.remove-btn {
+    cursor: pointer;
+    margin-left: 60px;
+    color: tomato;
+    font-weight: 400;
+}
+
 #achievement .trophy {
     display: flex;
     padding: 20px;

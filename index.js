@@ -1,4 +1,50 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('courseVideo');
+    const overlay = document.querySelector('.overlay');
+    const playIcon = document.querySelector('.ri-play-fill');
+  
+    // Play/pause on overlay click
+    overlay.addEventListener('click', function () {
+      if (video.paused) {
+        video.play();
+        playIcon.style.display = 'none'; // Hide play icon when video starts playing
+      } else {
+        video.pause();
+      }
+    });
+  
+    // Toggle play icon on video play/pause
+    video.addEventListener('playing', function () {
+      playIcon.style.display = 'none'; // Hide play icon when video is playing
+    });
+  
+    video.addEventListener('pause', function () {
+      playIcon.style.display = 'flex'; // Show play icon when video is paused
+    });
+  
+    // Toggle volume controls
+    video.addEventListener('volumechange', function () {
+      if (video.muted) {
+        // Show mute icon when video is muted
+        // You can add your own mute icon class or use 'fa-volume-mute' from Font Awesome
+        volumeIcon.classList.add('mute-icon');
+      } else {
+        // Show volume icon when video is not muted
+        volumeIcon.classList.remove('mute-icon');
+      }
+    });
+  
+    // Add hover effect
+    overlay.addEventListener('mouseenter', function () {
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    });
+  
+    overlay.addEventListener('mouseleave', function () {
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.0)';
+    });
+});
 
+  
 
 // --------------------for responsive side bar
 function myFunction(x) {
@@ -150,12 +196,20 @@ var myChart = new Chart(ctx, {
 
 
 //Function for to-do list
-
 function toggleTask(taskId) {
     const checkbox = document.getElementById(taskId);
     const label = checkbox.nextElementSibling;
     label.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
 }
+
+function removeTask(taskId) {
+    const taskElement = document.getElementById(taskId);
+    if (taskElement) {
+        taskElement.parentElement.remove();
+    }
+}
+
+
 
 function addTask() {
     const newTaskInput = document.getElementById('new-task');
@@ -169,6 +223,7 @@ function addTask() {
         newTask.innerHTML = `
             <input type="checkbox" id="${newTaskId}" onclick="toggleTask('${newTaskId}')">
             <label for="${newTaskId}">${newTaskText}</label>
+            <span class="remove-btn" onclick="removeTask('${newTaskId}')">&times;</span>
         `;
 
         tasksList.appendChild(newTask);
@@ -176,3 +231,4 @@ function addTask() {
     }
 }
 
+  
