@@ -751,7 +751,7 @@ body {
         width: 30rem;
         top: 120%;
     }
-    #quick-select {
+    #quick-select_courses {
         padding: 10px;
         padding-left: 5px;
         display: flex;
@@ -760,36 +760,37 @@ body {
         justify-content: center;
     }
 
-    #quick-select .box-container {
+    #quick-select_courses .box-container {
         grid-template-columns: 1fr; /* Set the grid to a single column for smaller screens */
         gap: 1.5rem;
     }
-    #courses .box-container {
+    #courses_main_0 .box-container,
+    #courses_main_2 .box-container{
         grid-template-columns: 2fr;
         gap: 1.5rem;
     }
    
-    #about .row {
+    #about_courses .row {
         display: flex;
         align-items: center;
         gap: 0.75rem;
         flex-wrap: wrap;
     }
     
-    #about .row .image {
+    #about_courses .row .image {
         flex: 1 1 100%; /* Set full width for the image on smaller screens */
         order: 1; /* Set the order to 1 to move it to the beginning */
         margin-bottom: 1rem; /* Add margin for better separation */
         margin-right: 40px;
     }
-    #about .row .image img {
+    #about_courses .row .image img {
         max-width: 100%;
         height: auto;
         margin-top: -80px;
         
     }
     
-    #about .row .content {
+    #about_courses .row .content {
         flex: 1 1 100%; /* Set full width for the content on smaller screens */
         order: 2; /* Set the order to 2 to place it after the image */
         margin-top: -20px;
@@ -799,14 +800,14 @@ body {
         margin-bottom: 40px;
     }
     
-    #about .row .content h3 {
+    #about_courses .row .content h3 {
         font-weight: 500;
         line-height: 1;
         font-size: 18px;
         color: #393540;
     }
     
-    #about .row .content p {
+    #about_courses .row .content p {
         color: #8c8787;
         margin-top: 5px;
         font-size: 16px;
@@ -814,7 +815,7 @@ body {
         margin-bottom: 10px;
     }
     
-    #about .box-container {
+    #about_courses .box-container {
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 0.75rem;
@@ -824,24 +825,17 @@ body {
         flex-wrap: wrap;
     }
     
-    #about .box-container .box {
+    #about_courses .box-container .box {
         flex: 1 1 35%; /* Set full width for the box on smaller screens */
         text-align: center;
     }
-    #about .box-container .box i {
+    #about_courses .box-container .box i {
        margin-left: 10px;
     }
     .hd2 {
         margin-left: 15px;
     }
-    #reviews .box-container {
-        grid-template-columns: 1fr; /* Display one item at a time */
-        margin-bottom: 0;
-        padding-bottom: 30px;
-    }
-    #reviews .inline-option-btn { 
-        margin-top:-20px ;
-    }
+    
 }
 
 
@@ -873,7 +867,7 @@ body {
     gap: 0;
     padding: 4px 8px;
    }
-   #about .row .content {
+   #about_courses .row .content {
     flex: 1 1 100%;
     order: 2;
     margin-top: -20px;
