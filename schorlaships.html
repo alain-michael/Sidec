@@ -19,12 +19,12 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="index.html">
+                <a href="discover.html">
                     <i class="ri-rocket-2-fill"></i>
                     <span class="link_name">Discover</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a href="index.html" class="link_name">Discover</a></li>
+                    <li><a href="discover.html" class="link_name">Discover</a></li>
                 </ul>
             </li>
 
@@ -34,7 +34,7 @@
                     <span class="link_name">Dashboard</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a href="#" class="link_name">Dashboard</a></li>
+                    <li><a href="dashboard.html" class="link_name">Dashboard</a></li>
                 </ul>
             </li>
             <!--Drop down nav item-->
@@ -65,9 +65,9 @@
                     </div>
                     <ul class="sub-menu">
                         <li><a href="resources.html" class="link_name">Resources</a></li>
-                        <li><a href="#">Questions</a></li>
-                        <li><a href="#">Solutions</a></li>
-                        <li><a href="#">Test</a></li>
+                        <li><a href="questions.html">Questions</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="test.html">Test</a></li>
                     </ul>
              </li>
 
@@ -82,9 +82,9 @@
                      </div>
                          <ul class="sub-menu">
                              <li><a href="tutors.html" class="link_name">Tutors</a></li>
-                             <li><a href="#">Science</a></li>
-                             <li><a href="#">Arts</a></li>
-                             <li><a href="#">University</a></li>
+                             <li><a href="sciencetut.html">Science</a></li>
+                             <li><a href="artstut.html">Arts</a></li>
+                             <li><a href="universitytut.html">University</a></li>
                          </ul>
                  </li>
 
@@ -95,7 +95,7 @@
                        
                     </a>
                     <ul class="sub-menu blank">
-                        <li><a href="discover.html" class="link_name">Discussions</a></li>
+                        <li><a href="discuss.html" class="link_name">Discussions</a></li>
                     </ul>
                 </li>
                 <li>
@@ -108,9 +108,9 @@
                     </div>
                         <ul class="sub-menu">
                             <li><a href="schorlaships.html" class="link_name">Schorlaships</a></li>
-                            <li><a href="#">Undergraduate</a></li>
-                            <li><a href="#">Masters</a></li>
-                            <li><a href="#">Doctorate</a></li>
+                            <li><a href="ugschorlaships.html">Undergraduate</a></li>
+                            <li><a href="masterschorlaship.html">Masters</a></li>
+                            <li><a href="phdschorlaships.html">Doctorate</a></li>
                         </ul>
                 </li>
 
@@ -144,7 +144,7 @@
                             <div class="profile_name">Fred Joe</div>
                         <div class="job">Student | UB</div>
                         </div>
-                        <i class="ri-logout-circle-line"></i>
+                        <i class="ri-logout-circle-line" onclick="window.location.href='login.html'"></i>
                     </div>
                     
                 </li>
@@ -211,80 +211,191 @@
                   <span class="dot" onclick="currentSlide(3)"></span> 
                 </div>
         </div>
-        
 
-         <div id="about">
-            <div class="row">
-                <div class="image">
-                    <img src="images/abbbb.png" id="spe" alt="sidec">
+        
+         <div id="blog">
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="images/aluuuu.jpg" alt="">
                 </div>
-                <div class="content">
-                    <h3>Happy Learning</h3>
-                    <p>Find articles, past questions to popular exams like GCE, WAEC, etc,
-                        Get exam ready by taking our mock test with popular questions from this exams amongst others. Happy Learning!! 
-                    </p>
-                    <a href="test.html" class="inline-btn">Explore</a>
+                <div class="blog-details">
+                    <h4 style="color: #9875ff;">Study at ALU</h4>
+                    <p style="font-weight: 400; color: #696969;">Urenzi founded in 2020, is a passion project close to my heart.
+                       Explore our impact of sustainable education in areas affected by conflict, showcasing success stories, and envisioning...</p>
+                       <button class="modal-button" id="my_Btn1">Read more</button>
                 </div>
+                <h1>08/01</h1>
+                <div id="myModal1" class="modal">
+
+                    <!-- Modal content -->
+                   <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                             <span class="close_mod">&times;</span>
+                                 <h2>Modal Header</h2>
+                        </div>
+                                <div class="modal-body">
+                                    <p>Some text in the Modal Body</p>
+                                    <p>Some other text...</p>
+                                </div>
+                                 <div class="modal-footer">
+                                    <h3>Modal Footer</h3>
+                                </div>
+                            </div>
+                  </div>
             </div>
+        
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="images/swartmore.jpg" alt="">
+                </div>
+                <div class="blog-details">
+                    <h4 style="color: #9835ff;">Tech and Humanity: A Web Developer's Perspective</h4>
+                    <p style="font-weight: 500; color: #696969;">Discover the intersection of technology and humanity through the eyes of a front-end web developer. 
+                        Being well aware of how important ubuntu is to....</p>
+                        <button class="modal-button" id="my_Btn2">Read more</button>
+                </div>
+                <h1>10/01</h1>
+                <div id="myModal2" class="modal">
+
+                    <!-- Modal content -->
+                   <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                             <span class="close_mod">&times;</span>
+                                 <h2>Modal Header 2</h2>
+                        </div>
+                                <div class="modal-body">
+                                    <p>Some text in the Modal Body</p>
+                                    <p>Some other text...</p>
+                                </div>
+                                 <div class="modal-footer">
+                                    <h3>Modal Footer</h3>
+                                </div>
+                            </div>
+                  </div>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="images/beirut.jpg" alt="">
+                </div>
+                <div class="blog-details">
+                    <h4 style="color: #9835ff;">Study at University of Beirut</h4>
+                    <p style="font-weight: 500; color: #696969;">Step into the shoes of a refugee scholar as I share a personal narrative of triumph over adversity. Explore the pivotal...</p>
+                         <a href="#">CONTINUE READING</a>
+                </div>
+                <h1>30/05</h1>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="images/alc.jpg" alt="">
+                </div>
+                <div class="blog-details">
+                    <h4 style="color: #9835ff;">Study at ALC</h4>
+                    <p style="font-weight: 500;color: #696969;">Uncover the world of social media management and digital strategy as I share insights from my role. Dive into the importance of crafting online narratives...</p>
+                         <a href="#">CONTINUE READING</a>
+                </div>
+                <h1>08/01</h1>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="images/ubc.jpg" alt="">
+                </div>
+                <div class="blog-details">
+                    <h4 style="color: #336b89;">Customer Insights: Uncovering Stories at Stojo</h4>
+                    <p style="font-weight: 500;color: #696969;">Embark on a behind-the-scenes journey of applying for and participating in the Stojo customer insights externship. Explore the revelations...</p>
+                         <a href="#">CONTINUE READING</a>
+                </div>
+                <h1>13/01</h1>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="images/cape.jpg" alt="">
+                </div>
+                <div class="blog-details">
+                    <h4 style="color: #336b89;">Community Impact: Bridging Gaps Through Integrated Youth Empowerment</h4>
+                    <p style="font-weight: 500;color: #696969;">Delve into my involvement with Integrated Youth Empowerment Center (IYEC) and the transformative power of community engagement. Explore initiatives focused on social justice, peace, healthcare...</p>
+                         <a href="#">CONTINUE READING</a>
+                </div>
+                <h1>12/01</h1>
+                
+            </div>
+            <h2>Featured</h2>
+            <div class="blog-box">
+               
+                <div class="blog-img">
+                    <img src="images/urega.jpg" alt="">
+                </div>
+                <div class="blog-details">
+                    <h4 style="color: #336b89;">Urega Foundation</h4>
+                    <p style="font-weight: 500;color: #696969;">Delve into my involvement with Integrated Youth Empowerment Center (IYEC) and the transformative power of community engagement. Explore initiatives focused on social justice, peace, healthcare...</p>
+                         <a href="#">CONTINUE READING</a>
+                </div>
+                <h1>12/01</h1>
+                
+            </div>
+            <div class="more-btn">
+                <a href="courses.html" class="inline-btn">View more</a>
+            </div>
+        </div>
+
+        <div id="quick-select-2">
+            <h1 class="heading">Discover</h1>
             <div class="box-container">
-                <div class="box">
-                    <i class="fa-solid fa-square-poll-vertical"></i>
-                    <h3>Quick</h3>
-                    <span>Results</span>
-                </div>
+               <div class="box">
+                <h3 class="title">New</h3>
+                <p>Undergraduate : <span>6</span></p>
+                <a href="#" class="inline-btn">View schorlaships</a>
+                <p>Graduate : <span>14</span></p>
+                <a href="#" class="inline-btn">View schorlaships</a>
+                <p>Doctorate and Fellowships : <span>3</span></p>
+                <a href="#" class="inline-btn">View schorlaships</a>
+               </div> 
 
-              
-                <div class="box">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <h3>Accurate</h3>
-                    <span>Analytics</span>
-                </div>
-                <div class="box">
-                    <i class="fa-solid fa-clock"></i>
-                    <h3>Time</h3>
-                    <span>Management</span>
-                </div>
-                <div class="box">
-                    <i class="ri-trophy-fill"></i>
-                    <h3>Weekly</h3>
-                    <span>Challenges</span>
-                </div>
+               <div class="box">
+                <h3 class="title">Popular searches</h3>
+               <div class="flex">
+                <a href="#"><i class="ri-code-s-line"></i><span>Development</span></a>
+                <a href="#"><i class="ri-pencil-ruler-2-fill"></i><span>Arts & Design</span></a>
+                <a href="#"><i class="fa-solid fa-flask"></i><span>Science</span></a>
+                <a href="#"><i class="fa-solid fa-earth-africa"></i><span>Africa</span></a>
+                <a href="#"><i class="ri-camera-3-fill"></i><span>Photography</span></a>
+                <a href="#"><i class="fa-solid fa-microchip"></i><span>Tech world</span></a>
+                <a href="#"><i class="fa-solid fa-business-time"></i><span>Business</span></a>
+                <a href="#"><i class="fa-solid fa-bowl-food"></i><span>Food and wellness</span></a>
+               </div>
+               </div> 
+
+               <div class="box">
+                <h3 class="title">Popular schorlaships</h3>
+               <div class="flex">
+                <a href="#"><i class="fa-solid fa-atom"></i><span>Organic Chemistry</span></a>
+                <a href="#"><i class="fa-solid fa-microscope"></i><span>Taxonomy Biology</span></a>
+                <a href="#"><i class="fa-solid fa-clock-rotate-left"></i><span>Historical events</span></a>
+                <a href="#"><i class="fa-solid fa-earth-africa"></i><span>Enviromental science</span></a>
+                <a href="#"><i class="fa-solid fa-bowl-food"></i><span>Food and Nutrition</span></a>
+                <a href="#"><i class="ri-camera-3-fill"></i><span>Photography</span></a>
+                <a href="#"><i class="fa-solid fa-calculator"></i><span>Maths</span></a>
+                <a href="#"><i class="fa-solid fa-business-time"></i><span>Economics</span></a>
+                
+               </div>
+               </div> 
+
+               <div class="box tutor">
+                <h3 class="title">Submit an Opportuinity</h3>
+                <p>Know about a schorlaship? submit it to us now! By doing so,
+                    you help save a life!
+                </p>
+                <a href="support.html#contact" class="inline-btn">Submit</a>
+               </div> 
+               
             </div>
-         </div>
+        </div>
         
-
 
             <div id="courses">
-                <h1 class="heading hd2">Premium<i class="fa-solid fa-money-bill"></i></h1>
+                <h1 class="heading hd2">Recommended courses</h1>
                 <div class="box-container">
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/meta.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">Meta Developer<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>Get Certified</span>
-                            </div>
-                            <img src="images/meee.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Learn AR with Meta</h3>
-                            <h3 style="color: #9875ff;">$45</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                           
-                        </div>
-                    </div>
-    
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/Asset 6.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">ALU | SIDEC<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>Get Certified!</span>
-                            </div>
-                            <img src="images/alupy.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Master python</h3>
-                            <h3 style="color: #9875ff;">$30</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                        </div>
-                    </div>
     
                     <div class="box">
                         <div class="tutor">
@@ -331,32 +442,68 @@
     
     <script src="index.js"></script>
     <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-        
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-        
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          let dots = document.getElementsByClassName("dot");
-          if (n > slides.length) {slideIndex = 1}    
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-        }
+     let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+// Get all buttons that open modals
+var modalButtons = document.querySelectorAll(".modal-button");
+
+// Loop through each button and attach a click event listener
+modalButtons.forEach(function (button, index) {
+    button.onclick = function () {
+        // Get the corresponding modal
+        var modal = document.getElementById("myModal" + (index + 1));
+
+        // Display the modal
+        modal.style.display = "block";
+    };
+});
+
+// Get all elements that close modals
+var closeButtons = document.querySelectorAll(".close_mod");
+
+// Loop through each close button and attach a click event listener
+closeButtons.forEach(function (button) {
+    button.onclick = function () {
+        // Get the corresponding modal
+        var modal = button.closest(".modal");
+
+        // Close the modal
+        modal.style.display = "none";
+    };
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target.classList.contains("modal")) {
+        event.target.style.display = "none";
+    }
+};
+
         </script>
 </body>
 </html>

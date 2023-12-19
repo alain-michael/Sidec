@@ -19,12 +19,12 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="index.html">
+                <a href="discover.html">
                     <i class="ri-rocket-2-fill"></i>
                     <span class="link_name">Discover</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a href="index.html" class="link_name">Discover</a></li>
+                    <li><a href="discover.html" class="link_name">Discover</a></li>
                 </ul>
             </li>
 
@@ -65,9 +65,9 @@
                     </div>
                     <ul class="sub-menu">
                         <li><a href="resources.html" class="link_name">Resources</a></li>
-                        <li><a href="#">Questions</a></li>
-                        <li><a href="#">Solutions</a></li>
-                        <li><a href="#">Test</a></li>
+                        <li><a href="questions.html">Questions</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="test.html">Test</a></li>
                     </ul>
              </li>
 
@@ -179,8 +179,6 @@
            
             </div>
         
-        
-
          <div id="about">
             <div class="row">
                 <div class="image">
@@ -191,7 +189,14 @@
                     <p>Find articles, past questions to popular exams like GCE, WAEC, etc,
                         Get exam ready by taking our mock test with popular questions from this exams amongst others. Happy Learning!! 
                     </p>
-                    <a href="test.html" class="inline-btn">Explore</a>
+                    <div class="dropdown">
+                        <button onclick="myFunction3()" class="dropbtn">Explore <i class="ri-magic-fill"></i></button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="questions.html">Questions</a>
+                          <a href="solutions.html">Solutions</a>
+                          <a href="tests.html">Test</a>
+                        </div>
+                      </div>
                 </div>
             </div>
             <div class="box-container">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="questions.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
@@ -40,7 +40,7 @@
             <!--Drop down nav item-->
             <li>
                 <div class="iocn-link">
-                    <a href="courses.html" class="active">
+                    <a href="courses.html">
                         <i class="ri-book-open-fill"></i>
                         <span class="link_name">Courses</span>
                     </a>
@@ -48,7 +48,7 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="courses.html">Courses</a></li>
-                    <li><a href="science.html" class="active">Science</a></li>
+                    <li><a href="science.html">Science</a></li>
                     <li><a href="arts.html">Arts</a></li>
                     <li><a href="technology.html">Technology</a></li>
                     <li><a href="special.html">Specialization</a></li>
@@ -57,7 +57,7 @@
 
                 <li>
                     <div class="iocn-link">
-                        <a href="resources.html">
+                        <a href="resources.html" class="active">
                             <i class="ri-archive-drawer-fill"></i>
                             <span class="link_name">Resources</span>
                         </a>
@@ -65,7 +65,7 @@
                     </div>
                     <ul class="sub-menu">
                         <li><a href="resources.html" class="link_name">Resources</a></li>
-                        <li><a href="questions.html">Questions</a></li>
+                        <li><a href="questions.html" class="active">Questions</a></li>
                         <li><a href="solutions.html">Solutions</a></li>
                         <li><a href="test.html">Test</a></li>
                     </ul>
@@ -178,47 +178,23 @@
             </div>
            
             </div>
-         <div id="quick-select_courses">
-            <h1 class="heading">Other categories</h1>
-    
-            <div class="box-container">
-                <div class="box tutor">
-                    <h3 class="title">Arts</h3>
-                    <p> Encompass a broad spectrum of creative and expressive disciplines. 
-                        This category includes visual arts, performing arts, literature, and more.
-                    </p>
-                    <a href="arts.html" class="inline-btn">Browse</a>
-                   </div> 
-
-                  
-                   <div class="box tutor">
-                    <h3 class="title">Technology</h3>
-                    <p> It encompasses a wide range of fields, 
-                        including information technology, engineering,
-                         computer science, and telecommunications.
-                    </p>
-                    <a href="technology.html" class="inline-btn">Browse</a>
-                   </div> 
-
-               
-
-               <div class="box">
-                <h3 class="title">Popular science searches</h3>
-               <div class="flex">
-                <a href="#"><i class="fa-solid fa-atom"></i><span>Organic Chemistry</span></a>
-                <a href="#"><i class="fa-solid fa-microscope"></i><span>Taxonomy Biology</span></a>
-                <a href="#"><i class="fa-solid fa-earth-africa"></i><span>Enviromental science</span></a>
-                <a href="#"><i class="fa-solid fa-bowl-food"></i><span>Food and Nutrition</span></a>
-                <a href="#"><i class="fa-solid fa-calculator"></i><span>Maths</span></a>
-               </div>
-               </div> 
-              
-
-               
-            </div>
-            </div>
-         <div id="courses_main_0">
-            <h1 class="heading hd2">Science courses<i class="fa-solid fa-bolt"></i></h1>
+         <div id="quick-select-3">
+            <h1 class="heading">Find Questions with search</h1>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Enter keyword.." title="Type in a category">
+            <ul id="myMenu">
+              <li><a href="#">GCE Alevel 2023</a></li>
+              <li><a href="#">WAEC 2020</a></li>
+              <li><a href="#">GCE Alevel 2012</a></li>
+              <li><a href="#">GCE Alevel 2014</a></li>
+              <li><a href="#">Maths 1996</a></li>
+              <li><a href="#">GCE Olevel 2023</a></li>
+              <li><a href="#">GCE Alevel 2022</a></li>
+              <li><a href="#">GCE Alevel 2012</a></li>
+              <li><a href="#">JAMB 2019</a></li>
+            </ul>    
+        </div>
+         <div id="courses">
+            <h1 class="heading hd2">Arts courses<i class="fa-solid fa-bolt"></i></h1>
             <div class="box-container">
                 <div class="box">
                     <div class="tutor">
@@ -227,21 +203,22 @@
                             <span class="names">Sidec<i class="ri-verified-badge-fill"></i></span><br>
                             <span>09-25-2023</span>
                         </div>
-                        <img src="images/m2.jpg" class="thumb" alt="sidec python course">
-                        <h3 class="title">Introduction to Alevel Maths with Mech</h3>
+                        <img src="images/economics.jpg" class="thumb" alt="sidec python course">
+                        <h3 class="title">Economics Alevel</h3>
                         <a href="play2.html" class="inline-btn">View course</a>
                        
                     </div>
                 </div>
+
                 <div class="box">
                     <div class="tutor">
-                        <img src="images/1.png" class="ima" alt="tutor">
+                        <img src="images/2.png" class="ima" alt="tutor">
                         <div>
-                            <span class="names">John Morg</span><br>
-                            <span>09-25-2023</span>
+                            <span class="names">Akong Freddy<i class="ri-verified-badge-fill"></i></span><br>
+                            <span>23-05-2004</span>
                         </div>
-                        <img src="images/3d-virus-cells-attacking-dna-strand_1048-6816.avif" class="thumb" alt="food & science">
-                        <h3 class="title">Olevel Biology</h3>
+                        <img src="images/history course.png" class="thumb" alt="food & science">
+                        <h3 class="title">Complete History for beginners</h3>
                         <a href="play2.html" class="inline-btn">View course</a>
                     </div>
                 </div>
@@ -266,21 +243,34 @@
                             <span class="names">Cynthia Morgan</span><br>
                             <span>23-05-2004</span>
                         </div>
-                        <img src="images/commm.jpeg" class="thumb" alt="food & science">
-                        <h3 class="title">GCE Alevel computer science</h3>
+                        <img src="images/129453972-british-english-language-learning-class-vector-illustration-brittish-flag-logo-england-dictionary.jpg" class="thumb" alt="food & science">
+                        <h3 class="title">GCE Olevel English</h3>
                         <a href="play2.html" class="inline-btn">View course</a>
                     </div>
                 </div>
 
                 <div class="box">
                     <div class="tutor">
-                        <img src="images/Asset 6.png" class="ima" alt="tutor">
+                        <img src="images/5.png" class="ima" alt="tutor">
                         <div>
-                            <span class="names">Sidec<i class="ri-verified-badge-fill"></i></span><br>
+                            <span class="names">Cyril</span><br>
                             <span>23-05-2004</span>
                         </div>
-                        <img src="images/org.jpg" class="thumb" alt="food & science">
-                        <h3 class="title">Alevel Organic chemistry</h3>
+                        <img src="images/his.jpg" class="thumb" alt="food & science">
+                        <h3 class="title">Alevel World history</h3>
+                        <a href="play2.html" class="inline-btn">View course</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="tutor">
+                        <img src="images/2.png" class="ima" alt="tutor">
+                        <div>
+                            <span class="names">Freddy<i class="ri-verified-badge-fill"></i></span><br>
+                            <span>23-05-2004</span>
+                        </div>
+                        <img src="images/econs.png" class="thumb" alt="food & science">
+                        <h3 class="title">Economics crash course</h3>
                         <a href="play2.html" class="inline-btn">View course</a>
                     </div>
                 </div>
@@ -292,7 +282,7 @@
             </div>
             </div>
 
-         <div id="about_course">
+         <div id="about">
             <div class="row">
                 <div class="image">
                     <img src="images/about2.png" alt="sidec">
@@ -330,7 +320,7 @@
                 </div>
             </div>
          </div>
-         <div id="courses_main_1">
+         <div id="courses">
             <h1 class="heading hd2">Recommended</h1>
             <div class="box-container">
                 <div class="box">
@@ -360,23 +350,23 @@
                     </div>
                 </div>
 
-                <div class="box">
-                    <div class="tutor">
-                        <img src="images/1.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Anitha Alkman</span><br>
-                            <span>09-25-2023</span>
-                        </div>
-                        <img src="images/3d-virus-cells-attacking-dna-strand_1048-6816.avif" class="thumb" alt="food & science">
-                        <h3 class="title">Olevel Biology</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
-                    </div>
-                </div>
+               
 
                 
                
 
-              
+                <div class="box">
+                    <div class="tutor">
+                        <img src="images/2.png" class="ima" alt="tutor">
+                        <div>
+                            <span class="names">Freddy<i class="ri-verified-badge-fill"></i></span><br>
+                            <span>23-05-2004</span>
+                        </div>
+                        <img src="images/history course.png" class="thumb" alt="food & science">
+                        <h3 class="title">Complete History for Olevels</h3>
+                        <a href="play2.html" class="inline-btn">View course</a>
+                    </div>
+                </div>
 
                 <div class="box">
                     <div class="tutor">
@@ -404,18 +394,7 @@
                     </div>
                 </div>
 
-                <div class="box">
-                    <div class="tutor">
-                        <img src="images/2.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Freddy<i class="ri-verified-badge-fill"></i></span><br>
-                            <span>23-05-2004</span>
-                        </div>
-                        <img src="images/com.png" class="thumb" alt="food & science">
-                        <h3 class="title">Complete AL computer science</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
-                    </div>
-                </div>
+               
 
 
             </div>

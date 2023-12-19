@@ -484,100 +484,44 @@ body {
 .home-section .home-content .flex .profile-2 span {
     color: #979292;
 }
-#quick-select {
+#quick-select-3 {
     padding: 20px;
     padding-left: 40px;
+   
   
-}
-.mySlides {display: none}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 85%;
-  position: relative;
-  margin: auto;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 8px;
-
+    
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 40px;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #393540;
-  font-size: 18px;
-  padding: 20px auto;
-  margin-left: -20px;
-  position: absolute;
-  font-weight: 500;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
- .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-#quick-select .active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
+  
+#mySearch {
+    width: 50%;
+    font-size: 16px;
+    padding: 11px;
+    border: 1px solid #ddd;
+    outline: none;
+  }
+  
+  /* Style the navigation menu */
+  #myMenu {
+    width: 50%;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: inherit;
+  }
+  
+  /* Style the navigation links */
+  #myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: #393540;
+    display: block
+  }
+  
+  #myMenu li a:hover {
+    background-color: #eee;
+  }
 
 /* Course styling */
 #courses .box-container {
@@ -854,219 +798,6 @@ img {vertical-align: middle;}
     text-align: center;
     border-radius: 5px;
 }
-#blog {
-    padding: 90px 150px 0 150px;
-}
-#blog .blog-box {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-}
-#blog .blog-img {
-    width: 50%;
-    margin-right: 40px;
-    padding-bottom: 90px;
-}
-#blog img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-#blog .blog-details {
-    width: 50%;
-    margin-top: -120px;
-}
-
-#blog .blog-box h1 {
-    position: absolute;
-    top: -70px;
-    left: 0;
-    font-size: 90px;
-    font-weight: 800;
-    color: #c9cbce;
-    z-index: -9;
-}
-#blog .blog-details h4 {
-    margin-bottom: 20px;
-}
-#blog .blog-details p {
-    margin-top: 5px;
-}
-#blog .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    right: 20%;
-    top: 50%;
-    width: 60%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-   
-  }
-  
-  /* Modal Content/Box */
-  #blog .modal-content {
-    background-color: #f9feff;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #eee;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  #blog .close_mod {
-    color: #fff;
-    float: right;
-    font-size: 20px;
-    font-weight: 500;
-    transition: 0.3s ease;
-  }
-  
-  
-  #blog .close_mod:hover,
-  #blog .close_mod:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  /* Modal Header */
-#blog .modal-header {
-    padding: 2px 16px;
-    background-color: #9835ff;
-    color: #fff;
-  }
-  #blog .modal-header h2 {
-    font-weight: 500;
-    font-size: 18px;
-  }
-  
-  /* Modal Body */
-#blog .modal-body {padding: 2px 16px;}
-#blog .modal-body p {
-    font-weight: 400;
-    line-height: 1;
-    margin: 10px;
-} 
-  /* Modal Footer */
-#blog .modal-footer {
-    padding: 2px 16px;
-    background-color: #9835ff;
-    color: white;
-  }
-  #blog .modal-footer h3 {
-    font-weight: 400;
-    font-size: 14px;
-  }
-  
-  /* Modal Content */
-#blog .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #eee;
-    width: 80%;
-    box-shadow: 3px 4px 5px 30px rgba(0,0,0,0.02);
-    animation-name: animatetop;
-    animation-duration: 0.4s
-  }
-  .modal-button {
-    padding: 10px 18px;
-    background-color: #9835ff;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 20px;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 5px;
-    transition: 0.3s ease;
-  }
-  .modal-button:hover {
-    color: #fff;
-    background-color: #393540;
-  }
-  
-  /* Add Animation */
-  @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-  }
-  #quick-select-2 {
-    padding: 20px;
-    padding-left: 40px;
-  
-    
-}
- #quick-select-2 .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: 1.5rem;
-    align-items: flex-start;
-    justify-content: center;
-    
-}
-#quick-select-2 a {
-    text-decoration: none;
-}
-#quick-select-2 .box-container .box {
-    border-radius: 4px;
-    background-color: #fff;
-    padding: 20px;
-   
-    border: 1px solid #eee;
-}
-#quick-select-2 .box-container .box .title {
-    font-size: 18px;
-    font-weight: 500;
-    color: #393540;
-}
-#quick-select-2 .box-container .box p {
-    line-height: 1.5;
-    padding-top: 10px;
-    color: #8c8787;
-    font-size: 15px;
-}
-#quick-select-2 .box-container .box p span {
-    color: #9936ff;
-}
-#quick-select-2 .box-container .tutor  {
-    text-align: center;
-} 
-#quick-select-2 .box-container p {
-    padding-bottom: 5px;
-}
-#quick-select-2 .box-container .flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding-top: 5px;
-}
-#quick-select-2 .box-container .flex a {
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #eee;
-    transition: all 0.3s ease;
-}
-#quick-select-2 .box-container .flex a i {
-    margin-right: 10px;
-    color: #393540;
-}
-#quick-select-2 .box-container .flex a span {
-    color: #98969d;
-}
-#quick-select-2 .box-container .flex a:hover {
-    background-color: #393540;
-}
-#quick-select-2 .box-container .flex a:hover i {
-    color: white;
-}
-#quick-select-2 .box-container .flex a:hover span {
-    color: #fff;
-}
 
 
 
@@ -1199,13 +930,6 @@ img {vertical-align: middle;}
     #reviews .inline-option-btn { 
         margin-top:-20px ;
     }
-    #blog {
-        padding: 40px 20px 0 15px;
-    }
-    #blog .blog-details {
-        width: 50%;
-        margin-top: -120px;
-    }
 }
 
 
@@ -1251,25 +975,5 @@ img {vertical-align: middle;}
 }
 #spe {
     padding-top: 60px;
-}
-.slideshow-container {
-    max-width: 100%;
-   
-}
-.prev, .next,.text {font-size: 11px;}
-.text {margin-left: -40px;}
-#blog {
-    padding: 20px 15px 0 15px;
-}
-#blog img {
-    width: 120%;
-    height: 200px;
-    object-fit: cover;
-}
-#blog .blog-box h1 {
-    top: -50px;
-    font-size: 60px;
-   
-    
 }
 }

@@ -484,13 +484,13 @@ body {
 .home-section .home-content .flex .profile-2 span {
     color: #979292;
 }
-#quick-select {
+#quick-select_dash {
     padding: 20px;
     padding-left: 40px;
   
     
 }
- #quick-select .box-container {
+ #quick-select_dash .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 1.5rem;
@@ -498,10 +498,10 @@ body {
     justify-content: center;
     
 }
-#quick-select a {
+#quick-select_dash a {
     text-decoration: none;
 }
-#quick-select .box-container .box {
+#quick-select_dash .box-container .box {
     border-radius: 4px;
     background: url("images/dashbac.png");
     background-position: top 40% right 25%;
@@ -511,136 +511,76 @@ body {
    
    
 }
-#quick-select .box-container .box .title {
+#quick-select_dash .box-container .box .title {
     font-size: 18px;
     font-weight: 600;
     color: #fff;
     text-align: left;
 }
-#quick-select .box-container .box p {
+#quick-select_dash .box-container .box p {
     line-height: 1.5;
     padding-top: 10px;
     color: #fff;
     font-size: 18px;
     text-align: left;
 }
-#quick-select .box-container .box p span {
+#quick-select_dash .box-container .box p span {
     color: #d3f5cf;
     font-weight: 600;
 }
-#quick-select .box-container .tutor  {
+#quick-select_dash .box-container .tutor  {
     text-align: center;
 } 
-#quick-select .box-container p {
+#quick-select_dash .box-container p {
     padding-bottom: 5px;
 }
-#quick-select .box-container .flex {
+#quick-select_dash .box-container .flex {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     padding-top: 5px;
 }
-#quick-select .box-container .flex a {
+#quick-select_dash .box-container .flex a {
     padding: 4px 8px;
     border-radius: 5px;
     font-size: 16px;
     background-color: #eee;
     transition: all 0.3s ease;
 }
-#quick-select .box-container .flex a i {
+#quick-select_dash .box-container .flex a i {
     margin-right: 10px;
     color: #393540;
 }
-#quick-select .box-container .flex a span {
+#quick-select_dash .box-container .flex a span {
     color: #98969d;
 }
-#quick-select .box-container .flex a:hover {
+#quick-select_dash .box-container .flex a:hover {
     background-color: #393540;
 }
-#quick-select .box-container .flex a:hover i {
+#quick-select_dash .box-container .flex a:hover i {
     color: white;
 }
-#quick-select .box-container .flex a:hover span {
+#quick-select_dash .box-container .flex a:hover span {
     color: #fff;
 }
 
 
-/* Course styling */
-#courses .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1.5rem;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 20px;
-   
-}
-#courses .box-container .box {
-    border-radius: 4px;
-    background-color: #fff;
-    padding: 20px;
 
-    border: 1px solid #eee;
-}
-#courses .box-container .box .tutor  {
-    margin-bottom: 20px;
-}
-#courses .box-container .box .tutor .names {
-    display: flex;
-    margin-top: -40px;
-    margin-left: 60px;
-}
-#courses .box-container .box .thumb {
-    width: 100%;
-    border-radius: 10px;
-    height: 200px;
-    object-fit: cover;
-}
-#courses .box-container .box .tutor .ima {
-    max-width: 100%;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-#courses .box-container .box .tutor h3 {
-    font-size: 16px;
-    color: #393540;
-    margin-bottom: 20px;
-}
-#courses .box-container .box .tutor span {
-    font-size: 16px;
-    margin-top: -20px;
-}
-#courses .box-container .box .title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #393540;
-    margin-top: 20px;
-    padding: 3px 0;
-}
-
-#courses .more-btn {
-    margin-top: 20px;
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-
-}
-#about .row {
+#about_dash .row {
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
-#about .row .image {
+#about_dash .row .image {
     flex: 1 1 20rem;
 }
 
-#about .row .image img {
+#about_dash .row .image img {
     max-width: 100%;
    height: 500px;
 }
-#about .row .content {
+#about_dash .row .content {
     flex: 1; /* Set flex-grow to 1 */
     max-width: 80%; /* Set a maximum width for the content */
     margin-right: 200px;
@@ -650,13 +590,13 @@ body {
 }
 
 
-#about .row .content h3 {
+#about_dash .row .content h3 {
     font-weight: 500;
     line-height: 1;
     font-size: 18px;
     color: #393540;
 }
-#about .row .content p {
+#about_dash .row .content p {
     color: #8c8787;
     margin-top: 5px;
     font-size: 16px;
@@ -664,16 +604,16 @@ body {
     
 }
 
-#about .box-container {
-    padding-left: 20px;
+#about_dash .box-container {
+    padding-left: 40px;
     padding-right: 20px;
-    margin-top: 0.75rem;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: -10px;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
-#about .box-container .box {
+#about_dash .box-container .box {
     flex: 1 1 10rem;
     display: flex;
     background-color: #fff;
@@ -687,85 +627,21 @@ body {
     transition: .3s ease;
     cursor: pointer;
 }
-#about .box-container .box:hover {
+#about_dash .box-container .box:hover {
     transform: translateY(-10px);
 }
-#about .box-container .box i {
+#about_dash .box-container .box i {
     font-size: 24px;
     color: #393540;
 }
-#about .box-container .box h3 {
+#about_dash .box-container .box h3 {
     color: #9936ff;
     font-size: 18px;
 }
-#about .box-container .box span {
+#about_dash .box-container .box span {
     font-size: 14px;
     color: #393540;
 }
-#reviews .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
-    gap: 1rem;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 10px 20px 10px 20px;
-}
-#reviews .box-container .box {
-    border-radius: 5px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: inset;
-    padding-top: 20px;
-    border: 1px solid #eee;
-}
-#reviews .box-container .box p {
-    line-height: 2;
-    font-size: 16px;
-    color: #979292;
-}
-#reviews .box-container .box .user {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
-}
-#reviews .box-container .box .user img {
-    height: 60px;
-    max-width: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-#reviews .box-container .box .user h3 {
-    font-size: 14px;
-    font-weight: 600;
-    color: #393540;
-}
-#reviews .box-container .box .user .stars i {
-    color: #9936ff;
-    font-size: 14px;
-}
-#reviews .inline-option-btn {
-    margin: auto;
-   text-align: center;
-   margin-left: 20px;
-  margin-bottom: 20px;
-  margin-right: 10px;
-}
-#reviews textarea {
-    width: 70%;
-    outline: none;
-    padding: 20px;
-    border: 1px solid #eee;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-#reviews .input-2 .inline-btn {
-   margin-left: 20px;
-   margin-top: -80px;
-    margin-bottom: 20px;
-}
-
-
 /*Dasboard*/
 #mainn {
     position: relative;
@@ -1063,6 +939,7 @@ body {
     border-radius: 8px;
     margin-left: 5px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eee;
 }
 
 #tasks-list {
@@ -1099,8 +976,9 @@ body {
 
 #add-btn {
     padding: 8px 16px;
-    margin-left: 10px;
     border-radius: 5px ;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
     background-color: #9835ff;
     color: #fff;
     border: none;
@@ -1109,7 +987,7 @@ body {
 }
 
 #add-btn:hover {
-   transform: translateY(-10px);
+   background-color: #a15de9;
 }
 #achievement {
    margin-left: 40px;
@@ -1144,7 +1022,6 @@ body {
 #achievement .trophy i {
     font-size: 65px;
     color: #fff;
-    border: 10px solid #fff;
     border-radius: 50%;
     padding: 20px;
 }
@@ -1207,7 +1084,7 @@ body {
         width: 30rem;
         top: 120%;
     }
-    #quick-select {
+    #quick-select_dash {
         padding: 10px;
         padding-left: 5px;
         display: flex;
@@ -1216,44 +1093,44 @@ body {
         justify-content: center;
     }
 
-    #quick-select .box-container {
+    #quick-select_dash .box-container {
         grid-template-columns: 1fr; /* Set the grid to a single column for smaller screens */
         gap: 1.5rem;
     }
-    #quick-select .box-container .tutor {
+    #quick-select_dash .box-container .tutor {
         margin-left: 3px;
         margin-right: 20px;
     }
-    #courses .box-container {
+    #courses_dash .box-container {
         grid-template-columns: 2fr;
         gap: 1.5rem;
     }
-    #quick-select .box-container .box p {
+    #quick-select_dash .box-container .box p {
         font-size: 16px;
        
     }
    
-    #about .row {
+    #about_dash .row {
         display: flex;
         align-items: center;
         gap: 0.75rem;
         flex-wrap: wrap;
     }
     
-    #about .row .image {
+    #about_dash .row .image {
         flex: 1 1 100%; /* Set full width for the image on smaller screens */
         order: 1; /* Set the order to 1 to move it to the beginning */
         margin-bottom: 1rem; /* Add margin for better separation */
         margin-right: 40px;
     }
-    #about .row .image img {
+    #about_dash .row .image img {
         max-width: 100%;
         height: auto;
         margin-top: -80px;
         
     }
     
-    #about .row .content {
+    #about_dash .row .content {
         flex: 1 1 100%; /* Set full width for the content on smaller screens */
         order: 2; /* Set the order to 2 to place it after the image */
         margin-top: -20px;
@@ -1263,14 +1140,14 @@ body {
         margin-bottom: 40px;
     }
     
-    #about .row .content h3 {
+    #about_dash .row .content h3 {
         font-weight: 500;
         line-height: 1;
         font-size: 18px;
         color: #393540;
     }
     
-    #about .row .content p {
+    #about_dash .row .content p {
         color: #8c8787;
         margin-top: 5px;
         font-size: 16px;
@@ -1278,7 +1155,7 @@ body {
         margin-bottom: 10px;
     }
     
-    #about .box-container {
+    #about_dash .box-container {
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 0.75rem;
@@ -1288,24 +1165,17 @@ body {
         flex-wrap: wrap;
     }
     
-    #about .box-container .box {
+    #about_dash .box-container .box {
         flex: 1 1 35%; /* Set full width for the box on smaller screens */
         text-align: center;
     }
-    #about .box-container .box i {
+    #about_dash .box-container .box i {
        margin-left: 10px;
     }
     .hd2 {
         margin-left: 15px;
     }
-    #reviews .box-container {
-        grid-template-columns: 1fr; /* Display one item at a time */
-        margin-bottom: 0;
-        padding-bottom: 30px;
-    }
-    #reviews .inline-option-btn { 
-        margin-top:-20px ;
-    }
+   
     .home-section .data {
         flex-direction: column;
         align-items: stretch; /* Optional: Stretch items to fill the container */
@@ -1371,7 +1241,7 @@ body {
     gap: 0;
     padding: 4px 8px;
    }
-   #about .row .content {
+   #about_dash .row .content {
     flex: 1 1 100%;
     order: 2;
     margin-top: -20px;
@@ -1386,17 +1256,17 @@ body {
 #spe {
     padding-top: 60px;
 }
-#quick-select .box-container .box {
+#quick-select_dash .box-container .box {
   width: 100%;
   height: auto;
   margin-left: 0;
 }
-#quick-select .box-container .box .title {
+#quick-select_dash .box-container .box .title {
     font-size: 14px;
     margin-left: -30px;
     
 }
-#quick-select .box-container .box p {
+#quick-select_dash .box-container .box p {
     font-size: 11px;
     margin-left: -30px;
 }
