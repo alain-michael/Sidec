@@ -193,135 +193,115 @@
               <li><a href="#">JAMB 2019</a></li>
             </ul>    
         </div>
-         <div id="courses">
-            <h1 class="heading hd2">Arts courses<i class="fa-solid fa-bolt"></i></h1>
+         <div id="resources_1">
+            <h1 class="heading hd2">Popular<i class="fa-solid fa-bolt"></i></h1>
             <div class="box-container">
                 <div class="box">
                     <div class="tutor">
-                        <img src="images/Asset 6.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Sidec<i class="ri-verified-badge-fill"></i></span><br>
-                            <span>09-25-2023</span>
-                        </div>
-                        <img src="images/economics.jpg" class="thumb" alt="sidec python course">
-                        <h3 class="title">Economics Alevel</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
+                        <img src="images/Questions.jpg" class="thumb" alt="food & science">
+                        <h3 class="title">Mathematics paper one</h3>
+                        <h3 style="color: #9875ff; font-weight: 500;">GCE Alevel 2023</h3>
+                        <a href="play2.html" class="inline-btn">View <i class="ri-eye-fill"></i></a>
                        
                     </div>
                 </div>
 
                 <div class="box">
                     <div class="tutor">
-                        <img src="images/2.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Akong Freddy<i class="ri-verified-badge-fill"></i></span><br>
-                            <span>23-05-2004</span>
-                        </div>
-                        <img src="images/history course.png" class="thumb" alt="food & science">
-                        <h3 class="title">Complete History for beginners</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
+                        <img src="images/Questions.jpg" class="thumb" alt="food & science">
+                        <h3 class="title">Mathematics paper two</h3>
+                        <h3 style="color: #9875ff; font-weight: 500;">GCE Alevel 2023</h3>
+                        <a href="play2.html" class="inline-btn">View <i class="ri-eye-fill"></i></a>
+                       
                     </div>
                 </div>
-
                 <div class="box">
                     <div class="tutor">
-                        <img src="images/5.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Cyril</span><br>
-                            <span>23-05-2004</span>
-                        </div>
-                        <img src="images/mathe.jpg" class="thumb" alt="food & science">
-                        <h3 class="title">Olevel Mathematics</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
+                        <img src="images/Questions.jpg" class="thumb" alt="food & science">
+                        <h3 class="title">Chemistry paper one</h3>
+                        <h3 style="color: #9875ff; font-weight: 500;">GCE Alevel 2023</h3>
+                        <a href="play2.html" class="inline-btn">View <i class="ri-eye-fill"></i></a>
+                       
                     </div>
                 </div>
-
                 <div class="box">
                     <div class="tutor">
-                        <img src="images/cynthia.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Cynthia Morgan</span><br>
-                            <span>23-05-2004</span>
-                        </div>
-                        <img src="images/129453972-british-english-language-learning-class-vector-illustration-brittish-flag-logo-england-dictionary.jpg" class="thumb" alt="food & science">
-                        <h3 class="title">GCE Olevel English</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
+                        <img src="images/Questions.jpg" class="thumb" alt="food & science">
+                        <h3 class="title">History paper one</h3>
+                        <h3 style="color: #9875ff; font-weight: 500;">GCE Alevel 2023</h3>
+                        <a href="play2.html" class="inline-btn">View <i class="ri-eye-fill"></i></a>
+                       
                     </div>
                 </div>
-
-                <div class="box">
-                    <div class="tutor">
-                        <img src="images/5.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Cyril</span><br>
-                            <span>23-05-2004</span>
-                        </div>
-                        <img src="images/his.jpg" class="thumb" alt="food & science">
-                        <h3 class="title">Alevel World history</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <div class="tutor">
-                        <img src="images/2.png" class="ima" alt="tutor">
-                        <div>
-                            <span class="names">Freddy<i class="ri-verified-badge-fill"></i></span><br>
-                            <span>23-05-2004</span>
-                        </div>
-                        <img src="images/econs.png" class="thumb" alt="food & science">
-                        <h3 class="title">Economics crash course</h3>
-                        <a href="play2.html" class="inline-btn">View course</a>
-                    </div>
-                </div>
+               
 
 
             </div>
             <div class="more-btn">
-                <a href="courses.html" class="inline-btn">View more</a>
+                <button class="inline-btn" onclick="openForm()">Find Questions</button>
             </div>
+            <!-- The form -->
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Find question</h1>
+  
+      <label for="exam"><b>Exam</b></label>
+      <select name="exam" id="exam">
+            <option>GCE</option>
+            <option>WAEC</option>
+            <option>TVET</option>
+            <option>JAMB</option>
+            <option>NECO</option>
+            <option>ECZ</option>
+            <option>HND</option>
+      </select>
+      <label for="level"><b>Level</b></label>
+      <select name="level" id="level">
+            <option>Alevel</option>
+            <option>Olevel</option>
+            <option>Level 1 HND</option>
+            <option>Level 2 HND</option>
+      </select>
+      <label for="type"><b>Type</b></label>
+      <select name="type" id="type">
+            <option>Science</option>
+            <option>Arts</option>
+            <option>Technical</option>
+            <option>Others</option>
+      </select>
+      <label for="year"><b>Year</b></label>
+      <select name="year" id="year">
+            <option>2023</option>
+            <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+            <option>2018</option>
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+            <option>2014</option>
+            <option>2013</option>
+            <option>2012</option>
+            <option>2011</option>
+            <option>2010</option>
+            <option>2009</option>
+            <option>2008</option>
+            <option>2007</option>
+            <option>2006</option>
+            <option>2004</option>
+            <option>2003</option>
+      </select>
+ 
+      <button type="submit" class="btn">Find</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
             </div>
 
-         <div id="about">
-            <div class="row">
-                <div class="image">
-                    <img src="images/about2.png" alt="sidec">
-                </div>
-                <div class="content">
-                    <h3>Did you know?</h3>
-                    <p>We now have a free mock test on our website similar to your GCE?,
-                        it's completely free and graded!
-                    </p>
-                    <a href="test.html" class="inline-btn">Explore</a>
-                </div>
-            </div>
-            <div class="box-container">
-                <div class="box">
-                    <i class="fa-solid fa-square-poll-vertical"></i>
-                    <h3>Quick</h3>
-                    <span>Results</span>
-                </div>
-
-              
-                <div class="box">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <h3>Accurate</h3>
-                    <span>Analytics</span>
-                </div>
-                <div class="box">
-                    <i class="fa-solid fa-clock"></i>
-                    <h3>Time</h3>
-                    <span>Management</span>
-                </div>
-                <div class="box">
-                    <i class="ri-trophy-fill"></i>
-                    <h3>Weekly</h3>
-                    <span>Challenges</span>
-                </div>
-            </div>
-         </div>
-         <div id="courses">
-            <h1 class="heading hd2">Recommended</h1>
+        
+         <div id="resources_1">
+            <h1 class="heading hd2">Recommended courses</h1>
             <div class="box-container">
                 <div class="box">
                     <div class="tutor">
@@ -400,76 +380,6 @@
             </div>
             <div class="more-btn">
                 <a href="courses.html" class="inline-btn">View more</a>
-            </div>
-
-
-            <div id="courses">
-                <h1 class="heading hd2">Premium<i class="fa-solid fa-money-bill"></i></h1>
-                <div class="box-container">
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/meta.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">Meta Developer<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>Get Certified</span>
-                            </div>
-                            <img src="images/meee.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Learn AR with Meta</h3>
-                            <h3 style="color: #9875ff;">$45</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                           
-                        </div>
-                    </div>
-    
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/Asset 6.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">ALU | SIDEC<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>Get Certified!</span>
-                            </div>
-                            <img src="images/alupy.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Master python</h3>
-                            <h3 style="color: #9875ff;">$30</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                        </div>
-                    </div>
-    
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/5.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">Arnaud<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>23-05-2004</span>
-                            </div>
-                            <img src="images/SAT.png" class="thumb" alt="food & science">
-                            <h3 class="title">SAT preparation</h3>
-                            <h3 style="color: #9875ff;">$50</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                        </div>
-                    </div>
-    
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/3.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">Duo master<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>23-05-2004</span>
-                            </div>
-                            <img src="images/duo.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Complete History for beginners</h3>
-                            <h3 style="color: #9875ff;">$45</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                        </div>
-                    </div>
-    
-                    
-    
-    
-                </div>
-                <div class="more-btn">
-                    <a href="courses.html" class="inline-btn">View more</a>
-                </div>
             </div>
         </div>
       

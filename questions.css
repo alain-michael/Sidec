@@ -524,7 +524,8 @@ body {
   }
 
 /* Course styling */
-#courses .box-container {
+/* Course styling */
+#resources_1 .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     gap: 1.5rem;
@@ -533,43 +534,47 @@ body {
     padding: 20px;
    
 }
-#courses .box-container .box {
+#resources_1 .box-container .box {
     border-radius: 4px;
     background-color: #fff;
     padding: 20px;
-
     border: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
-#courses .box-container .box .tutor  {
+#resources_1 .box-container .box:hover {
+ box-shadow: 4px 12px 20px rgba(0, 0, 0, .1);
+}
+#resources_1 .box-container .box .tutor  {
     margin-bottom: 20px;
 }
-#courses .box-container .box .tutor .names {
+#resources_1 .box-container .box .tutor .names {
     display: flex;
     margin-top: -40px;
     margin-left: 60px;
 }
-#courses .box-container .box .thumb {
+#resources_1 .box-container .box .thumb {
     width: 100%;
     border-radius: 10px;
     height: 200px;
     object-fit: cover;
 }
-#courses .box-container .box .tutor .ima {
+#resources_1 .box-container .box .tutor .ima {
     max-width: 100%;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
-#courses .box-container .box .tutor h3 {
+#resources_1 .box-container .box .tutor h3 {
     font-size: 16px;
     color: #393540;
     margin-bottom: 20px;
 }
-#courses .box-container .box .tutor span {
+#resources_1 .box-container .box .tutor span {
     font-size: 16px;
     margin-top: -20px;
 }
-#courses .box-container .box .title {
+#resources_1 .box-container .box .title {
     font-size: 18px;
     font-weight: 600;
     color: #393540;
@@ -577,34 +582,12 @@ body {
     padding: 3px 0;
 }
 
-#courses .more-btn {
+#resources_1 .more-btn {
     margin-top: 20px;
     text-align: center;
     margin-bottom: 40px;
     padding-bottom: 20px;
 
-}
-#about .row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-#about .row .image {
-    flex: 1 1 20rem;
-}
-
-#about .row .image img {
-    max-width: 100%;
-   height: 500px;
-}
-#about .row .content {
-    flex: 1; /* Set flex-grow to 1 */
-    max-width: 80%; /* Set a maximum width for the content */
-    margin-right: 200px;
-    text-align: justify;
-    
-   
 }
 
 
@@ -798,14 +781,77 @@ body {
     text-align: center;
     border-radius: 5px;
 }
-
-
-
-
-
-
-
-
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border: 1px solid #f1f1f1;
+    z-index: 1000;
+    box-shadow: inherit;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  /* Full-width input fields */
+  .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    border: none;
+    background: #f1f1f1;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+  }
+  
+  /* When the inputs get focus, do something */
+  
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #9835ff;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  .form-container h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #393540;
+  }
+  #myForm label {
+    font-size: 12px;
+    font-weight: 200;
+    color: #9835ff;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: #393540;
+   
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+    transform: none;
+  }
+ #resources_1 .inline-btn {
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+ }
 
 
 /* Media querries */
@@ -839,96 +885,10 @@ body {
         width: 30rem;
         top: 120%;
     }
-    #quick-select {
-        padding: 10px;
-        padding-left: 5px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #quick-select .box-container {
-        grid-template-columns: 1fr; /* Set the grid to a single column for smaller screens */
-        gap: 1.5rem;
-    }
-    #courses .box-container {
+  
+    #resources_1 .box-container{
         grid-template-columns: 2fr;
         gap: 1.5rem;
-    }
-   
-    #about .row {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-    }
-    
-    #about .row .image {
-        flex: 1 1 100%; /* Set full width for the image on smaller screens */
-        order: 1; /* Set the order to 1 to move it to the beginning */
-        margin-bottom: 1rem; /* Add margin for better separation */
-        margin-right: 40px;
-    }
-    #about .row .image img {
-        max-width: 100%;
-        height: auto;
-        margin-top: -80px;
-        
-    }
-    
-    #about .row .content {
-        flex: 1 1 100%; /* Set full width for the content on smaller screens */
-        order: 2; /* Set the order to 2 to place it after the image */
-        margin-top: -20px;
-        margin-left: 130px;
-        padding-right: -20px;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    #about .row .content h3 {
-        font-weight: 500;
-        line-height: 1;
-        font-size: 18px;
-        color: #393540;
-    }
-    
-    #about .row .content p {
-        color: #8c8787;
-        margin-top: 5px;
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 10px;
-    }
-    
-    #about .box-container {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 0.75rem;
-        margin-bottom: 40px;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-    
-    #about .box-container .box {
-        flex: 1 1 35%; /* Set full width for the box on smaller screens */
-        text-align: center;
-    }
-    #about .box-container .box i {
-       margin-left: 10px;
-    }
-    .hd2 {
-        margin-left: 15px;
-    }
-    #reviews .box-container {
-        grid-template-columns: 1fr; /* Display one item at a time */
-        margin-bottom: 0;
-        padding-bottom: 30px;
-    }
-    #reviews .inline-option-btn { 
-        margin-top:-20px ;
     }
 }
 
@@ -975,5 +935,16 @@ body {
 }
 #spe {
     padding-top: 60px;
+}
+#mySearch {
+    width: 100%;
+    
+}
+#myMenu {
+    width: 100%;
+}
+.form-popup {
+    right: 10px;
+    bottom: 120px;
 }
 }

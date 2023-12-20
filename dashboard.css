@@ -1287,7 +1287,7 @@ body {
 }
 
 #achievement .trophy {
-    width: 100%; /* Make it full width on smaller screens */
+    width: 80%; /* Make it full width on smaller screens */
     margin-left: 0; /* Remove margin on smaller screens */
     margin-top: 10px; /* Optional: Add space between text and icon on smaller screens */
 }
