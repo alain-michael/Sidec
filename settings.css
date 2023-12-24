@@ -623,15 +623,20 @@ body {
     border-radius: 4px;
   }
   #connect .alert {
-    background-color: lightblue;
+    background-color: #be82ff;
     padding: 10px;
-    color: #393540;
+    color: #fff;
     font-size: 16px;
     font-weight: 400;
     margin-top: 20px;
   }
   #connect .alert a {
     color: #9835ff;
+    background-color: #fff;
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 5px;
   }
 
 
@@ -836,9 +841,9 @@ body {
     padding: 20px;
     width: 100%;
     border-left: none;
-    height: 570px;
+    height: 580px;
     margin-top: 60px;
-   margin-left: -50px;
+   margin-left: 5px;
 } 
 
 .content-settings .inline-option-btn {
@@ -852,6 +857,9 @@ body {
    padding: 5px;
     font-size: 14px;
    
+}
+#connect .alert a {
+    margin-top: 10px;
 }
 }
 @media only screen and (min-width: 601px) {
