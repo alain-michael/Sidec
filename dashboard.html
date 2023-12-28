@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+    <!-- Include Chart.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.11/chartjs-plugin-annotation.min.js"></script>
 
@@ -270,8 +273,7 @@
         <div class="data">
             <div id="chartContainer">
                 <h2 class="heading">Recent perfomance</h2>
-                <canvas id="lineChart" width="450" height="100">
-                </canvas>
+                <canvas id="lineChart"> </canvas>
                
             </div>
     
@@ -393,20 +395,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Chart options
     var options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            x: [{
-                grid: {
-                    display: false // Hide x-axis grid lines within the graph
-                }
-            }],
-            y: [{
-                grid: {
-                    display: false // Hide y-axis grid lines within the graph
-                }
-            }]
-        }
+       
+        
     };
 
     // Get the canvas element

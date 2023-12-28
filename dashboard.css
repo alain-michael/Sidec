@@ -1385,11 +1385,15 @@ body {
 #chartContainer {
     max-width: 100%;
    padding: 10px;
+   height: auto;
 }
 #chartContainer a {
     text-align: center;
     margin-top: 60px;
   
+}
+#lineChart {
+    height: 80px;
 }
 
     #course-box {
