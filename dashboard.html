@@ -264,7 +264,10 @@
              
                     <div id="calendar">
                         <button id="addEventBtn" class="inline-btn">Add Event <i class="ri-add-line"></i></button>
+                      
                     </div>
+                   
+                    
                     
                
                    
@@ -393,36 +396,49 @@
     });
 });
 
-
-    $(document).ready(function() {
-      $('#calendar').fullCalendar({
+$(document).ready(function() {
+    // Initialize FullCalendar
+    $('#calendar').fullCalendar({
         header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
         },
         defaultView: 'month',
         editable: false,
         events: [
-          {
-            title: 'Event 1',
-            start: '2023-12-20',
-            end: '2023-12-12' // Add an end date
-          },
-          {
-            title: 'Event 2',
-            start: '2023-12-05',
-            end: '2023-12-07'
-          }
+            {
+                title: 'Event 1',
+                start: '2023-12-20',
+                end: '2023-12-12' // Add an end date
+            },
+            {
+                title: 'Event 2',
+                start: '2023-12-05',
+                end: '2023-12-07'
+            }
         ]
-      });
-  
-      // Add Event button click handler
-      $('#addEventBtn').click(function() {
-        // Your logic to open a modal or perform any action for adding an event
-        alert('Add Event button clicked!');
-      });
     });
+
+    // Add Event button click handler
+    $('#addEventBtn').click(function() {
+        // For simplicity, let's assume you have a modal with input fields for event details
+        var title = prompt('Enter event title:');
+        var startDate = prompt('Enter start date (YYYY-MM-DD):');
+        var endDate = prompt('Enter end date (YYYY-MM-DD):');
+
+        // Create a new event object
+        var newEvent = {
+            title: title,
+            start: startDate,
+            end: endDate
+        };
+
+        // Add the new event to FullCalendar
+        $('#calendar').fullCalendar('renderEvent', newEvent, true);
+    });
+});
+
   </script>
 
 </body>

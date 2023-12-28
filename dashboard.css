@@ -1143,6 +1143,46 @@ body {
     margin-top: -20px;
    
 }
+/* Add this CSS to your stylesheet */
+#addEventModal {
+    display: none; /* Hide the modal by default */
+}
+
+#addEventModal .modal-dialog {
+    max-width: 400px; /* Adjust the max-width as needed */
+}
+
+#addEventModal .modal-content {
+    border-radius: 8px;
+}
+
+#addEventModal .modal-header {
+    background-color: #007bff;
+    color: #fff;
+    border-bottom: none;
+}
+
+#addEventModal .modal-title {
+    font-size: 18px;
+}
+
+#addEventModal .modal-body {
+    padding: 20px;
+}
+
+#addEventModal .modal-footer {
+    border-top: none;
+}
+
+#saveEventBtn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+#saveEventBtn:hover {
+    background-color: #218838;
+}
+
 
 
 
