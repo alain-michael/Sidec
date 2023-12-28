@@ -155,7 +155,7 @@
             <i class="ri-menu-3-line ham_menu"></i>
             <div class="flex">
                 <form action="" method="post" class="search-form">
-                    <input type="text" name="search_box" placeholder="Find courses..." required maxlength="100">
+                    <input type="text" name="search_box" placeholder="Find setting..." required maxlength="100">
                     <button type="submit" class="ri-search-line"></button>
                 </form>
                 <div class="icons">
@@ -177,29 +177,111 @@
                 </div>
             </div>
            
+            
             </div>
-         <div id="quick-select_courses_main">
+            <div id="course-cont">
+                <ul class="breadcrumb">
+                    <li><a href="courseslanding.html">Home</a></li>
+                    <li><a href="#">Week one</a></li>
+                    <li><a href="#">Grammer and sentence structure</a></li>
+                    <li>Italy</li>
+                  </ul>
+            </div>
+         <div id="quick-select_settings">
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                <button class="tablinks" onclick="openSettings(event, 'general')"> <i class="ri-settings-fill"></i><span class="icon-only">General</span></button>
+                <button class="tablinks" onclick="openSettings(event, 'cpassword')"><i class="ri-lock-fill"></i><span class="icon-only">Change password</span></button>
+                <button class="tablinks" onclick="openSettings(event, 'info')"> <i class="ri-information-fill"></i><span class="icon-only">Information</span></button>
+                <button class="tablinks" onclick="openSettings(event, 'links')"> <i class="fa-solid fa-link"></i><span class="icon-only">Social links</span></button>
+                <button class="tablinks" onclick="openSettings(event, 'connect')"> <i class="ri-contacts-fill"></i><span class="icon-only">Connections</span></button>
+                <button class="tablinks" onclick="openSettings(event, 'notif')"><i class="fa-solid fa-bell"></i><span class="icon-only">Notifications</span></button>
+            </div>
+            
+              
+              <div id="general" class="tabcontent">
+                <div class="content-settings"> 
+                </div>
+                <a href="#" class="inline-option-btn">Previous</a>
+                <a href="#" class="inline-btn">Next</a>
+            </div>
+            
+
+              
+              <div id="cpassword" class="tabcontent">
+                <div class="input-settings">
+                    <label for="pass">Current password</label>
+                    <input type="text" id="pass" name="currentpassword">
+                    <label for="cpass">New password</label>
+                    <input type="password" id="cpass" name="cpass">
+                    <label for="password">Confirm password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <a href="#" class="inline-btn">Save</a>
               </div>
               
-              <div id="London" class="tabcontent">
-                <h3>London</h3>
-                <p>London is the capital city of England.</p>
+              <div id="info" class="tabcontent">
+                <div class="input-settings">
+                    <label for="bio">Bio</label>
+                    <textarea rows="4" cols="50" placeholder="Start writing, Keep it short..."></textarea>
+                    <label for="dob">Birthday</label>
+                    <input type="date" id="dob" name="dob">
+                    <label for="country">Country</label>
+                    <select name="Country" id="country">
+                        <option>Cameroon</option>
+                        <option>Nigeria</option>
+                        <option selected>Rwanda</option>
+                        <option>Kenya</option>
+                        <option>Zambia</option>
+                    </select>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" value="+250 798654693">
+                    <label for="git">Github</label>
+                    <input type="url" id="git" name="git">
+                </div>
+                <a href="#" class="inline-btn">Save</a>
               </div>
-              
-              <div id="Paris" class="tabcontent">
-                <h3>Paris</h3>
-                <p>Paris is the capital of France.</p>
+
+              <div id="links" class="tabcontent">
+               
+                <div class="input-settings">
+                    <label for="Twitter">Twitter</label>
+                    <input type="url" id="Twitter" name="links" placeholder="https://twitter.com/user">
+                    <label for="facebook">Facebook</label>
+                    <input type="url" id="facebook" name="links" placeholder="https://www.facebook.com/user">
+                    <label for="linked">Linkedin</label>
+                    <input type="url" id="linked" name="links" placeholder="https://www.linkedin.com/user">
+                    <label for="instagram">Instagram</label>
+                    <input type="url" id="instagram" name="links" placeholder="https://www.instagram.com/user">
+                </div>
+                <a href="#" class="inline-btn">Save</a>
               </div>
-              
-              <div id="Tokyo" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+              <div id="connect" class="tabcontent">
+                <div class="alert" id="emailAlert">
+                    <i class="ri-error-warning-fill"></i>
+                    Heads up! No connections yet, let's get you started <a href="#">Find</a>
+                </div>
+              </div>
+              <div id="notif" class="tabcontent">
+                <div class="input-settings checkbox-group">
+                    <label>
+                        <input type="checkbox" id="testResults" name="testResults">
+                        Email me my test results
+                    </label>
+            
+                    <label>
+                        <input type="checkbox" id="connectRequest" name="connectRequest">
+                        Email me when someone requests to connect
+                    </label>
+            
+                    <label>
+                        <input type="checkbox" id="tutorRecommendations" name="tutorRecommendations">
+                        Email me tutor recommendations
+                    </label>
+                </div>
               </div>
             </div>
+
+           
          
 
         
@@ -212,7 +294,7 @@
     
     <script src="index.js"></script>
     <script>
-        function openCity(evt, cityName) {
+        function openSettings(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -232,6 +314,24 @@
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+function triggerFileInput() {
+            document.getElementById('upload-input').click();
+        }
+
+        function resetPhoto() {
+            document.getElementById('profile-image').src = 'images/cynthia.png';
+        }
+
+        function updateProfilePicture(input) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('profile-image').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
     </script>
 </body>
 </html>
