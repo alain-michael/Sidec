@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 body {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +18,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-top: 40px;
 }
 .container .forms {
     display: flex;
