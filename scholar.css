@@ -1148,6 +1148,14 @@ img {vertical-align: middle;}
         width: 50%;
         margin-top: -120px;
     }
+    #quick-select-2 .box-container {
+        grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+    }
+    #quick-select-2 .box-container .box {
+        display: grid;
+       align-items: center;
+       justify-content: center;
+    }
 }
 
 
