@@ -255,9 +255,37 @@ margin-top: -300px;
   /* Style the input elements and the submit button */
   
   /* Add margins to the checkbox */
+/* Add this to your existing CSS file or in a style block in the head */
+
+#form .floating-message {
+    position: fixed;
+    top: 40px;
+    right: 400px;
+    background-color: #f9feff;
+    color: #9835ff;
+    font-weight: 500;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+}
+.fa-circle-check {
+    color: #9835ff !important;
+    margin-left: 5px;
+}
 
 
-@media (max-width: 799px) {
+@media (max-width: 834px) {
     .image-container {
     text-align: center;
     display: flex;
@@ -291,6 +319,12 @@ margin-top: -300px;
         background-color: #9835ff;
        color: #fff;
     }
+    #form .floating-message {
+       
+        top: 80px;
+        right: 150px;
+      
+    }
 }
 @media  (max-width: 468px) {
     .animated-text {
@@ -300,5 +334,11 @@ margin-top: -300px;
        
         padding: 5px;
         width: 100%;
+    }
+    #form .floating-message {
+       
+        top: 80px;
+        right: 20px;
+      
     }
 }

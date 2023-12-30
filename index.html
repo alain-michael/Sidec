@@ -29,13 +29,18 @@
         </div>
     </header>
     <div id="form">
-        <form class="earlyAccessForm">
+        <form class="earlyAccessForm" id="EarlyAccess">
             <label for="email">Get Early Access:</label>
             <div style="display: flex;">
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
                 <button type="submit">Submit</button>
             </div>
+            <div id="thankYouMessage2" class="floating-message">
+                Thank you for submitting, we will reach out to you!<i class="fa-solid fa-circle-check"></i>
+            </div>
         </form>
+        <!--Thank you message-->
+       
     
     </div>
     <div id="contact-icons">
@@ -53,14 +58,22 @@
         </a>
         <!-- Add more icons as needed -->
     </div>
+     <!-- Modal for email submission confirmation -->
    
     <script>
         // Check if launch timestamp is stored in localStorage
-        const storedLaunchTimestamp = localStorage.getItem('launchTimestamp');
+        let storedLaunchTimestamp = localStorage.getItem('launchTimestamp');
     
         // Parse the stored timestamp, or set a new one if it's invalid or missing
-        const launchTimestamp = parseInt(storedLaunchTimestamp) || new Date().getTime() + 140 * 24 * 60 * 60 * 1000;
-
+        let launchTimestamp = parseInt(storedLaunchTimestamp);
+    
+        if (isNaN(launchTimestamp)) {
+            // Set the launch timestamp to 52 days from the current date
+            launchTimestamp = new Date().getTime() + 52 * 24 * 60 * 60 * 1000;
+    
+            // Store the launch timestamp in localStorage
+            localStorage.setItem('launchTimestamp', launchTimestamp.toString());
+        }
     
         const countdown = setInterval(function () {
             const now = new Date().getTime();
@@ -80,9 +93,29 @@
             }
         }, 1000);
     
-        // Store the launch timestamp in localStorage
-        localStorage.setItem('launchTimestamp', launchTimestamp);
+        
+        // script.js to handle thank you message
+document.addEventListener("DOMContentLoaded", function () {
+    var earlyAccessForm = document.getElementById("EarlyAccess");
+    var thankYouMessage = document.getElementById("thankYouMessage2");
+
+    earlyAccessForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from submitting (for demo purposes)
+
+        // You can add code here to handle the actual form submission (e.g., using AJAX)
+
+        // Show the thank-you message
+        thankYouMessage.style.display = "block";
+
+        // Hide the thank-you message after a certain duration (e.g., 5 seconds)
+        setTimeout(function () {
+            thankYouMessage.style.display = "none";
+        }, 5000);
+    });
+});
+
     </script>
+    
     
 </body>
 </html>
