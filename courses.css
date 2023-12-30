@@ -728,7 +728,7 @@ body {
         font-size: 55%;
     }
 }
-@media (max-width:768px) {
+@media (max-width:834px) {
    
   #search-btn {
     display: inline-block;
@@ -760,16 +760,19 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
-
+    
     #quick-select_courses .box-container {
-        grid-template-columns: 1fr; /* Set the grid to a single column for smaller screens */
+        display: grid; /* Add this line to enable grid layout */
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Use auto-fit to adjust columns based on container width */
         gap: 1.5rem;
     }
+    
     #courses_main_0 .box-container,
-    #courses_main_1 .box-container{
-        grid-template-columns: 2fr;
+    #courses_main_1 .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Adjust this based on your needs */
         gap: 1.5rem;
     }
+    
    
     #about_course .row {
         display: flex;
