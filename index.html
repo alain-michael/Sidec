@@ -29,7 +29,7 @@
         </div>
     </header>
     <div id="form">
-        <form class="earlyAccessForm" id="EarlyAccess">
+        <form class="earlyAccessForm" id="EarlyAccess" method="post" action="" name="contact-data">
             <label for="email">Get Early Access:</label>
             <div style="display: flex;">
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
@@ -60,62 +60,63 @@
     </div>
      <!-- Modal for email submission confirmation -->
    
-    <script>
-        // Check if launch timestamp is stored in localStorage
-        let storedLaunchTimestamp = localStorage.getItem('launchTimestamp');
-    
-        // Parse the stored timestamp, or set a new one if it's invalid or missing
-        let launchTimestamp = parseInt(storedLaunchTimestamp);
-    
-        if (isNaN(launchTimestamp)) {
-            // Set the launch timestamp to 52 days from the current date
-            launchTimestamp = new Date().getTime() + 52 * 24 * 60 * 60 * 1000;
-    
-            // Store the launch timestamp in localStorage
-            localStorage.setItem('launchTimestamp', launchTimestamp.toString());
-        }
-    
-        const countdown = setInterval(function () {
-            const now = new Date().getTime();
-            const distance = launchTimestamp - now;
-    
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-            document.getElementById("countdown").innerHTML =
-                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    
-        
-        // script.js to handle thank you message
-document.addEventListener("DOMContentLoaded", function () {
-    var earlyAccessForm = document.getElementById("EarlyAccess");
-    var thankYouMessage = document.getElementById("thankYouMessage2");
+   <script>
+    // Check if launch timestamp is stored in localStorage
+let storedLaunchTimestamp = localStorage.getItem('launchTimestamp');
 
-    earlyAccessForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting (for demo purposes)
+// Parse the stored timestamp, or set a new one if it's invalid or missing
+let launchTimestamp = parseInt(storedLaunchTimestamp);
 
-        // You can add code here to handle the actual form submission (e.g., using AJAX)
+if (isNaN(launchTimestamp)) {
+    // Set the launch timestamp to 52 days from the current date
+    launchTimestamp = new Date().getTime() + 52 * 24 * 60 * 60 * 1000;
 
-        // Show the thank-you message
-        thankYouMessage.style.display = "block";
+    // Store the launch timestamp in localStorage
+    localStorage.setItem('launchTimestamp', launchTimestamp.toString());
+}
 
-        // Hide the thank-you message after a certain duration (e.g., 5 seconds)
-        setTimeout(function () {
-            thankYouMessage.style.display = "none";
-        }, 5000);
-    });
+const countdown = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = launchTimestamp - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+}, 1000);
+
+
+// Handle form submission
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwmRVmnP7JbZyXxc3HPqRcVM3O6WF9rNFk68W9-AOxk4dd8MIQGohFqSf7dDbxa6nwKqA/exec';
+
+const form = document.forms['EarlyAccess'];
+const customThankYouMessage = document.querySelector('#form .floating-message');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            // Show the custom thank-you message
+            customThankYouMessage.style.display = 'block';
+        })
+        .catch(error => console.error('Error!', error.message));
 });
 
-    </script>
+// Function to close the custom thank-you message
+function closeCustomThankYouMessage() {
+    customThankYouMessage.style.display = 'none';
+}
+
+   </script>
     
-    
+    <script src="Google Sheet.js"></script>
 </body>
 </html>
