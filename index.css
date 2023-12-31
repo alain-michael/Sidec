@@ -283,6 +283,12 @@ margin-top: -300px;
     color: #9835ff !important;
     margin-left: 5px;
 }
+#alert {
+    color: #f9feff;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
 
 
 @media (max-width: 834px) {
@@ -324,6 +330,11 @@ margin-top: -300px;
         top: 80px;
         right: 150px;
       
+    }
+    #alert {
+        color: #9835ff;
+        font-size: 14px;
+        text-align: center;
     }
 }
 @media  (max-width: 468px) {

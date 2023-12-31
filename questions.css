@@ -852,6 +852,49 @@ body {
     font-size: 16px;
     font-weight: 500;
  }
+ #resources_2 {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 80px;
+ }
+ #resources_2 .box-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background-color: #9835ff;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .02);
+ }
+ #resources_2 .box-container .heading {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+#resources_2 .box-container label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #fff;
+}
+#resources_2 .box-container select {
+    width: 100%;
+    padding: 10px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #393540;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+}
 
 
 /* Media querries */

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="questions.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
@@ -40,7 +40,7 @@
             <!--Drop down nav item-->
             <li>
                 <div class="iocn-link">
-                    <a href="courses.html" class="active">
+                    <a href="courses.html">
                         <i class="ri-book-open-fill"></i>
                         <span class="link_name">Courses</span>
                     </a>
@@ -48,16 +48,16 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="courses.html">Courses</a></li>
-                    <li><a href="science.html" >Science</a></li>
+                    <li><a href="science.html">Science</a></li>
                     <li><a href="arts.html">Arts</a></li>
                     <li><a href="technology.html">Technology</a></li>
-                    <li><a href="special.html" class="active">Specialization</a></li>
+                    <li><a href="special.html">Specialization</a></li>
                 </ul>
             </li>
 
                 <li>
                     <div class="iocn-link">
-                        <a href="resources.html">
+                        <a href="resources.html" class="active">
                             <i class="ri-archive-drawer-fill"></i>
                             <span class="link_name">Resources</span>
                         </a>
@@ -65,9 +65,9 @@
                     </div>
                     <ul class="sub-menu">
                         <li><a href="resources.html" class="link_name">Resources</a></li>
-                        <li><a href="questions.html">Questions</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="test.html">Test</a></li>
+                        <li><a href="questions.html" >Questions</a></li>
+                        <li><a href="solutions.html" >Solutions</a></li>
+                        <li><a href="test.html" class="active">Test</a></li>
                     </ul>
              </li>
 
@@ -100,17 +100,17 @@
                 </li>
                 <li>
                     <div class="iocn-link">
-                       <a href="Scholarships.html">
+                       <a href="schorlaships.html">
                         <i class="ri-school-fill"></i>
                            <span class="link_name">Scholarships</span>
                        </a>
                             <i class="ri-arrow-down-s-line arrow"></i>
                     </div>
                         <ul class="sub-menu">
-                            <li><a href="Scholarships.html" class="link_name">Scholarships</a></li>
-                            <li><a href="ugScholarships.html">Undergraduate</a></li>
-                            <li><a href="masterschorlaships.html">Masters</a></li>
-                            <li><a href="phdScholarships.html">Doctorate</a></li>
+                            <li><a href="schorlaships.html" class="link_name">Schorlaships</a></li>
+                            <li><a href="ugschorlaships.html">Undergraduate</a></li>
+                            <li><a href="masterschorlaship.html">Masters</a></li>
+                            <li><a href="phdschorlaships.html">Doctorate</a></li>
                         </ul>
                 </li>
 
@@ -178,119 +178,65 @@
             </div>
            
             </div>
-        
-        
-
-         <div id="about_course">
-            <div class="row">
-                <div class="image">
-                    <img src="images/ab4.png" id="spe" alt="sidec">
-                </div>
-                <div class="content">
-                    <h3>What to expect?</h3>
-                    <p>These are certification courses offered by our partners,
-                        they will help you secure a career or get better at your career!
-                    </p>
-                    <a href="#courses" class="inline-btn">Explore</a>
-                </div>
-            </div>
+         <div id="resources_2">
             <div class="box-container">
-                <div class="box">
-                    <i class="fa-solid fa-square-poll-vertical"></i>
-                    <h3>Quick</h3>
-                    <span>Results</span>
-                </div>
+                <div class="start-screen">
+                    <h1 class="heading">Mock Test</h1>
+                    <div class="settings">
+                        <label for="num-questions">Number of Questions</label>
+                        <select name="num-questions" id="num-questions">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="60">60</option>
+                        </select>
 
-              
-                <div class="box">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <h3>Accurate</h3>
-                    <span>Analytics</span>
-                </div>
-                <div class="box">
-                    <i class="fa-solid fa-clock"></i>
-                    <h3>Time</h3>
-                    <span>Management</span>
-                </div>
-                <div class="box">
-                    <i class="ri-trophy-fill"></i>
-                    <h3>Weekly</h3>
-                    <span>Challenges</span>
-                </div>
-            </div>
-         </div>
+                        <label for="difficulty">Select difficulty</label>
+                        <select name="" id="difficulty">
+                            <option value="5">Form 5 | Grade 10</option>
+                            <option value="10">Lowersixth | Grade 11</option>
+                            <option value="15">Uppersixth | Grade 12</option>
+                            <option value="30">University</option>
         
+                        </select>
 
+                        <label for="category">Select subject</label>
+                        <select name="" id="category">
+                            <option value="9">Any science subject</option>
+                            <option value="10">Any arts subject</option>
+                            <option value="11">Mathematics</option>
+                            <option value="12">English</option>
+                            <option value="14">Physics</option>
+                            <option value="30">Biology</option>
+                            <option value="60">Food science</option>
+                            <option value="60">Geography</option>
+                            <option value="60">History</option>
+                            <option value="60">Philosophy</option>
+                            <option value="60">Science</option>
+                            <option value="60">Economics</option>
+                            <option value="60">Computer science</option>
+                            <option value="60">ICT</option>
+                            <option value="60">Commerce</option>
+                            <option value="60">Music</option>
+                        </select>
 
-            <div id="courses_main_1">
-                <h1 class="heading hd2">Premium<i class="fa-solid fa-money-bill"></i></h1>
-                <div class="box-container">
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/meta.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">Meta Developer<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>Get Certified</span>
-                            </div>
-                            <img src="images/meee.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Learn AR with Meta</h3>
-                            <h3 style="color: #9875ff;">$45</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                           
-                        </div>
+                        <label for="time">Time per Question</label>
+                        <select name="" id="time">
+                            <option value="5">5s</option>
+                            <option value="10">10s</option>
+                            <option value="15">15s</option>
+                            <option value="30">30s</option>
+                            <option value="60">60s</option>
+                        </select>
                     </div>
-    
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/Asset 6.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">ALU | SIDEC<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>Get Certified!</span>
-                            </div>
-                            <img src="images/alupy.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Master python</h3>
-                            <h3 style="color: #9875ff;">$30</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                        </div>
-                    </div>
-    
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/5.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">Arnaud<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>23-05-2004</span>
-                            </div>
-                            <img src="images/SAT.png" class="thumb" alt="food & science">
-                            <h3 class="title">SAT preparation</h3>
-                            <h3 style="color: #9875ff;">$50</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                        </div>
-                    </div>
-    
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="images/3.png" class="ima" alt="tutor">
-                            <div>
-                                <span class="names">Duo master<i class="ri-verified-badge-fill"></i></span><br>
-                                <span>23-05-2004</span>
-                            </div>
-                            <img src="images/duo.jpg" class="thumb" alt="food & science">
-                            <h3 class="title">Complete History for beginners</h3>
-                            <h3 style="color: #9875ff;">$45</h3>
-                            <a href="play2.html" class="inline-btn">View course</a>
-                        </div>
-                    </div>
-    
-                    
-    
-    
                 </div>
-                <div class="more-btn">
-                    <a href="courses.html" class="inline-btn">View more</a>
-                </div>
+
+               
             </div>
-        </div>
+            <!-- The form -->
+
+    </div>
       
         
     </section>
