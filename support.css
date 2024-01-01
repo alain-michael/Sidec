@@ -1252,6 +1252,76 @@ border-radius: 25px;
     margin-top: 5px;
     padding-top: 3px;
   }
+  /* Style for the Quill container */
+#quill-container {
+    height: 100px; /* Set the desired height for the editor */
+    border: 1px solid #eee;
+    overflow-y: auto; 
+}
+
+/* Style for the Quill toolbar */
+.ql-toolbar {
+    border-bottom: 1px solid #eee;
+}
+
+.ql-toolbar.ql-snow {
+    border: 1px solid #eee;
+    background-color: #eee;
+    box-sizing: border-box;
+   font-family: inherit;
+    padding: 8px;
+}
+
+/* Style for toolbar buttons */
+.ql-toolbar button {
+    color: #393540;
+    padding: 8px 18px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+/* Style for active toolbar buttons */
+.ql-toolbar button.ql-active {
+    background-color: #f0f0f0;
+}
+
+/* Style for the content area of the Quill editor */
+.ql-editor {
+    box-sizing: border-box;
+    line-height: 1.42;
+    height: 100%;
+    outline: none;
+    overflow-y: auto;
+    padding: 10px 5px !important;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Style for placeholder text in the editor */
+
+
+/* Optional: Hide the default toolbar and use a custom button to trigger the toolbar */
+.ql-container .ql-toolbar {
+    display: none;
+}
+
+#toggle-toolbar {
+    background-color: #9835ff;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style for the custom button */
+#toggle-toolbar:hover {
+    background-color: #9835ff;
+}
+
+
   
 
 
