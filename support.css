@@ -1321,6 +1321,43 @@ border-radius: 25px;
     background-color: #9835ff;
 }
 
+.like_buttons {
+    background-color: #9835ff;
+    margin-top: 5px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.like_buttons i {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    transition: .3s ease;
+}
+.like_buttons i:active {
+    color: #393540;
+    
+}
+.flag_button {
+    background-color: transparent;
+    border: none;
+}
+.flag_button i {
+    font-size: 18px;
+    color: #979292;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.flag_button i:hover {
+    color: #393540;
+}
+/* Default styles for heart and flag icons */
+
+
+
 
   
 

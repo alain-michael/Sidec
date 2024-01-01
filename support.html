@@ -354,7 +354,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="reactions" id="review1">
+                        <button onclick="(() => react('review1', 'love'))()" class="like_buttons"><i class="ri-heart-3-line heart-icon"></i></button>
+                        <span id="like_count_review1">0</span>
+                        <button onclick="(() => react('review1', 'flag'))()" class="flag_button"><i class="ri-flag-fill"></i></button>
+                    </div>
                 </div>
+                
 
                 <div class="box">
                     <p>I earn some little cash from the connections of home lessons &#x1F600;
@@ -371,6 +377,11 @@
                                 <i class="fa-regular fa-star-half-stroke"></i>
                             </div>
                         </div>
+                    </div>
+                    <div class="reactions" id="review2">
+                        <button onclick="(() => react('review2', 'love'))()" class="like_buttons"><i class="ri-heart-3-line heart-icon"></i></button>
+                        <span id="like_count_review2">0</span>
+                        <button onclick="(() => react('review2', 'flag'))()" class="flag_button"><i class="ri-flag-fill"></i></button>
                     </div>
                 </div>
                 <div class="box">
@@ -389,6 +400,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="reactions" id="review3">
+                        <button onclick="(() => react('review3', 'love'))()" class="like_buttons"><i class="ri-heart-3-line heart-icon"></i></button>
+                        <span id="like_count_review3">0</span>
+                        <button onclick="(() => react('review3', 'flag'))()" class="flag_button"><i class="ri-flag-fill"></i></button>
+                    </div>
                 </div>
                 <div class="box">
                     <p>Kudos to the creators, this is very user friendly 
@@ -405,6 +421,11 @@
                                 <i class="fa-solid fa-star"></i>
                             </div>
                         </div>
+                    </div>
+                    <div class="reactions" id="review4">
+                        <button onclick="(() => react('review4', 'love'))()" class="like_buttons"><i class="ri-heart-3-line heart-icon"></i></button>
+                        <span id="like_count_review4">0</span>
+                        <button onclick="(() => react('review4', 'flag'))()" class="flag_button"><i class="ri-flag-fill"></i></button>
                     </div>
                 </div>
                 <div class="box">
@@ -423,6 +444,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="reactions" id="review5">
+                        <button onclick="(() => react('review5', 'love'))()" class="like_buttons"><i class="ri-heart-3-line heart-icon"></i></button>
+                        <span id="like_count_review5">0</span>
+                        <button onclick="(() => react('review5', 'flag'))()" class="flag_button"><i class="ri-flag-fill"></i></button>
+                    </div>
                 </div>
                 <div class="box">
                     <p>This website is doing me good! 
@@ -440,7 +466,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="reactions" id="review6">
+                        <button onclick="(() => react('review6', 'love'))()" class="like_buttons"><i class="ri-heart-3-line heart-icon"></i></button>
+                        <span id="like_count_review6">0</span>
+                        <button onclick="(() => react('review6', 'flag'))()" class="flag_button"><i class="ri-flag-fill"></i></button>
+                    </div>
                 </div>
+               
             </div>
             <a href="#" class="inline-option-btn">Read more</a>
            
@@ -464,29 +496,80 @@
     <!--Quick select-->
     
     <script src="index.js"></script>
-  
-        <script>
-   document.addEventListener('DOMContentLoaded', function () {
-      var quill = new Quill('#quill-container', {
-         theme: 'snow', // or 'bubble' for a bubble theme
-         placeholder: 'Enter review...',
-         modules: {
-            toolbar: [
-               [{ header: [1, 2, false] }],
-               ['bold', 'italic', 'underline', 'strike'],
-               [{ list: 'ordered' }, { list: 'bullet' }],
-               ['link', 'image', 'video'],
-               ['clean']
-            ]
-         }
-      });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var quill = new Quill('#quill-container', {
+                theme: 'snow',
+                placeholder: 'Enter review...',
+                modules: {
+                    toolbar: [
+                        [{ header: [1, 2, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ list: 'ordered' }, { list: 'bullet' }],
+                        ['link', 'image', 'video'],
+                        ['clean']
+                    ]
+                }
+            });
+    
+            // Listen for changes and update the hidden input with HTML content
+            quill.on('text-change', function () {
+                document.getElementById('hidden-comment-box').value = quill.root.innerHTML;
+            });
+        });
+    
+        let reactions = {
+            love: 0,
+            flag: 0
+        };
+    
+        function react(reviewId, reactionType) {
+            reactions[reactionType]++;
+            updateCounts(reviewId);
+            toggleHeartIcon(reviewId, 'love');
+        }
+    
+        function updateCounts(reviewId) {
+            document.getElementById(`like_count_${reviewId}`).textContent = reactions.love;
+            document.getElementById(`flag_count_${reviewId}`).textContent = reactions.flag;
+        }
+    
+        function toggleHeartIcon(reviewId, reactionType) {
+            const heartIcon = document.querySelector(`#review${reviewId} .ri-heart-3-line`);
+    
+            if (reactionType === 'love') {
+                const isFilled = heartIcon.classList.contains('ri-heart-3-fill');
+                heartIcon.classList.toggle('ri-heart-3-fill', !isFilled);
+            }
+        }
 
-      // Listen for changes and update the hidden input with HTML content
-      quill.on('text-change', function () {
-         document.getElementById('hidden-comment-box').value = quill.root.innerHTML;
-      });
-   });
+         // Paste your async functions here
+         async function react(reviewId, reactionType) {
+            reactions[reactionType]++;
+            updateCounts(reviewId);
+            await toggleHeartIcon(reviewId, 'love');
+        }
 
+        async function toggleHeartIcon(reviewId, reactionType) {
+            const heartIcon = document.querySelector(`#review${reviewId} .ri-heart-3-line`);
+
+            if (reactionType === 'love') {
+                const isFilled = heartIcon.classList.contains('ri-heart-3-fill');
+                heartIcon.classList.toggle('ri-heart-3-fill', !isFilled);
+
+                // Send an asynchronous request to update the like count on the server
+                // You may need to replace 'your-server-endpoint' with the actual endpoint
+                await fetch('your-server-endpoint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ reviewId, reactionType }),
+                });
+            }
+        }
     </script>
+    
+    
 </body>
 </html>
