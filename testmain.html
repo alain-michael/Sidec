@@ -180,7 +180,7 @@
             </div>
          <div id="resources_2">
             <div class="box-container">
-                <div class="start-screen">
+                <div class="start-screen hide">
                     <h1 class="heading">Mock Test</h1>
                     <div class="settings">
                         <label for="num-questions">Number of Questions</label>
@@ -194,45 +194,58 @@
 
                         <label for="difficulty">Select difficulty</label>
                         <select name="" id="difficulty">
-                            <option value="5">Form 5 | Grade 10</option>
-                            <option value="10">Lowersixth | Grade 11</option>
-                            <option value="15">Uppersixth | Grade 12</option>
-                            <option value="30">University</option>
+                            <option value="Form-5">Form 5 | Grade 10</option>
+                            <option value="Lowersixth">Lowersixth | Grade 11</option>
+                            <option value="Uppersixth">Uppersixth | Grade 12</option>
+                            <option value="University">University</option>
         
                         </select>
 
                         <label for="category">Select subject</label>
                         <select name="" id="category">
-                            <option value="9">Any science subject</option>
-                            <option value="10">Any arts subject</option>
-                            <option value="11">Mathematics</option>
-                            <option value="12">English</option>
-                            <option value="14">Physics</option>
-                            <option value="30">Biology</option>
-                            <option value="60">Food science</option>
-                            <option value="60">Geography</option>
-                            <option value="60">History</option>
-                            <option value="60">Philosophy</option>
-                            <option value="60">Science</option>
-                            <option value="60">Economics</option>
-                            <option value="60">Computer science</option>
-                            <option value="60">ICT</option>
-                            <option value="60">Commerce</option>
-                            <option value="60">Music</option>
+                            <option value="Any_science">Any science subject</option>
+                            <option value="Any_arts">Any arts subject</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="English">English</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Food">Food science</option>
+                            <option value="Geography">Geography</option>
+                            <option value="History">History</option>
+                            <option value="Philosophy">Philosophy</option>
+                            <option value="science">Science</option>
+                            <option value="Economics">Economics</option>
+                            <option value="Computer">Computer science</option>
+                            <option value="ict">ICT</option>
+                            <option value="Commerce">Commerce</option>
+                            <option value="music">Music</option>
                         </select>
 
                         <label for="time">Time per Question</label>
                         <select name="" id="time">
-                            <option value="5">5s</option>
-                            <option value="10">10s</option>
-                            <option value="15">15s</option>
-                            <option value="30">30s</option>
-                            <option value="60">60s</option>
+                            <option value="5s">5 seconds</option>
+                            <option value="10s">10 seconds</option>
+                            <option value="15s">15 seconds</option>
+                            <option value="30s">30 seconds</option>
+                            <option value="60s">60 seconds</option>
                         </select>
+                        
+                    </div>
+                    <button class="btn start">Begin</button>
+                </div>
+                <div class="quiz">
+                    <div class="timer">
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                            <span class="progress-text">50</span>
+                        </div>
+                    </div>
+                    <div class="question-wrapper">
+                        <div class="number">
+                            Question <span class="current">1</span>
+                        </div>
                     </div>
                 </div>
-
-               
             </div>
             <!-- The form -->
 

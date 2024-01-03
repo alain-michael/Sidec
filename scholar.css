@@ -1013,6 +1013,92 @@ img {vertical-align: middle;}
 #quick-select-2 .box-container .flex a:hover span {
     color: #fff;
 }
+/* The browser window */
+.container_3 {
+    border: 3px solid #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  /* Container for columns and the top "toolbar" */
+  .row_3 {
+    padding: 10px;
+    background: #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  /* Create three unequal columns that floats next to each other */
+  .column_3 {
+    float: left;
+  }
+  
+  .left_3 {
+    width: 15%;
+  }
+  
+  .right_3 {
+    width: 10%;
+  }
+  
+  .middle_3 {
+    width: 75%;
+  }
+  
+  /* Clear floats after the columns */
+  .row_3:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Three dots */
+  .dot_3 {
+    margin-top: 4px;
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  /* Style the input field */
+  #blog input[type=text] {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    background-color: white;
+    margin-top: -8px;
+    height: 25px;
+    color: #666;
+    padding: 5px;
+    outline: none;
+  }
+  
+  /* Three bars (hamburger menu) */
+  .bar_3 {
+    width: 17px;
+    height: 3px;
+    background-color: #aaa;
+    margin: 3px 0;
+    display: block;
+    padding-right: 20px;
+  }
+  
+  /* Page content */
+  .content_3 {
+    padding: 10px;
+  }
+  .block_3 {
+    background-color: #e2e2e2;
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+  } 
+  .block_3:nth-child(3) {
+    width: 80%;
+    margin: 10px 0px;
+  }
 
 
 
