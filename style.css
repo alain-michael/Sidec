@@ -10,6 +10,26 @@
 body {
     background-color: #f9feff;
 }
+/* WebKit Scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9835ff; /* color of the thumb */
+    border-radius: 1px; /* roundness of the thumb */
+    transition: 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc; /* color of the thumb on hover */
+   
+}
+
 
 .section-p1 {
     padding: 0 80px;
@@ -457,10 +477,9 @@ body {
 .home-section .home-content .flex .profile-2 img {
    max-width: 100%; 
     height: 60px;
-    border-radius: 50%;
     object-fit: cover;
     margin-bottom: .5rem;
-
+    border-radius: 50% ;
 }
 .home-section .home-content .flex .profile-2 {
     position: absolute;
@@ -484,6 +503,44 @@ body {
 .home-section .home-content .flex .profile-2 span {
     color: #979292;
 }
+
+/* Add this style for the notification icon */
+.home-section .home-content .flex .notification-content img {
+    max-width: 100%;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.home-section .home-content .flex .notification-content {
+    position: absolute;
+    top: 90%;
+    right: 2rem;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    width: 20rem;
+    box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.02);
+    transform: scale(0);
+    transform-origin: top right;
+    transition: 0.2s linear;
+}
+
+.home-section .home-content .flex .notification-content.active {
+    transform: scale(1);
+}
+
+.home-section .home-content .flex .notification-content h3 {
+    font-size: 20px;
+    color: #393540;
+}
+
+.home-section .home-content .flex .notification-content span {
+    color: #979292;
+}
+
 #quick-select {
     padding: 20px;
     padding-left: 40px;

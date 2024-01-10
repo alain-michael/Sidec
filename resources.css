@@ -10,6 +10,26 @@
 body {
     background-color: #f9feff;
 }
+/* WebKit Scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9835ff; /* color of the thumb */
+    border-radius: 1px; /* roundness of the thumb */
+    transition: 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc; /* color of the thumb on hover */
+   
+}
+
 
 .section-p1 {
     padding: 0 80px;

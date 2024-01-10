@@ -10,26 +10,6 @@
 body {
     background-color: #f9feff;
 }
-/* WebKit Scrollbar */
-::-webkit-scrollbar {
-    width: 8px; /* width of the scrollbar */
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1; /* color of the track */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #9835ff; /* color of the thumb */
-    border-radius: 1px; /* roundness of the thumb */
-    transition: 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ccc; /* color of the thumb on hover */
-   
-}
-
 
 .section-p1 {
     padding: 0 80px;
@@ -316,6 +296,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .sidebar .profile-details {
     position: fixed;
     bottom: 0;
@@ -365,6 +346,7 @@ body {
 .sidebar.close .profile-details .job {
     display: none;
 }
+
 
 .home-section {
     left: 260px;
@@ -504,13 +486,13 @@ body {
 .home-section .home-content .flex .profile-2 span {
     color: #979292;
 }
-#quick-select_dash {
-    padding: 20px;
-    padding-left: 40px;
-  
-    
+.dashboard_home {
+    display: flex;
+    flex-direction: row; /* Ensure it's set to "row" */
+    justify-content: space-between; /* Adjust this as needed */
+   
 }
- #quick-select_dash .box-container {
+#quick-select_dash .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 1.5rem;
@@ -518,17 +500,14 @@ body {
     justify-content: center;
     
 }
-#quick-select_dash a {
-    text-decoration: none;
-}
-#quick-select_dash .box-container .box {
+#quick-select_dash .box-container  {
     border-radius: 4px;
     background: url("images/dashbac.png");
     background-position: top 40% right 25%;
     background-size: cover;
     border: 1px solid #eee;
     padding: 40px;
-   
+   width: 100%;
    
 }
 #quick-select_dash .box-container .box .title {
@@ -585,6 +564,107 @@ body {
 }
 
 
+.half-width {
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.column {
+    width: 30%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+   
+}
+.earning {
+    background-color: #fff;
+    margin-bottom: 10px;
+    height: 20%;
+    margin: 20px 20px 20px 0;
+    border: 1px solid #ccc;
+   
+}
+.earning .detail_rev {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.earning .detail_rev h3 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 20px;
+    color: #9835ff;
+}
+.earning .content {
+    display: flex;
+    flex-direction: row;
+   
+}
+.earning .detail_rev2 .content h3 {
+    font-size: 14px;
+    padding: 10px;
+    font-weight: 500;
+    color: #9835ff;
+}
+.earning .detail_rev2 .content p {
+    padding: 0 15px;
+    font-size: 12px;
+    color: #848484;
+
+}
+.earning .detail_rev2 .content .pending {
+    color: #ffc107;
+}
+.earning .inline-btn1 {
+    display: flex;
+    background-color: #9835ff;
+    padding: 10px 15px;
+    margin: 10px;
+    text-align: center;
+    color: #fff;
+   text-decoration: none;
+   text-align: center; 
+   align-items: center;
+   justify-content: center;
+   margin-top: 20px;
+   font-weight: 400;
+   border-radius: 4px;
+   transition: .3s ease;
+}
+.earning .inline-btn1:hover {
+    background-color: #393540;
+}
+
+
+
+
+.location_container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    padding: 10px;
+    height: 35%;
+    margin-top: 20px;
+}
+#profile_main {
+    display: flex;
+    background-color: #2196F3;
+}
+ #profile_main .img {
+    max-width: 30%;
+    height: 30px;
+}
+#quick-select_dash {
+    padding: 20px;
+    padding-left: 40px;
+  
+    
+}
+
+
+
+
+
 
 #about_dash .row {
     display: flex;
@@ -592,14 +672,8 @@ body {
     gap: 1rem;
     flex-wrap: wrap;
 }
-#about_dash .row .image {
-    flex: 1 1 20rem;
-}
 
-#about_dash .row .image img {
-    max-width: 100%;
-   height: 500px;
-}
+
 #about_dash .row .content {
     flex: 1; /* Set flex-grow to 1 */
     max-width: 80%; /* Set a maximum width for the content */
@@ -610,19 +684,7 @@ body {
 }
 
 
-#about_dash .row .content h3 {
-    font-weight: 500;
-    line-height: 1;
-    font-size: 18px;
-    color: #393540;
-}
-#about_dash .row .content p {
-    color: #8c8787;
-    margin-top: 5px;
-    font-size: 16px;
-    font-weight: 400;
-    
-}
+
 
 #about_dash .box-container {
     padding-left: 40px;
@@ -635,7 +697,7 @@ body {
 }
 #about_dash .box-container .box {
     flex: 1 1 10rem;
-    display: flex;
+   
     background-color: #fff;
     border: 1px solid #eee;
     border-radius: 5px;
@@ -662,16 +724,272 @@ body {
     font-size: 14px;
     color: #393540;
 }
-#main-courses {
+#about_dash .box-container .detail_rev,
+#about_dash .box-container .detail_rev2
+ {
+    display: flex;
+    justify-content: space-between;
+   
+}
+#about_dash .box-container .detail_rev h1 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #393540;
+}
+#about_dash .box-container .detail_rev i {
+    display: flex;
+    font-size: 18px;
+    color: #9835ff;
+    background-color: #faf9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+
+}
+#about_dash .box-container .detail_rev2 h1 {
+    font-size: 12px;
+    color: #8c8787;
+    font-weight: 400;
+    margin-top: 15px
+}
+#about_dash .box-container .detail_rev2 h3 {
+    color: #9835ff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+#about_dash .box-container .box .fa-star {
+    color: #ff9800;
+}
+/*Dasboard*/
+
+
+.home-section .data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 10px 40px 20px 40px;
+}
+#chartContainer {
+    width: 50%;
+    height: 480px;
+    margin: 2px auto;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 40px;
+    border-radius: 5px;
+    
+}
+#chartContainer {
+    flex: 1;
+}
+#chartContainer a {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.pie {
+    margin-top: -5px;
+    width: 40%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: -15px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eee;
+}
+.table1 {
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-top: -15px;
+    margin-right: 40px;
+}
+.table1 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table1 th, .table1 td {
+    padding: 8px;
+    text-align: left;
+
+}
+
+.table1 th {
+    background-color: #f9feff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #848484;
+    padding-left: 10px;
+
+}
+.table1 .price {
+    color: #9835ff;
+    font-weight: 500;
+    font-size: 14px;
+   
+}
+.table1 td {
+    font-weight: 500;
+    color: #48454d;
+    font-size: 14px;
+}
+.table1 .progres {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding-left: 20px;
+
+}
+.table1 td i {
+    color: #9835ff;
+    background-color: #eee;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+.table1 progress {
+    width: 100%;
+    height: 10px;
+    appearance: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+  
+}
+
+.table1 progress::-webkit-progress-bar {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.table1 progress::-webkit-progress-value {
+    background-color: #9835ff;
+    border-radius: 5px;
+}
+
+.table1 progress::-moz-progress-bar {
+    background-color: #9835ff;
+    border-radius: 5px;
+}
+
+.table1 progress::before {
+    content: attr(value) '% completed';
+    padding: 0 10px;
+    color: #fff;
+    font-weight: bold;
+}
+.wrapper{
+    width: 95%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
+  .wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px 10px;
+    justify-content: space-between;
+  }
+  .wrapper header .icons{
+    display: flex;
+  }
+  header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+  }
+  .wrapper .icons span:last-child{
+    margin-right: -10px;
+  }
+ .wrapper header .icons span:hover{
+    background: #f2f2f2;
+  }
+  .wrapper header .current-date{
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .calendar{
+    padding: 20px;
+  }
+  .calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+  }
+  .calendar .days{
+    margin-bottom: 20px;
+  }
+  .calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+  }
+  .calendar .weeks li{
+    font-weight: 400;
+    font-size: 14px;
+    cursor: default;
+  }
+  .calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+  }
+  .days li.inactive{
+    color: #aaa;
+  }
+  .days li.active{
+    color: #fff;
+  }
+  .days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .days li.active::before{
+    background: #9B59B6;
+  }
+  .days li:not(.active):hover::before{
+    background: #f2f2f2;
+  }
+
+  #main-courses {
     margin-top: 20px;
     text-transform: capitalize;
-    display: flex;
-    flex-direction: column;
 }
   #course-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    width: 90%;
     padding: 10px 10px 10px 20px;
     margin-top: 10px;
     margin-left: 40px;
@@ -679,6 +997,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.02);
     border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
    
 }
  #course-box ul {
@@ -696,15 +1017,15 @@ body {
 }
 #course-box .course {
     display: flex;
-    flex-direction: column;
-    
+    flex-wrap: wrap; /* Make the boxes wrap to the next line on smaller screens */
 }
 #course-box .course .box {
     width: 25%;
-    padding: 10px;
+    padding: 25px;
     margin: 10px;
     border-radius: 10px;
-    background: #9835ff;
+    border: 1px solid #eee;
+    background: #fff;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.02);
     transition: all 0.40s ease;
 }
@@ -712,442 +1033,93 @@ body {
     transform: translateY(-10px); 
 }
 #course-box .course .box h3 {
-    color: #fff;
+    color: #393540;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 #course-box .course .box p {
     font-size: 12px;
     margin-top: 5px;
-    color: #fff;
+    color: grey;
 }
  #course-box .course .box a {
-    background: #fff !important;
-    border-radius: 10px;
-    color: #9835ff;
+    display: block;
+    background: #9835ff !important;
+    border-radius: 5px;
+    color: #fff;
     opacity: 1;
-    padding: 7px 10px;
-    margin-top: 5px;
+    padding: 4px 8px;
+    margin-top: 10px;
     cursor: pointer;
     transition: all 0.40s ease;
 }
-
-#course-box .course .box i {
-    font-size: 7rem;
-    float: right;
-    margin: -40px 20px 20px 5px;
-    border-radius: 5px;
-    
-}
- .html {
-    color: rgb(155, 250, 53);
-}
- .css {
-    color:#fff000;
-}
-.js {
-    color: #f9feff;
-}
-.test-results h1 {
-    margin-top: 30px;
-}
-.test-box {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #9835ff;
-    border-radius: 10px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-.test-box h5 {
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-}
-.test-box button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 10px;
-    color: #9835ff;
-    margin: auto;
-    opacity: 1;
-    padding: 7px 10px;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.test-box button:hover {
-    opacity: 0.8;
-}
-.home-section .data {
+#course-box .course .box .head {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    margin: 10px 40px 20px 40px;
 }
-#chartContainer {
-    width: 40%;
-    height: 480px;
-    margin: 20px auto;
-    margin-bottom: 40px;
-    background-color: #fff;
-    border: 1px solid #eee;
-    padding: 40px;
-    border-radius: 5px;
-    
+#course-box .course .box .head img {
+    max-width: 100%;
+    height: 25px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
-#chartContainer {
-    flex: 1;
-}
-#chartContainer a {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#progress {
-    margin-top: -5px;
-    text-align: left;
-    background-color: #fff;
-    width: 40%;
-    padding: 20px 40px 40px 40px;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    box-shadow: inset;
-    cursor: pointer;
-}
-
-
-#progress .progress-bar {
-    display: flex;
-   flex-direction: column;
-    height: 40px;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-#progress .label {
-    font-size: 16px;
-    font-weight: 500;
-    color: #979292;
-    text-align: left;
-    margin-bottom: 5px;
-    width: 100%;
-    transition: .3s ease;
-    }
-    #progress .label:hover {
-        color: #9835ff;
-    }
-
-#progress .progress-bar-inner {
-    flex: 1;
-    height: 100%;
-    background-color: #ddd;
-    border-radius: 5px;
-    width: 100%;
-    overflow: hidden;
-}
-
-#progress .progress-bar-inner div {
-    height: 100%;
-}
-
-#progress .progress-bar-monday .progress-bar-inner div {
-    width: 30%; /* Set the percentage for Monday */
-    background-color: #4caf50; /* Set the color for Monday */
-}
-
-#progress .progress-bar-tuesday .progress-bar-inner div {
-    width: 20%; /* Set the percentage for Tuesday */
-    background-color: #2196F3; /* Set the color for Tuesday */
-}
-
-#progress .progress-bar-wednesday .progress-bar-inner div {
-    width: 40%; /* Set the percentage for Wednesday */
-    background-color: #ff9800; /* Set the color for Wednesday */
-}
-
-#progress .progress-bar-thursday .progress-bar-inner div {
-    width: 10%; /* Set the percentage for Thursday */
-    background-color: #f44336; /* Set the color for Thursday */
-}
-
-#progress .progress-bar-friday .progress-bar-inner div {
-    width: 60%; /* Set the percentage for Friday */
-    background-color: #9c27b0; /* Set the color for Friday */
-}
-
-#progress .progress-bar-saturday .progress-bar-inner div {
-    width: 80%; /* Set the percentage for Saturday */
-    background-color: #ffc107; /* Set the color for Saturday */
-}
-
-#progress .progress-bar-sunday .progress-bar-inner div {
-    width: 50%; /* Set the percentage for Sunday */
-    background-color: #607d8b; /* Set the color for Sunday */
-}
-/* Add this to your existing CSS or create a new CSS file */
-
-#todo-list {
-    margin-top: 20px;
-    width: 40%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-left: -15px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.02);
-    border: 1px solid #eee;
-}
-
-#tasks-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#tasks-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-#tasks-list input[type="checkbox"] {
-    margin-right: 10px;
-    
-}
-
-#add-task {
-    margin-top: 20px;
-    display: flex;
-}
-
-#new-task {
-    flex: 1;
-    padding: 8px;
-    outline: none;
-    border: 1px solid #eee;
-
-}
-#new-task:focus {
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.02);
-}
-
-#add-btn {
-    padding: 8px 16px;
-    border-radius: 5px ;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    background-color: #9835ff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#add-btn:hover {
-   background-color: #a15de9;
-}
-
-#calendar {
-    position: relative;
-    width: 60%;
-    height: 80%;
-    margin-left: 20px;
-    background-color: #fff;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
-    padding: 20px;
-}
-#calendar .inline-btn {
-    border: none;
-} 
-#calendar .inline-btn:hover {
-    transform: none;
-    background-color: #393540;
-}
-.fc-day {
-    padding: 3px;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    transition: .3s ease;
-    cursor: pointer;
-}
-/* Add this to your CSS file or within a <style> tag in your HTML */
-.fc-day, .fc-day-number {
-    margin: 2px; /* Adjust the padding value as needed */
-    border-radius: 4px;
-    border: none;
-    outline: none;
-}
-
-
-
-
-.fc-day-header {
-    font-weight: 400;
-}
-.fc-state-default {
-    color: #fff !important;
-    background-color: #9835ff;
-    text-shadow: none;
-    background-image: none;
-    box-shadow: none;
-    border: none;
-    outline: none;
-    padding: 20px;
-    margin-right: 10px;
-}
-.fc-day {
-    padding: 0;
-}
-.fc .fc-row .fc-content-skeleton table, .fc .fc-row .fc-content-skeleton td, .fc .fc-row .fc-helper-skeleton td {
-    padding: 0px;
-}
-.fc td, .fc th {
-    border-style: none;
-    text-align: center;
-    vertical-align: top;
-}
-.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
-    text-align: center;
-    float: none;
-    padding: 0;
-}
-
-#calendar h2 {
+#course-box .course .box .head i {
     margin-top: 5px;
-    font-size: 16px;
-    text-align: center;
-    color: #393540;
-    font-weight: 600;
-   
+    color: #878787;
 }
-
-
-
-
-.fc-event {
-    background-color: #9835ff;
-    color: #fff;
-    border: none;
-    padding: 3px 8px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: .3s ease;
+#course-box .course .box .time {
+    color: #9835ff;
+    margin-top: 5px;
 }
-
-.fc-event:hover {
-    background-color: #b36cff;
-}
-
-.fc-unthemed td.fc-today {
-    background-color: #eee;
-    color: #393540;
-}
-.fc-basic-view .fc-day-number, .fc-basic-view .fc-week-number {
-   font-size: 14px;
-   font-weight: 400;
-   outline: none;
-} 
-
-.remove-btn {
-    cursor: pointer;
-    margin-left: 60px;
-    color: tomato;
-    font-weight: 400;
-}
-
-#achievement .trophy {
+   /* Additional styles for the quiz page */
+   .quiz-container {
     display: flex;
+    justify-content: space-between;
+}
+
+.quiz-half-width {
+    width: 48%; /* Adjust the width as needed */
+    margin-top: 20px;
+}
+
+.quiz-question-container {
+    border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 50%;
-    background: url("images/trophy.png");
-   width: 40%;
-   align-items: center;
-   justify-content: center;
-    height: 150px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-#achievement .trophy i {
-    font-size: 65px;
-    color: #fff;
-    border-radius: 50%;
-    padding: 20px;
-}
-#achievement .text {
-    flex-grow: 1;
-    margin-left: 15px; /* Adjust the margin based on your design */
-}
-#achievement .fa-face-smile {
-    color: #9835ff;
-    margin-left: 5px;
-}
-#achievement h1 {
-    margin-left: -20px;
-}
-#achievement .text p {
-    font-weight: 500;
-    color: #979292;
-    font-size: 14px;
-}
-#achievement .text span {
-    color: #9835ff;
-}
-
-#chartContainer h2 {
-    margin-top: -20px;
-   
-}
-/* Add this CSS to your stylesheet */
-#addEventModal {
-    display: none; /* Hide the modal by default */
-}
-
-#addEventModal .modal-dialog {
-    max-width: 400px; /* Adjust the max-width as needed */
-}
-
-#addEventModal .modal-content {
     border-radius: 8px;
+    background-color: #fff;
 }
 
-#addEventModal .modal-header {
-    background-color: #007bff;
-    color: #fff;
-    border-bottom: none;
+.quiz-options-container {
+    margin-top: 20px;
 }
 
-#addEventModal .modal-title {
-    font-size: 18px;
+.quiz-options-container label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-#addEventModal .modal-body {
+.quiz-results-container {
+    border: 1px solid #ddd;
     padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 20px;
 }
 
-#addEventModal .modal-footer {
-    border-top: none;
+.quiz-progress-container {
+    margin-top: 20px;
 }
 
-#saveEventBtn {
-    background-color: #28a745;
-    color: #fff;
+.quiz-progress-container h2 {
+    margin-bottom: 10px;
 }
 
-#saveEventBtn:hover {
-    background-color: #218838;
+.quiz-completed-question {
+    color: #4CAF50; /* Green color for completed questions */
+    font-weight: bold;
 }
-
-
-
-
-
-
 
 
 
@@ -1188,71 +1160,10 @@ body {
         padding-left: 5px;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         justify-content: center;
     }
-
-    #quick-select_dash .box-container {
-        grid-template-columns: 1fr; /* Set the grid to a single column for smaller screens */
-        gap: 1.5rem;
-    }
-    #quick-select_dash .box-container .tutor {
-        margin-left: 3px;
-        margin-right: 20px;
-    }
-    #courses_dash .box-container {
-        grid-template-columns: 2fr;
-        gap: 1.5rem;
-    }
-    #quick-select_dash .box-container .box p {
-        font-size: 16px;
-       
-    }
    
-    #about_dash .row {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-    }
-    
-    #about_dash .row .image {
-        flex: 1 1 100%; /* Set full width for the image on smaller screens */
-        order: 1; /* Set the order to 1 to move it to the beginning */
-        margin-bottom: 1rem; /* Add margin for better separation */
-        margin-right: 40px;
-    }
-    #about_dash .row .image img {
-        max-width: 100%;
-        height: auto;
-        margin-top: -80px;
-        
-    }
-    
-    #about_dash .row .content {
-        flex: 1 1 100%; /* Set full width for the content on smaller screens */
-        order: 2; /* Set the order to 2 to place it after the image */
-        margin-top: -20px;
-        margin-left: 130px;
-        padding-right: -20px;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    #about_dash .row .content h3 {
-        font-weight: 500;
-        line-height: 1;
-        font-size: 18px;
-        color: #393540;
-    }
-    
-    #about_dash .row .content p {
-        color: #8c8787;
-        margin-top: 5px;
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 10px;
-    }
+
     
     #about_dash .box-container {
         padding-left: 20px;
@@ -1277,47 +1188,59 @@ body {
    
     .home-section .data {
         flex-direction: column;
-        align-items: stretch; /* Optional: Stretch items to fill the container */
-    }
-    #todo-list {
-      
-        width: 100%;
-        order: 2;
-        
-    }
-    #achievement {
-       margin-left: 10px;
-        width: 100%;
-        order: 1;
        
     }
+
     #chartContainer {
         width: 100%;
-        margin-left: -20px;
-        height: 100%;
+        margin-left: -3px;
     }
     #progress {
       
         width: 100%;
         margin-left: -20px;
     }
-      /* Media query for smaller screens */
-      #mainn .main-skills .card {
-        width: 100%; /* Make the cards full width on smaller screens */
+
+    .dashboard_home {
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
     }
-    #course-box {
-        margin-left: 20px;
-    }
-    #course-box .course {
-        flex-direction: column; /* Stack the boxes on top of each other on smaller screens */
-    }
-    #course-box .course .box {
-        width: 80%; /* Make the boxes full width on smaller screens */
-    }
-    #calendar {
+
+    .half-width {
         width: 100%;
-        margin-left: -10px;
     }
+
+    .column {
+        width: 100%;
+      /* Add some space between the two columns on smaller screens */
+      padding: 50px;
+      padding-top: 10px;
+      margin-left: 10px;
+    }
+    .earning {
+        height: 30%;
+        padding-bottom: 20px;
+       
+    }
+    .perfomance {
+      padding-bottom: 20px;
+    }
+    #quick-select_dash {
+       flex-direction: row;
+       justify-content: space-between;
+       padding: 20px;
+    }
+    .pie {
+        margin-top: 20px;
+        width: 100%;
+        margin-left: 0px;
+       margin-bottom: 20px;
+       order: 3;
+    }
+
+  
+    
 }
 
 
@@ -1365,11 +1288,27 @@ body {
     padding-top: 60px;
 }
 
+
+
+.column {
+    padding: 20px;
+    padding-top: 0;
+    margin-top: -20px;
+    margin-left: -2px;
+}
+
+.earning,
+.perfomance,
+.location_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+}
 .heading {
     font-size: 14px;
 }
 
-}
 .home-section .data {
    
     gap: 0.75rem;
@@ -1379,7 +1318,7 @@ body {
     width: 100%;
    padding: 2px;
    margin-left: 2px;
-   height: 100%;
+   height: 200px;
 }
 #chartContainer a {
     text-align: center;
@@ -1399,5 +1338,8 @@ body {
     }
     #progress {
        margin-left: 2px;
+    }
+    #about_dash .box-container {
+       flex-direction: column;
     }
 }

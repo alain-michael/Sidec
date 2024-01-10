@@ -102,6 +102,24 @@ document.querySelector('#search-btn').onclick = () =>{
         SearchForm.classList.remove('active');
     }
 
+//script to handle notification
+
+// ... (your existing JavaScript) ...
+// Script for notification icon
+let notificationIcon = document.querySelector('#feed-btn');
+let notificationContent = document.querySelector('.notification-content');
+
+notificationIcon.onclick = () => {
+    notificationContent.classList.toggle('active');
+    SearchForm.classList.remove('active');
+    profile.classList.remove('active');
+}
+
+window.onscroll = () => {
+    notificationContent.classList.remove('active');
+}
+
+
 
 // script.js to handle thank you message
 document.addEventListener("DOMContentLoaded", function () {
