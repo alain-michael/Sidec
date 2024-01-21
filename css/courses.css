@@ -627,7 +627,7 @@ a.inline-option-btn {
 }
 #courses_main_0 .box-container .box:hover,
 #courses_main_1 .box-container .box:hover {
- box-shadow: 4px 12px 20px rgba(0, 0, 0, .1);
+transform: scale(1.03);
 }
 #courses_main_0 .box-container .box .tutor,
 #courses_main_1 .box-container .box .tutor  {
