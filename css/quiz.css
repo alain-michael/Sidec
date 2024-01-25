@@ -1030,7 +1030,7 @@ body {
     transition: all 0.40s ease;
 }
 #course-box .course .box:hover {
-    transform: translateY(-10px); 
+    transform: scale(1.03); 
 }
 #course-box .course .box h3 {
     color: #404660;
