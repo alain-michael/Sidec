@@ -1394,6 +1394,9 @@ a.inline-option-btn {
     opacity: 1;
     transform: none;
   }
+  #profile_page {
+      border-radius: 10px;
+  }
   #profile_page .head {
     display: flex;
     flex-direction: row;
@@ -1430,44 +1433,95 @@ a.inline-option-btn {
     color: #404660;
     font-size: 18px;
   }
-/* Style the buttons that are used to open and close the accordion panel */
-#profile_page .accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 10px;
+  #profile_page .line {
+    position: relative;
+       height: 1px;
+       width: 100%;
+       background-color: #eee;
+       margin: 20px 0;
+       opacity: 0.8;
+  }
+  #profile_page .activities {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#profile_page .activities div {
+    height: 2px;
+    width: 15%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#profile_page .activities div:nth-child(1),
+#profile_page .activities div:nth-child(2),
+#profile_page .activities div:nth-child(3) {
+    background: #9835ff;
+  
+    margin-left: 10px;
+}
+
+#profile_page .activities div:nth-child(4),
+#profile_page .activities div:nth-child(5) {
+    background: #919ca6;
+    margin-left: 10px;
+    
+}
+
+  #profile_page .activi h3 {
+    color: #919ca6;
     font-size: 14px;
     font-weight: 500;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
+    margin-bottom: 10px;
+    text-align: center;
   }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  #profile_page .active, #profile_page .accordion:hover {
-    background-color: #ccc;
+  #profile_page .box {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 80px;
+      background: #9835ff;
   }
-  
-  /* Style the accordion panel. Note: hidden by default */
-  #profile_page .panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  #profile_page .box .more_box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 15px;
+      padding-left: 33px;
+      color: #fff;
   }
-  #profile_page .accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: #404660;
-    float: right;
-    margin-left: 5px;
+  #profile_page .box .more_box i {
+    font-size: 18px;
+    font-weight: 500;
   }
-  
-  #profile_page .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  #profile_page .box .more_box p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  #profile_page .bio p {
+    color: #979292;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px;
+  }
+  #profile_page .icons {
+    display: flex;
+    justify-content: center;
+  }
+  #profile_page .icons a {
+    text-decoration: none;
+    padding: 5px;
+  }
+  #profile_page .icons i {
+    color: #9835ff;
+    font-size: 18px;
+    transition: .3s ease;
+  }
+  #profile_page .icons i:hover {
+   color: #404660;
+   transform: scale(1.03);
   }
   :root {
     --blue: #5e72e4;
