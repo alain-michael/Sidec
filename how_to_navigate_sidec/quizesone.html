@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main Quill library -->
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+<!-- Theme included stylesheets -->
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+<!-- Core build with no theme, formatting, non-essential modules -->
+<link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+<script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+   
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
+    <!-- FullCalendar JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- FullCalendar JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.11/chartjs-plugin-annotation.min.js"></script>
+
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../css/coursecontent.css">
+    <link rel="icon" href="../images/Asset 6.png" type="image/png">
+</head>
+
+<body >
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="../images/Asset 6.png" alt="sidec org">
+            <span class="logo_name">Sidec</span>
+        </div>
+        <ul class="nav-links">
+            <li >
+                <a href="discover.html">
+                    <i class="ri-rocket-2-fill"></i>
+                    <span class="link_name">Discover</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="discover.html" class="link_name">Discover</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="dashboard.html" >
+                    <i class="ri-layout-grid-fill"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="dashboard.html" class="link_name">Dashboard</a></li>
+                </ul>
+            </li>
+            <!--Drop down nav item-->
+            <li>
+                <div class="iocn-link">
+                    <a href="courses.html">
+                        <i class="ri-book-open-fill"></i>
+                        <span class="link_name">Courses</span>
+                    </a>
+                    <i class="ri-arrow-down-s-line arrow"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="courses.html">Courses</a></li>
+                    <li><a href="../sub_pages/science.html">Science</a></li>
+                    <li><a href="../sub_pages/arts.html">Arts</a></li>
+                    <li><a href="../sub_pages/technology.html">Technology</a></li>
+                    <li><a href="../sub_pages/premium.html">Specialization</a></li>
+                </ul>
+            </li>
+
+                <li>
+                    <div class="iocn-link">
+                        <a href="resources.html">
+                            <i class="ri-archive-drawer-fill"></i>
+                            <span class="link_name">Resources</span>
+                        </a>
+                        <i class="ri-arrow-down-s-line arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a href="../sub_pages/resources.html" class="link_name">Resources</a></li>
+                        <li><a href="../sub_pages/questions.html">Questions</a></li>
+                        <li><a href="../sub_pages/solutions.html">Solutions</a></li>
+                        <li><a href="../sub_pages/test.html">Test</a></li>
+                    </ul>
+             </li>
+
+               
+             <li>
+                     <div class="iocn-link">
+                        <a href="tutors.html">
+                            <i class="ri-service-fill"></i>
+                            <span class="link_name">Tutors</span>
+                        </a>
+                             <i class="ri-arrow-down-s-line arrow"></i>
+                     </div>
+                         <ul class="sub-menu">
+                             <li><a href="tutors.html" class="link_name">Tutors</a></li>
+                             <li><a href="../sub_pages/sciencetut.html">Science</a></li>
+                             <li><a href="../sub_pages/artstut.html">Arts</a></li>
+                             <li><a href="../sub_pages/universitytut.html">University</a></li>
+                         </ul>
+                 </li>
+
+                 <li>
+                    <a href="discuss.html">
+                        <i class="ri-chat-1-fill"></i>
+                        <span class="link_name">Discussions</span>
+                       
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a href="discuss.html" class="link_name">Discussions</a></li>
+                    </ul>
+                </li>
+                <li>
+                   
+                       <a href="iqlink.html" >
+                        <i class="fa-solid fa-circle-nodes"></i>
+                           <span class="link_name">IQlink</span>
+                       </a>
+                       <ul class="sub-menu blank">
+                        <li><a href="iqlink.html" class="link_name">IQlink</a></li>
+                    </ul>
+                          
+                  
+                </li>
+
+                
+                <li>
+                    <a href="settings.html">
+                        <i class="ri-settings-fill"></i>
+                        <span class="link_name">Settings</span> 
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a href="settings.html" class="link_name">Settings</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="support.html">
+                        <i class="ri-question-fill"></i>
+                        <span class="link_name">Support</span> 
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a href="support.html" class="link_name">Support</a></li>
+                    </ul>
+                </li>
+                <!--Profile details-->
+                <li>
+                    <div class="profile-details">
+                        <div class="profile-content">
+                            <img src="../images/4.png" alt="profile">
+                        </div>
+                        <div class="name-job">
+                            <div class="profile_name">Fred Joe</div>
+                        <div class="job">Student | UB</div>
+                        </div>
+                        <i class="ri-logout-circle-line" onclick="window.location.href='login.html'"></i>
+                    </div>
+                    
+                </li>
+        </ul>
+    </div>
+    <section class="home-section header">
+        <div class="home-content">
+            <i class="ri-menu-3-line ham_menu" id="but_small"></i>
+            <div class="flex">
+                <form action="" method="post" class="search-form">
+                    <input type="text" name="search_box" placeholder="Search..." required maxlength="100">
+                    <button type="submit" class="ri-search-line"></button>
+                </form>
+                <div class="icons">
+                    <div id="search-btn" class="ri-search-line"></div>
+                    <div id="feed-btn" class="ri-notification-4-fill"></div>
+                    <div id="user-btn" class="ri-user-5-fill"></div>
+              
+                </div>
+
+                <div class="profile-2">
+                    <img src="../images/4.png" alt="profile">
+                    <h3>Fred Joe</h3>
+                    <span>Student | UB</span>
+                    <a href="profile.html" class="btn">View profile</a>
+                    <div class="flex-btn">
+                        <a href="login.html" class="option-btn">Log out</a>
+                        <a href="login.html" class="btn">Share</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+       
+        <div class="course_home">
+            <div class="section" id="section1">
+                <div class="hero_btn">
+                    <button onclick="window.location.href='firstpage.html'"><i class="ri-arrow-left-line"></i> Back</button>
+                </div>
+
+
+                <div class="first_links">
+                    <a href="#" class="topic_link"> <h1 class="topic_title">MCQ</h1></a>
+             
+              
+              <!--Course content subjects-->
+                 
+                      <button class="tablinks active" onclick="openCourse(event, 'firstpage')" id="defaultOpen"> <span class="check"></span><i class="ri-question-line"></i> Page one</button>
+                      <button class="tablinks" onclick="openCourse(event, 'secondpage')"> <span class="check"></span><i class="ri-question-line"></i> Page two</button>
+                      <button class="tablinks" onclick="openCourse(event, 'thirdpage')"> <span class="check"></span><i class="ri-question-line"></i> Page three</button>
+                  
+                      <!-- Add more buttons for additional subjects as needed -->
+                  
+                </div>
+                
+                <div class="first_links">
+                    <a href="#" class="topic_link"> <h1 class="topic_title">Essays</h1></a>
+             
+              
+              <!--Course content subjects-->
+                 
+                      <button class="tablinks active" onclick="openCourse(event, 'fourthpage')" id="defaultOpen"> <span class="check"></span><i class="ri-file-text-line"></i> Essay one</button>
+                      <button class="tablinks" onclick="openCourse(event, 'fifthpage')"> <span class="check"></span><i class="ri-file-text-line"></i> Essay two</button>
+                     
+                  
+                      <!-- Add more buttons for additional subjects as needed -->
+                  
+                </div>
+
+            
+              
+                  
+            </div>
+           
+            <div class="section quiz_container" id="section2">
+                <!-- Content for the second section goes here -->
+                <div id="firstpage" class="tabcontent">
+                    <div class="questions_container">
+                        <form action="">
+                            <div class="question__data">
+                                <h1 class="question_title"><span>1.</span> What is Sidec?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">HTML</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">CSS</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>2.</span> Select atleast 2 things you can benefit with sidec</h1>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <p class="points">2 points</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>3.</span> Is sidec free?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">Yes</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">No</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>3.</span> Is sidec easy to use?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">Yes</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">No</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <p class="honor_text">Sidec Honor code <a href="#">Learn More <i class="ri-external-link-fill"></i></a></p>
+                            <div class="honor">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I, <span>Fred Joe</span> understand that submitting work that isn't my own may lead permanent failure of this course or deactivation of my sidec acount</label><br>
+                            </div>
+                            <div class="submit_btns">
+                                <button type="submit">Submit</button>
+                                <button type="submit" id="saveDraft">Save Draft</button>
+                            </div>
+                        
+                        </form>
+                         
+                       </div>
+                     
+                </div>
+            
+                <div id="secondpage" class="tabcontent">
+                    <div class="questions_container">
+                        <form action="">
+                            <div class="question__data">
+                                <h1 class="question_title"><span>1.</span> What programming langauge was sidec built with?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">HTML, CSS, JS & PHP</label><br>
+                                <input type="radio" id="css" name="fav_language" value="Laravel">
+                                <label for="Laravel">Laravel</label><br>
+                                <input type="radio" id="css" name="fav_language" value="python">
+                                <label for="python">Python</label><br>
+                                <input type="radio" id="css" name="fav_language" value="Reactjs">
+                                <label for="Reactjs">Reactjs</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>2.</span> Select atleast 2 things you can benefit with sidec</h1>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <p class="points">2 points</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>2.</span> Is sidec free?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">Yes</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">No</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>3.</span> Is sidec easy to use?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">Yes</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">No</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>4.</span> Select atleast 2 things you can benefit with sidec</h1>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <p class="points">2 points</p>
+                            </div>
+                            <p class="honor_text">Sidec Honor code <a href="#">Learn More <i class="ri-external-link-fill"></i></a></p>
+                            <div class="honor">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I, <span>Fred Joe</span> understand that submitting work that isn't my own may lead permanent failure of this course or deactivation of my sidec acount</label><br>
+                            </div>
+                            <div class="submit_btns">
+                                <button type="submit">Submit</button>
+                                <button type="submit" id="saveDraft">Save Draft</button>
+                            </div>
+                        
+                        </form>
+                         
+                       </div>
+                </div>
+                <div id="thirdpage" class="tabcontent">
+                    <div class="questions_container">
+                        <form action="">
+                            <div class="question__data">
+                                <h1 class="question_title"><span>1.</span> What makes sidec unqiue?</h1>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> User friendliness</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> Unique interface</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> Cheap resources</label><br>
+                                <p class="points">2 points</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>2.</span> What programming langauge was sidec built with?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">HTML, CSS, JS & PHP</label><br>
+                                <input type="radio" id="css" name="fav_language" value="Laravel">
+                                <label for="Laravel">Laravel</label><br>
+                                <input type="radio" id="css" name="fav_language" value="python">
+                                <label for="python">Python</label><br>
+                                <input type="radio" id="css" name="fav_language" value="Reactjs">
+                                <label for="Reactjs">Reactjs</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>2.</span> Select atleast 2 things you can benefit with sidec</h1>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <p class="points">2 points</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>2.</span> Is sidec free?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">Yes</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">No</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>3.</span> Is sidec easy to use?</h1>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">Yes</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">No</label><br>
+                                <p class="points">1 point</p>
+                            </div>
+                            <div class="question__data">
+                                <h1 class="question_title"><span>4.</span> Select atleast 2 things you can benefit with sidec</h1>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <p class="points">2 points</p>
+                            </div>
+                            <p class="honor_text">Sidec Honor code <a href="#">Learn More <i class="ri-external-link-fill"></i></a></p>
+                            <div class="honor">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I, <span>Fred Joe</span> understand that submitting work that isn't my own may lead permanent failure of this course or deactivation of my sidec acount</label><br>
+                            </div>
+                            <div class="submit_btns">
+                                <button type="submit">Submit</button>
+                                <button type="submit" id="saveDraft">Save Draft</button>
+                            </div>
+                        
+                        </form>
+                         
+                       </div>
+                </div>
+
+                <div id="fourthpage" class="tabcontent">
+                   <div class="questions_container">
+                    <form action="">
+                        <div class="question__data">
+                            <h1 class="question_title"><span>Essay 1.</span> What do you think about Sidec?</h1>
+                            <textarea id="answerTextarea" cols="30" rows="10" placeholder="Enter your answer in less than 50 words"></textarea>
+                            <p id="wordCount">Word count: <span class="wordcount_span">0</span></p>
+                            <div class="submit_btns">
+                                <button type="submit">Submit</button>
+                                <button type="submit" id="saveDraft">Save Draft</button>
+                            </div>
+                        </div>
+                        <div class="question__data custom_upload-container">
+                            <p>Submit answer as pdf or image</p>
+                            <label class="custum-file-upload" for="file">
+                                <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path fill="" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+                                </div>
+                                <div class="text">
+                                   <span>Click to upload image or pdf</span>
+                                   </div>
+                                   <input type="file" id="file">
+                                </label>
+                                <div class="submit_btns">
+                                    <button type="submit">Submit</button>
+                                    <button type="submit" id="saveDraft">Save Draft</button>
+                                </div>
+                                
+                            </div>
+                        
+                    </form>
+                   </div>
+                </div>
+
+                <div id="fifthpage" class="tabcontent">
+                    <div class="questions_container">
+                        <form action="">
+                            <div class="question__data">
+                                <h1 class="question_title"><span>Essay 2.</span> How do you think sidec would help you?</h1>
+                                <textarea id="answerTextarea" cols="30" rows="10" placeholder="Enter your answer in less than 50 words"></textarea>
+                                <p id="wordCount">Word count: <span class="wordcount_span">0</span></p>
+                                <div class="submit_btns">
+                                    <button type="submit">Submit</button>
+                                    <button type="submit" id="saveDraft">Save Draft</button>
+                                </div>
+                            </div>
+                            <div class="question__data custom_upload-container">
+                                <p>Submit answer as pdf or image</p>
+                                <label class="custum-file-upload" for="file">
+                                    <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path fill="" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+                                    </div>
+                                    <div class="text">
+                                       <span>Click to upload image or pdf</span>
+                                       </div>
+                                       <input type="file" id="file">
+                                    </label>
+                                    <div class="submit_btns">
+                                        <button type="submit">Submit</button>
+                                        <button type="submit" id="saveDraft">Save Draft</button>
+                                    </div>
+                                    
+                                </div>
+                            
+                        </form>
+                       </div>
+                </div>
+
+              
+            </div>
+            
+
+           
+
+           
+        </div>
+       
+        
+<!-- Simulate a smartphone / tablet -->
+<div class="mobile-container">
+
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="#home" class="active" id="title_main">Practice Quiz</a>
+      <div id="myLinks">
+        <div class="section" id="section1">
+            <div class="hero_btn">
+                <button onclick="window.location.href='firstpage.html'"><i class="ri-arrow-left-line"></i> Back</button>
+            </div>
+
+
+            <div class="first_links">
+                <a href="#" class="topic_link"> <h1 class="topic_title">MCQ</h1></a>
+         
+          
+          <!--Course content subjects-->
+             
+                  <button class="tablinks active" onclick="openCourse(event, 'mobile_firstpage')" id="defaultOpen"> <span class="check"></span><i class="ri-question-line"></i> Page one</button>
+                  <button class="tablinks" onclick="openCourse(event, 'mobile_secondpage')"> <span class="check"></span><i class="ri-question-line"></i> Page two</button>
+                  <button class="tablinks" onclick="openCourse(event, 'mobile_thirdpage')"> <span class="check"></span><i class="ri-question-line"></i> Page three</button>
+              
+                  <!-- Add more buttons for additional subjects as needed -->
+              
+            </div>
+            
+            <div class="first_links">
+                <a href="#" class="topic_link"> <h1 class="topic_title">Essays</h1></a>
+         
+          
+          <!--Course content subjects-->
+             
+                  <button class="tablinks active" onclick="openCourse(event, 'mobile_fourthpage')" id="defaultOpen"> <span class="check"></span><i class="ri-file-text-line"></i> Essay one</button>
+                  <button class="tablinks" onclick="openCourse(event, 'mobile_fifthpage')"> <span class="check"></span><i class="ri-file-text-line"></i> Essay two</button>
+                 
+              
+                  <!-- Add more buttons for additional subjects as needed -->
+              
+            </div>
+
+        
+          
+              
+        </div>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="mobile_wrapper">
+        <div class="section quiz_container" id="section2">
+            <!-- Content for the second section goes here -->
+            <div id="mobile_firstpage" class="tabcontent">
+                <div class="questions_container">
+                    <form action="">
+                        <div class="question__data">
+                            <h1 class="question_title"><span>1.</span> What is Sidec?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">HTML</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">CSS</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>2.</span> Select atleast 2 things you can benefit with sidec</h1>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I have a bike</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> I have a car</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> I have a boat</label><br>
+                            <p class="points">2 points</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>3.</span> Is sidec free?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Yes</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">No</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>3.</span> Is sidec easy to use?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Yes</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">No</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <p class="honor_text">Sidec Honor code <a href="#">Learn More <i class="ri-external-link-fill"></i></a></p>
+                        <div class="honor">
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I, <span>Fred Joe</span> understand that submitting work that isn't my own may lead permanent failure of this course or deactivation of my sidec acount</label><br>
+                        </div>
+                        <div class="submit_btns">
+                            <button type="submit">Submit</button>
+                            <button type="submit" id="saveDraft">Save Draft</button>
+                        </div>
+                    
+                    </form>
+                     
+                   </div>
+                 
+            </div>
+        
+            <div id="mobile_secondpage" class="tabcontent">
+                <div class="questions_container">
+                    <form action="">
+                        <div class="question__data">
+                            <h1 class="question_title"><span>1.</span> What programming langauge was sidec built with?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">HTML, CSS, JS & PHP</label><br>
+                            <input type="radio" id="css" name="fav_language" value="Laravel">
+                            <label for="Laravel">Laravel</label><br>
+                            <input type="radio" id="css" name="fav_language" value="python">
+                            <label for="python">Python</label><br>
+                            <input type="radio" id="css" name="fav_language" value="Reactjs">
+                            <label for="Reactjs">Reactjs</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>2.</span> Select atleast 2 things you can benefit with sidec</h1>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I have a bike</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> I have a car</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> I have a boat</label><br>
+                            <p class="points">2 points</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>2.</span> Is sidec free?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Yes</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">No</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>3.</span> Is sidec easy to use?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Yes</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">No</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>4.</span> Select atleast 2 things you can benefit with sidec</h1>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I have a bike</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> I have a car</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> I have a boat</label><br>
+                            <p class="points">2 points</p>
+                        </div>
+                        <p class="honor_text">Sidec Honor code <a href="#">Learn More <i class="ri-external-link-fill"></i></a></p>
+                        <div class="honor">
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I, <span>Fred Joe</span> understand that submitting work that isn't my own may lead permanent failure of this course or deactivation of my sidec acount</label><br>
+                        </div>
+                        <div class="submit_btns">
+                            <button type="submit">Submit</button>
+                            <button type="submit" id="saveDraft">Save Draft</button>
+                        </div>
+                    
+                    </form>
+                     
+                   </div>
+            </div>
+            <div id="mobile_thirdpage" class="tabcontent">
+                <div class="questions_container">
+                    <form action="">
+                        <div class="question__data">
+                            <h1 class="question_title"><span>1.</span> What makes sidec unqiue?</h1>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> User friendliness</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> Unique interface</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> Cheap resources</label><br>
+                            <p class="points">2 points</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>2.</span> What programming langauge was sidec built with?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">HTML, CSS, JS & PHP</label><br>
+                            <input type="radio" id="css" name="fav_language" value="Laravel">
+                            <label for="Laravel">Laravel</label><br>
+                            <input type="radio" id="css" name="fav_language" value="python">
+                            <label for="python">Python</label><br>
+                            <input type="radio" id="css" name="fav_language" value="Reactjs">
+                            <label for="Reactjs">Reactjs</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>2.</span> Select atleast 2 things you can benefit with sidec</h1>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I have a bike</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> I have a car</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> I have a boat</label><br>
+                            <p class="points">2 points</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>2.</span> Is sidec free?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Yes</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">No</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>3.</span> Is sidec easy to use?</h1>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Yes</label><br>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">No</label><br>
+                            <p class="points">1 point</p>
+                        </div>
+                        <div class="question__data">
+                            <h1 class="question_title"><span>4.</span> Select atleast 2 things you can benefit with sidec</h1>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I have a bike</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> I have a car</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> I have a boat</label><br>
+                            <p class="points">2 points</p>
+                        </div>
+                        <p class="honor_text">Sidec Honor code <a href="#">Learn More <i class="ri-external-link-fill"></i></a></p>
+                        <div class="honor">
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I, <span>Fred Joe</span> understand that submitting work that isn't my own may lead permanent failure of this course or deactivation of my sidec acount</label><br>
+                        </div>
+                        <div class="submit_btns">
+                            <button type="submit">Submit</button>
+                            <button type="submit" id="saveDraft">Save Draft</button>
+                        </div>
+                    
+                    </form>
+                     
+                   </div>
+            </div>
+
+            <div id="mobile_fourthpage" class="tabcontent">
+               <div class="questions_container">
+                <form action="">
+                    <div class="question__data">
+                        <h1 class="question_title"><span>Essay 1.</span> What do you think about Sidec?</h1>
+                        <textarea id="answerTextarea" cols="30" rows="10" placeholder="Enter your answer in less than 50 words"></textarea>
+                        <p id="wordCount">Word count: <span class="wordcount_span">0</span></p>
+                        <div class="submit_btns">
+                            <button type="submit">Submit</button>
+                            <button type="submit" id="saveDraft">Save Draft</button>
+                        </div>
+                    </div>
+                    <div class="question__data custom_upload-container">
+                        <p>Submit answer as pdf or image</p>
+                        <label class="custum-file-upload" for="file">
+                            <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path fill="" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+                            </div>
+                            <div class="text">
+                               <span>Click to upload image or pdf</span>
+                               </div>
+                               <input type="file" id="file">
+                            </label>
+                            <div class="submit_btns">
+                                <button type="submit">Submit</button>
+                                <button type="submit" id="saveDraft">Save Draft</button>
+                            </div>
+                            
+                        </div>
+                    
+                </form>
+               </div>
+            </div>
+
+            <div id="mobile_fifthpage" class="tabcontent">
+                <div class="questions_container">
+                    <form action="">
+                        <div class="question__data">
+                            <h1 class="question_title"><span>Essay 2.</span> How do you think sidec would help you?</h1>
+                            <textarea id="answerTextarea" cols="30" rows="10" placeholder="Enter your answer in less than 50 words"></textarea>
+                            <p id="wordCount">Word count: <span class="wordcount_span">0</span></p>
+                            <div class="submit_btns">
+                                <button type="submit">Submit</button>
+                                <button type="submit" id="saveDraft">Save Draft</button>
+                            </div>
+                        </div>
+                        <div class="question__data custom_upload-container">
+                            <p>Submit answer as pdf or image</p>
+                            <label class="custum-file-upload" for="file">
+                                <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path fill="" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+                                </div>
+                                <div class="text">
+                                   <span>Click to upload image or pdf</span>
+                                   </div>
+                                   <input type="file" id="file">
+                                </label>
+                                <div class="submit_btns">
+                                    <button type="submit">Submit</button>
+                                    <button type="submit" id="saveDraft">Save Draft</button>
+                                </div>
+                                
+                            </div>
+                        
+                    </form>
+                   </div>
+            </div>
+
+          
+        </div>
+        
+      </div>
+</div>
+        
+    </section>
+    
+   
+
+    <!--Quick select-->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <script src="../Javascript/dashboard.js"></script>
+    <script src="../Javascript/coursedata.js"></script>
+    <script>
+        function openToolBar(evt, cityName) {
+          var i, sub_tabcontent, tablink;
+          sub_tabcontent = document.getElementsByClassName("sub_tabcontent");
+          for (i = 0; i < sub_tabcontent.length; i++) {
+            sub_tabcontent[i].style.display = "none";
+          }
+          tablink = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablink.length; i++) {
+            tablink[i].className = tablink[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        </script>
+ <script>
+    function initializeQuill(containerClass) {
+        var containers = document.querySelectorAll('.' + containerClass);
+
+        containers.forEach(function(container) {
+            var quill = new Quill(container, {
+                theme: 'snow'
+            });
+
+            container.querySelector('.saveButton').addEventListener('click', function() {
+                var content = quill.root.innerHTML;
+                // Save content to database or perform other actions
+                console.log(content);
+            });
+
+            container.querySelector('.viewAllButton').addEventListener('click', function() {
+                // Code to view all notes
+                console.log("View All Notes clicked");
+            });
+        });
+    }
+
+    // Initialize Quill for all editor containers with class "editor-container"
+    initializeQuill('editor-container');
+</script>
+<script>
+    var answerTextarea = document.getElementById('answerTextarea');
+    var wordCountDisplay = document.getElementById('wordCount');
+
+    answerTextarea.addEventListener('input', function() {
+        var words = answerTextarea.value.split(/\s+/).filter(function(word) {
+            return word.length > 0;
+        });
+        var wordCount = words.length;
+
+        if (wordCount <= 50) {
+            wordCountDisplay.textContent = 'Word count: ' + wordCount;
+        } else {
+            // Limit exceeded, show warning
+            wordCountDisplay.textContent = 'Word count exceeds limit!';
+        }
+    });
+</script>
+
+
+
+  
+
+</body>
+</html>
