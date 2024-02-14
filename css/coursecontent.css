@@ -1400,6 +1400,9 @@ a.inline-option-btn {
   .custum-file-upload input {
     display: none;
   }
+
+  /*Grades pages */
+
 /* Media querries */
 
 @media (max-width:991px) {
@@ -1444,16 +1447,41 @@ a.inline-option-btn {
 
    
 }
+
 #section2 {
     margin-top: 20px;
     width: 100%;
     
 }
+#section2 p {
+    font-size: 2em;
+   
+}
+.page_content {
+    padding: 0px 3.5rem;
+}
+.module_title {
+    font-size: 2.5em;
+  
+}
+li {
+    font-size: 2em;
+}
+
+#mobile_sixthpage > div > div > div > div:nth-child(3) > ul  {
+    
+}
+#mobile_sixthpage > div > div > div > div:nth-child(3) > ul > li {
+    font-size: 2em;
+}
+#mobile_sixthpage > div > div > div > div:nth-child(5) > ul li {
+    font-size: 2em;
+}
 .mobile_wrapper{
     padding: 20px ;
 }
 #section2  .tab input:checked ~ .tab__content {
-    max-height: 150rem;
+    max-height: 200rem;
     
   }
   .mobile-dropdown {
@@ -1492,6 +1520,13 @@ a.inline-option-btn {
     }
     .home-section .home-content .ham_menu {
     z-index: 1000;
+    }
+
+    .page_content {
+        padding: 0px 1.5rem;
+    }
+    #section2  .tab input:checked ~ .tab__content {
+        max-height: 250rem;
     }
     
     
@@ -1557,6 +1592,12 @@ a.inline-option-btn {
     margin-bottom: 20px;
    
 }
+
+#weekone_mobile > div > div > div > div > div.module_info > p {
+    font-size: 14px;
+    margin: 10px 0px;
+    padding: 3rem;
+}
 .question_wrapper .container a {
    width: 40%;
    text-align: center;
@@ -1598,4 +1639,5 @@ a.inline-option-btn {
     width: 259px;
   
 }
+
 }
