@@ -1539,14 +1539,14 @@ width: 100%;
 .tool {
   border: 1px solid #eee;
   width: 100%;
-  padding: 10px;
+ 
   margin-bottom: 10px;
 }
 .tool i {
   font-size: 18px;
 }
 .card_notes {
-  width: 255px;
+  width: 100%;
  
 }
 .home-btn {
