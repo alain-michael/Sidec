@@ -1538,9 +1538,21 @@ width: 100%;
 }
 .tool {
   border: 1px solid #eee;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 .tool i {
   font-size: 18px;
+}
+.card_notes {
+  width: 255px;
+ 
+}
+.home-btn {
+  border: 1px solid #404660;
+  padding: 7px 18px;
+ font-size: 18px;
 }
 }
     
