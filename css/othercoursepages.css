@@ -1084,7 +1084,251 @@ table {
     background-color: #9835ff;
     color: white;
   }
+.home-btn {
+    border: 1px solid #404660;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #404660;
+    transition: .3s ease;
+    text-decoration: none;
+    font-weight: 500
+}
+.home-btn:hover {
+    background-color: #404660;
+    color: #fff;
+}
+.grades_section {
+    margin-top: 40px;
+}
+  
+/* Notes page */
+#section4 {
+    margin-top: 10px;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 1px solid #eee;
+}
+ .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0 10px;
+    border: 1px solid #eee;
+    border-radius: 25px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    height: 35px;
+    border: 0;
+    outline: none;
+    font-size: 13px;
+  }
+  .tools_bar{
+    display: flex;
+    padding: 20px 5px;
+    width: 100%;
+  }
+  .tool {
+    position: relative;
+    display: flex;
+    z-index: 9;
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 259px;
+  padding: 10px 10px;
+    border-radius: 5px;
+    transition: .3s ease;
 
+  }
+  .tool:hover {
+    background: #eee;
+  }
+  
+   .tool i {
+    cursor: pointer;
+    color: #404660;
+    transition: .3s ease;
+    background: #eee;
+    padding: 12px 10px;
+    border-radius: 5px;
+    transition: .3s ease;
+  }
+  .tool:hover i {
+    color: #fff;
+    background: #404660;
+  }
+  .tools_info h5 {
+    font-size: 14px;
+    color: #404660;
+    font-weight: 500;
+
+  }
+  .tools_info p {
+    font-size: 12px;
+    color: #404660;
+    font-weight: 500;
+
+  }
+  .tools {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  .new {
+    position: absolute;
+    background: #9835ff;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    top: 10px;
+    right: 0;
+    text-align: center;
+  }
+  .card_notes {
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    transition: 0.2s ease-in-out;
+    margin-top: 40px;
+  }
+  
+  .card_notes:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+  
+  .img_notes {
+    width: 100%;
+    height: 7em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url('../images/notes.png');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: top;
+    justify-content: right;
+  } 
+  .img_notes_2 {
+    background: url('../images/notes2.png');
+    background-size: cover;
+    background-position: center;
+
+  }
+  
+  .save {
+    transition: 0.2s ease-in-out;
+    border-radius: 5px;
+    margin: 15px;
+    width: 20px;
+    height: 20px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.save i {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+  
+  .text {
+    padding: 7px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+  }
+  
+  .text .h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #404660;
+    text-align: center;
+  }
+  
+  .text .p {
+    font-family: system-ui;
+    color: #999999;
+    font-size: 13px;
+    margin: 0px;
+    text-align: center;
+    padding: 5px;
+  }
+  .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+
+  }
+ .icon-btn button {
+    border: none;
+    background: #9835ff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  
+ }  
+ .icon-btn button:hover {
+    background: #404660;
+    transform: scale(1.05);
+ }
+ #delete_btn {
+    border: 1px solid rgb(255, 102, 74);
+    background: transparent;
+    color:  rgb(255, 102, 74);
+
+ }
+ #delete_btn:hover {
+    background:  rgb(255, 102, 74);
+    color: #fff;
+    transform: scale(1.05);
+ }
+ .dates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 8px;
+  margin-top: -20px;
+}
+
+.date_info {
+  position: relative;
+  margin-top: 20px;
+}
+.date_info p {
+  font-size: 14px;
+  color: #404660;
+  font-weight: 500;
+
+}
+.date_info p::before {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  right: 0;
+  width: 79%;
+  height:  1px;
+  background: #9c9c9c;
+}
+  
   
 /* Media querries */
 
@@ -1179,6 +1423,30 @@ width: 100%;
   
     padding: 20px 60px;
 }
+
+/* Notes section */
+.dates {
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  justify-content: center;
+  align-items: center;
+}
+.img_notes {
+
+  height: 13em;
+ 
+}
+.date_info p::before {
+   display: none;
+}
+.container__notes {
+  padding-left: 60px;
+}
+#section4 {
+  width: 100%;
+  padding: 20px 60px;
+}
+
+
 }
   
 
@@ -1257,5 +1525,22 @@ width: 100%;
         margin: 20px 0;
         padding: 4px 8px;
     }
+    .dates {
+      display: flex;
+      flex-direction: column;
+    }
+    .container__notes {
+      padding-left: 0px;
+  }
+  #section4 {
+    width: 100%;
+    padding: 20px;
+}
+.tool {
+  border: 1px solid #eee;
+}
+.tool i {
+  font-size: 18px;
+}
 }
     
