@@ -151,6 +151,7 @@ box-sizing: border-box;
   font-size: 14px;
   font-weight: 500;
   line-height: 19px;
+  appearance: none;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
   padding: 17px 29px 17px 69px;
