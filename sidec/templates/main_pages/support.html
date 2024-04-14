@@ -1,0 +1,739 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/support.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css"
+      integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script
+      src="https://mediafiles.botpress.cloud/6e6052b8-a209-4509-8860-8e0dbac7b0e1/webchat/config.js"
+      defer
+    ></script>
+
+    <!--Quill libary-->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+
+    <title>Help center</title>
+    <link
+      rel="icon"
+      href="{% static 'images/Asset 6.png' %}"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="{% static 'images/Asset 6.png' %}" alt="sidec org" />
+        <span class="logo_name">Sidec</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{% url 'discover' %}">
+            <i class="ri-rocket-2-fill"></i>
+            <span class="link_name">Discover</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'discover' %}" class="link_name">Discover</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'dashboard' %}">
+            <i class="ri-layout-grid-fill"></i>
+            <span class="link_name">Dashboard</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'dashboard' %}" class="link_name">Dashboard</a>
+            </li>
+          </ul>
+        </li>
+        <!--Drop down nav item-->
+        <li>
+          <div class="iocn-link">
+            <a href="{% url 'courses' %}">
+              <i class="ri-book-open-fill"></i>
+              <span class="link_name">Courses</span>
+            </a>
+            <i class="ri-arrow-down-s-line arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li>
+              <a class="link_name" href="{% url 'courses' %}' %}">Courses</a>
+            </li>
+            <li><a href="{% url 'science' %}">Science</a></li>
+            <li><a href="{% url 'arts' %}">Arts</a></li>
+            <li><a href="{% url 'technology' %}">Technology</a></li>
+            <li><a href="{% url 'special' %}">Specialization</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="iocn-link">
+            <a href="{% url 'resources' %}">
+              <i class="ri-archive-drawer-fill"></i>
+              <span class="link_name">Resources</span>
+            </a>
+            <i class="ri-arrow-down-s-line arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li>
+              <a href="{% url 'resources' %}" class="link_name">Resources</a>
+            </li>
+            <li><a href="{% url 'questions' %}">Questions</a></li>
+            <li><a href="{% url 'solutions' %}">Solutions</a></li>
+            <li><a href="{% url 'test' %}">Test</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="iocn-link">
+            <a href="{% url 'tutors' %}">
+              <i class="ri-service-fill"></i>
+              <span class="link_name">Tutors</span>
+            </a>
+            <i class="ri-arrow-down-s-line arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a href="{% url 'tutors' %}" class="link_name">Tutors</a></li>
+            <li><a href="{% url 'sciencetut' %}">Science</a></li>
+            <li><a href="{% url 'artstut' %}">Arts</a></li>
+            <li><a href="{% url 'universitytut' %}">University</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'discuss' %}">
+            <i class="ri-chat-1-fill"></i>
+            <span class="link_name">Discussions</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'discuss' %}" class="link_name">Discussions</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="{% url 'iqlink' %}">
+            <i class="fa-solid fa-circle-nodes"></i>
+            <span class="link_name">IQlink</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a href="{% url 'iqlink' %}" class="link_name">IQlink</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'settings' %}">
+            <i class="ri-settings-fill"></i>
+            <span class="link_name">Settings</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'settings' %}" class="link_name">Settings</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'support' %}" class="active">
+            <i class="ri-question-fill"></i>
+            <span class="link_name">Support</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a href="{% url 'support' %}" class="link_name">Support</a></li>
+          </ul>
+        </li>
+        <!--Profile details-->
+        {% include 'profile_area.html' %}
+      </ul>
+    </div>
+    <section class="home-section header">
+      <div class="home-content">
+        <i class="ri-menu-3-line ham_menu"></i>
+        <div class="flex">
+          <form action="" method="post" class="search-form">
+            <input
+              type="text"
+              name="search_box"
+              placeholder="Find courses..."
+              required
+              maxlength="100"
+            />
+            <button type="submit" class="ri-search-line"></button>
+          </form>
+          <div class="icons">
+            <div id="search-btn" class="ri-search-line"></div>
+            <div id="feed-btn" class="ri-feedback-fill"></div>
+            <div id="user-btn" class="ri-user-5-fill"></div>
+          </div>
+
+          <div class="profile-2">
+            <img src="{% static 'images/4.png' %}" alt="profile" />
+            <h3>Fred Joe<i class="ri-verified-badge-fill"></i></h3>
+            <span>Student | Buea</span>
+            <a href="{% url 'profile' %}" class="btn">View profile</a>
+            <div class="flex-btn">
+              <a href="{% url 'login' %}" class="option-btn">Log out</a>
+              <a href="{% url 'login' %}" class="btn">Share</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="faq">
+        <h1>Frequently asked questions?</h1>
+        <div class="tab">
+          <input type="radio" name="acc" id="acc1" />
+          <label for="acc1">
+            <h2>01</h2>
+            <h3>General Questions:</h3>
+          </label>
+          <div class="content">
+            <p>
+              <strong> What is the purpose of this educational website?</strong
+              ><br />
+              Our website is dedicated to providing high-quality educational
+              resources and courses to help individuals enhance their skills,
+              gain knowledge, and achieve their learning goals.<br />
+              <strong>How do I navigate through the website?</strong><br />
+              You can easily navigate through our website using the menu in the
+              top left corner. Click on the different sections to explore our
+              content and courses.<br />
+              <strong
+                >Is registration or sign-up required to access the
+                content?</strong
+              ><br />
+              While some content is accessible without registration, signing up
+              allows you to track your progress, enroll in courses, and access
+              premium content.<br />
+              <strong
+                >Is this website free to use, or are there any subscription
+                fees?</strong
+              ><br />
+              We offer a mix of free and paid content. Some courses are
+              available at no cost, while premium courses may require a one-time
+              purchase or a subscription.<br />
+              <strong
+                >How do I contact the website administrators or support
+                team?</strong
+              ><br />
+              For any questions or support, you can reach out to our support
+              team through the "Contact Us" link in the footer of the website.
+              We're here to assist you.
+            </p>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="acc" id="acc2" />
+          <label for="acc2">
+            <h2>02</h2>
+            <h3>User Account Questions:</h3>
+          </label>
+          <div class="content">
+            <p>
+              <strong>How do I create an account on this platform?</strong
+              ><br />
+              Click on the "Sign Up" or "Register" button and follow the simple
+              steps to create your account. You'll need to provide some basic
+              information.<br />
+              <strong
+                >What should I do if I forgot my password or username?</strong
+              ><br />
+              Use the "Forgot Password" link on the login page to reset your
+              password. For username recovery, contact our support team.<br />
+              <strong
+                >Is my personal information safe and secure on this
+                website?</strong
+              ><br />
+              We take user privacy seriously. Your personal data is encrypted
+              and securely stored. Please refer to our Privacy Policy for
+              details.<br />
+              <strong>How can I update my profile information?</strong><br />
+              After logging in, navigate to your profile. You can edit and
+              update your personal information, including your profile picture
+              and email address.<br />
+              <strong>How do I delete my account?</strong><br />
+              If you wish to delete your account, contact our support team, and
+              they will guide you through the account deletion process.
+            </p>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="acc" id="acc3" />
+          <label for="acc3">
+            <h2>03</h2>
+            <h3>Course and Content Questions:</h3>
+          </label>
+          <div class="content">
+            <p>
+              <strong
+                >What types of courses are available on this platform?</strong
+              ><br />
+              We offer a wide range of courses, including web development,
+              design, business, and more. Explore our catalog to find courses
+              that match your interests.<br />
+              <strong
+                >Can I access course materials and resources for free?</strong
+              ><br />
+              Yes, many courses provide free access to their materials. Just
+              enroll in the course to get started.<br />
+              <strong>Can I download course materials for offline use?</strong
+              ><br />
+              Some courses offer downloadable materials. Look for the download
+              option within the course to access offline content.<br />
+              <strong>How do I track my progress within a course?</strong><br />
+              Your course progress is tracked automatically. You can view your
+              completion status, scores, and any assignments you've
+              submitted.<br />
+              <strong
+                >Are there paid or premium courses, and how do I enroll in
+                them?</strong
+              ><br />
+              Yes, we offer premium courses. To enroll in a premium course, you
+              can make a one-time purchase or subscribe, depending on the
+              course.
+            </p>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="acc" id="acc4" />
+          <label for="acc4">
+            <h2>04</h2>
+            <h3>Certification and Completion:</h3>
+          </label>
+          <div class="content">
+            <p>
+              <strong
+                >How do I access or download my course completion
+                certificates?</strong
+              ><br />
+              Your certificate will be available for download on your profile
+              when your instructor confirms you've completed!<br />
+              <strong
+                >Are these certificates recognized or accredited by any
+                institutions?</strong
+              ><br />
+              Our completion certificates verify your accomplishments, but they
+              may not be accredited by external institutions. Check the course
+              details for more information.<br />
+              <strong
+                >What if I need a replacement or duplicate certificate?</strong
+              ><br />
+              If you need a replacement certificate, please contact our support
+              team, and they will assist you.<br />
+              <strong
+                >How do I include my certificates on my LinkedIn or
+                resume?</strong
+              ><br />
+              You can add your certificates to your LinkedIn profile or resume
+              by uploading a digital copy or providing a link to your
+              certificate on our platform.<br />
+              <strong
+                >What payment methods are accepted for paid courses?</strong
+              ><br />
+              We accept major credit and debit cards, as well as various mobile
+              payment methods, including MTN mobile money via Flutterwave.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="about">
+        <div class="row">
+          <div class="image">
+            <img src="{% static 'images/ab3.png' %}" alt="sidec" />
+          </div>
+          <div class="content">
+            <h3>Why Sidec?</h3>
+            <p>
+              24/7 customer support with sidec. We are here 100% to support you,
+              we have a chatbot, faq documents all available for you, for more
+              information reach out to our team!
+            </p>
+            <a href="#contact" class="inline-btn">Contact us</a>
+          </div>
+        </div>
+        <div class="box-container">
+          <div class="box">
+            <i class="fa-solid fa-users"></i>
+            <h3>+5k</h3>
+            <span>Users</span>
+          </div>
+
+          <div class="box">
+            <i class="fa-solid fa-book"></i>
+            <h3>+5.5k</h3>
+            <span>Online courses</span>
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-user-graduate"></i>
+            <h3>+170</h3>
+            <span>certificates earned</span>
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h3>+190</h3>
+            <span>Tutors</span>
+          </div>
+        </div>
+      </div>
+      <div id="contact">
+        <span class="title">Contact Us</span>
+        <form id="contactForm">
+          <div class="input-field">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <i class="fa-solid fa-user icon"></i>
+          </div>
+          <div class="input-field">
+            <input type="email" id="email" placeholder="Your Email" required />
+            <i class="fa-solid fa-envelope icon"></i>
+          </div>
+          <div class="input-field">
+            <textarea
+              id="message"
+              placeholder="Your Message"
+              rows="4"
+              required
+            ></textarea>
+            <i class="fa-solid fa-comment-alt-lines icon"></i>
+          </div>
+          <div class="input-field button">
+            <input type="submit" value="Send Message" />
+          </div>
+        </form>
+        <!-- New element for thank-you message -->
+        <div id="thankYouMessage" class="floating-message">
+          Thank you for submitting your message, we will reach out to you!<i
+            class="fa-solid fa-circle-check"
+          ></i>
+        </div>
+      </div>
+      <div id="reviews">
+        <h1 class="heading">105 reviews</h1>
+        <div class="box-container">
+          <div class="box">
+            <p>
+              The app is so user friendly, I could easily navigate through the
+              course content with ease!&#x1F601;
+            </p>
+            <div class="user">
+              <img src="{% static 'images/avafemale.png' %}" alt="reviewer" />
+              <div>
+                <h3>Favour Arrey</h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="reactions" id="review1">
+              <button
+                onclick="(() => react('review1', 'love'))()"
+                class="like_buttons"
+              >
+                <i class="ri-heart-3-line heart-icon"></i>
+              </button>
+              <span id="like_count_review1">0</span>
+              <button
+                onclick="(() => react('review1', 'flag'))()"
+                class="flag_button"
+              >
+                <i class="ri-flag-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="box">
+            <p>
+              I earn some little cash from the connections of home lessons
+              &#x1F600;
+            </p>
+            <div class="user">
+              <img src="{% static 'images/avafemale.png' %}" alt="reviewer" />
+              <div>
+                <h3>Anitha Maureen</h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+            <div class="reactions" id="review2">
+              <button
+                onclick="(() => react('review2', 'love'))()"
+                class="like_buttons"
+              >
+                <i class="ri-heart-3-line heart-icon"></i>
+              </button>
+              <span id="like_count_review2">0</span>
+              <button
+                onclick="(() => react('review2', 'flag'))()"
+                class="flag_button"
+              >
+                <i class="ri-flag-fill"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box">
+            <p>Waiting for app launch &#x1F937;</p>
+            <div class="user">
+              <img src="{% static 'images/avamale.png' %}" alt="reviewer" />
+              <div>
+                <h3>Eddy</h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+            <div class="reactions" id="review3">
+              <button
+                onclick="(() => react('review3', 'love'))()"
+                class="like_buttons"
+              >
+                <i class="ri-heart-3-line heart-icon"></i>
+              </button>
+              <span id="like_count_review3">0</span>
+              <button
+                onclick="(() => react('review3', 'flag'))()"
+                class="flag_button"
+              >
+                <i class="ri-flag-fill"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box">
+            <p>Kudos to the creators, this is very user friendly</p>
+            <div class="user">
+              <img src="{% static 'images/avamale.png' %}" alt="reviewer" />
+              <div>
+                <h3>Joe Swan</h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="reactions" id="review4">
+              <button
+                onclick="(() => react('review4', 'love'))()"
+                class="like_buttons"
+              >
+                <i class="ri-heart-3-line heart-icon"></i>
+              </button>
+              <span id="like_count_review4">0</span>
+              <button
+                onclick="(() => react('review4', 'flag'))()"
+                class="flag_button"
+              >
+                <i class="ri-flag-fill"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box">
+            <p>The question bank is my favorite section</p>
+            <div class="user">
+              <img src="{% static 'images/cynthia.png' %}" alt="reviewer" />
+              <div>
+                <h3>Cynthia</h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="reactions" id="review5">
+              <button
+                onclick="(() => react('review5', 'love'))()"
+                class="like_buttons"
+              >
+                <i class="ri-heart-3-line heart-icon"></i>
+              </button>
+              <span id="like_count_review5">0</span>
+              <button
+                onclick="(() => react('review5', 'flag'))()"
+                class="flag_button"
+              >
+                <i class="ri-flag-fill"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box">
+            <p>This website is doing me good!</p>
+            <div class="user">
+              <img src="{% static 'images/avamale.png' %}" alt="reviewer" />
+              <div>
+                <h3>Fred Williams</h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+            <div class="reactions" id="review6">
+              <button
+                onclick="(() => react('review6', 'love'))()"
+                class="like_buttons"
+              >
+                <i class="ri-heart-3-line heart-icon"></i>
+              </button>
+              <span id="like_count_review6">0</span>
+              <button
+                onclick="(() => react('review6', 'flag'))()"
+                class="flag_button"
+              >
+                <i class="ri-flag-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="inline-option-btn">Read more</a>
+      </div>
+
+      <div id="comments">
+        <h1 class="heading">Add review</h1>
+        <form action="" method="post" class="add-comment">
+          <!-- Quill container -->
+          <div id="quill-container"></div>
+          <input
+            type="hidden"
+            name="comment-box"
+            id="hidden-comment-box"
+            required
+          />
+          <input
+            type="submit"
+            value="Add"
+            name="add_comment"
+            class="inline-btn"
+          />
+        </form>
+      </div>
+    </section>
+
+    <!--Quick select-->
+
+    <script src="{% static 'Javascript/index.js' %}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var quill = new Quill("#quill-container", {
+          theme: "snow",
+          placeholder: "Enter review...",
+          modules: {
+            toolbar: [
+              [{ header: [1, 2, false] }],
+              ["bold", "italic", "underline", "strike"],
+              [{ list: "ordered" }, { list: "bullet" }],
+              ["link", "image", "video"],
+              ["clean"],
+            ],
+          },
+        });
+
+        // Listen for changes and update the hidden input with HTML content
+        quill.on("text-change", function () {
+          document.getElementById("hidden-comment-box").value =
+            quill.root.innerHTML;
+        });
+      });
+
+      let reactions = {
+        love: 0,
+        flag: 0,
+      };
+
+      function react(reviewId, reactionType) {
+        reactions[reactionType]++;
+        updateCounts(reviewId);
+        toggleHeartIcon(reviewId, "love");
+      }
+
+      function updateCounts(reviewId) {
+        document.getElementById(`like_count_${reviewId}`).textContent =
+          reactions.love;
+        document.getElementById(`flag_count_${reviewId}`).textContent =
+          reactions.flag;
+      }
+
+      function toggleHeartIcon(reviewId, reactionType) {
+        const heartIcon = document.querySelector(
+          `#review${reviewId} .ri-heart-3-line`
+        );
+
+        if (reactionType === "love") {
+          const isFilled = heartIcon.classList.contains("ri-heart-3-fill");
+          heartIcon.classList.toggle("ri-heart-3-fill", !isFilled);
+        }
+      }
+
+      // Paste your async functions here
+      async function react(reviewId, reactionType) {
+        reactions[reactionType]++;
+        updateCounts(reviewId);
+        await toggleHeartIcon(reviewId, "love");
+      }
+
+      async function toggleHeartIcon(reviewId, reactionType) {
+        const heartIcon = document.querySelector(
+          `#review${reviewId} .ri-heart-3-line`
+        );
+
+        if (reactionType === "love") {
+          const isFilled = heartIcon.classList.contains("ri-heart-3-fill");
+          heartIcon.classList.toggle("ri-heart-3-fill", !isFilled);
+
+          // Send an asynchronous request to update the like count on the server
+          // You may need to replace 'your-server-endpoint' with the actual endpoint
+          await fetch("your-server-endpoint", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ reviewId, reactionType }),
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

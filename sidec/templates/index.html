@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sidec</title>
+    <link rel="icon" href="{% static 'images/Asset 6.png' %}" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="animated-text">
+            Welcome to <span></span>
+        </div>
+
+        <div class="bgimg">
+            <div class="topleft">
+                <img src="{% static 'images/logo white.png' %}" alt="images">
+            </div>
+            <div class="middle">
+                <h1>COMING SOON</h1>
+                <hr>
+                <p class="countdown-container"><span id="countdown"></span></p>
+             
+            </div>
+        </div>
+    </header>
+    <div id="form">
+        <form class="earlyAccessForm" id="EarlyAccess" method="post" action="" name="contact-data">
+            <label for="email">Get Early Access:</label>
+            <div style="display: flex;">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <button type="submit">Submit</button>
+              
+            </div>
+            <p id="alert">Please submit once and wait for a confirmation within 10 seconds</p>
+            <div id="thankYouMessage2" class="floating-message">
+                Thank you for submitting, we will reach out to you!<i class="fa-solid fa-circle-check"></i>
+            </div>
+        </form>
+        <!--Thank you message-->
+       
+    
+    </div>
+    <div id="contact-icons">
+        <a href="mailto:support@sidecedu.com" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="tel:+250798654693" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-phone fa-shake"></i>
+        </a>
+        <a href="https://www.facebook.com/sidec.edu?mibextid=YimQGvt8cm5a3TS7" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://instagram.com/sidec_edu?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-square-instagram"></i>
+        </a>
+        <!-- Add more icons as needed -->
+    </div>
+     <!-- Modal for email submission confirmation -->
+    
+   <script>
+    // Check if launch timestamp is stored in localStorage
+let storedLaunchTimestamp = localStorage.getItem('launchTimestamp');
+
+// Parse the stored timestamp, or set a new one if it's invalid or missing
+let launchTimestamp = parseInt(storedLaunchTimestamp);
+
+if (isNaN(launchTimestamp)) {
+    // Set the launch timestamp to 52 days from the current date
+    launchTimestamp = new Date().getTime() + 52 * 24 * 60 * 60 * 1000;
+
+    // Store the launch timestamp in localStorage
+    localStorage.setItem('launchTimestamp', launchTimestamp.toString());
+}
+
+const countdown = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = launchTimestamp - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+}, 1000);
+
+
+// Handle form submission
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwmRVmnP7JbZyXxc3HPqRcVM3O6WF9rNFk68W9-AOxk4dd8MIQGohFqSf7dDbxa6nwKqA/exec';
+
+const form = document.forms['EarlyAccess'];
+const customThankYouMessage = document.querySelector('#form .floating-message');
+
+let isFormSubmitted = false; // Flag to track form submission
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // Check if the form has already been submitted
+    if (isFormSubmitted) {
+        return;
+    }
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => response.json()) // Assuming the response is in JSON format
+        .then(data => {
+            // Show the custom thank-you message
+            customThankYouMessage.style.display = 'block';
+
+            // Optionally, reload the page after a delay (adjust the timeout as needed)
+            setTimeout(() => window.location.reload(), 5000);
+        })
+        .catch(error => console.error('Error!', error.message))
+        .finally(() => {
+            // Set the flag to indicate that the form has been submitted
+            isFormSubmitted = true;
+        });
+});
+
+// Function to close the custom thank-you message
+function closeCustomThankYouMessage() {
+    customThankYouMessage.style.display = 'none';
+}
+
+   </script>
+    
+    <script src="{% static 'Google Sheet.js' %}"></script>
+</body>
+</html>

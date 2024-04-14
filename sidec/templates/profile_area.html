@@ -1,0 +1,13 @@
+<li>
+    <div class="profile-details">
+        <div class="profile-content">
+            <img src={{student.profile_pic.url}} alt="profile">
+        </div>
+        <div class="name-job">
+            <div class="profile_name">{{student}}</div>
+        <div class="job">Student | UB</div>
+        </div>
+        <i class="ri-logout-circle-line" onclick="window.location.href='{% url 'logout' %}'"></i>
+    </div>
+    
+</li>

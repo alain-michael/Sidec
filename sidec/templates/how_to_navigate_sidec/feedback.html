@@ -1,0 +1,1304 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Main Quill library -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+    <!-- Theme included stylesheets -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet" />
+
+    <!-- Core build with no theme, formatting, non-essential modules -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet" />
+    <script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FullCalendar CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"
+    />
+
+    <!-- FullCalendar JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- FullCalendar JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.11/chartjs-plugin-annotation.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css"
+      integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Notes</title>
+    <link rel="stylesheet" href="{% static 'css/feedback.css' %}" />
+    <link
+      rel="icon"
+      href="{% static 'images/Asset 6.png' %}"
+      type="image/png"
+    />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="{% static 'images/Asset 6.png' %}" alt="sidec org" />
+        <span class="logo_name">Sidec</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{% url 'discover' %}">
+            <i class="ri-rocket-2-fill"></i>
+            <span class="link_name">Discover</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'discover' %}" class="link_name">Discover</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'dashboard' %}">
+            <i class="ri-layout-grid-fill"></i>
+            <span class="link_name">Dashboard</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'dashboard' %}" class="link_name">Dashboard</a>
+            </li>
+          </ul>
+        </li>
+        <!--Drop down nav item-->
+        <li>
+          <div class="iocn-link">
+            <a href="{% url 'courses' %}">
+              <i class="ri-book-open-fill"></i>
+              <span class="link_name">Courses</span>
+            </a>
+            <i class="ri-arrow-down-s-line arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li>
+              <a class="link_name" href="{% url 'courses' %}' %}">Courses</a>
+            </li>
+            <li><a href="{% url 'science' %}">Science</a></li>
+            <li><a href="{% url 'arts' %}">Arts</a></li>
+            <li><a href="{% url 'technology' %}">Technology</a></li>
+            <li><a href="{% url 'premium' %}">Specialization</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="iocn-link">
+            <a href="{% url 'resources' %}">
+              <i class="ri-archive-drawer-fill"></i>
+              <span class="link_name">Resources</span>
+            </a>
+            <i class="ri-arrow-down-s-line arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li>
+              <a href="{% url 'resources' %}" class="link_name">Resources</a>
+            </li>
+            <li><a href="{% url 'questions' %}">Questions</a></li>
+            <li><a href="{% url 'solutions' %}">Solutions</a></li>
+            <li><a href="{% url 'test' %}">Test</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="iocn-link">
+            <a href="{% url 'tutors' %}">
+              <i class="ri-service-fill"></i>
+              <span class="link_name">Tutors</span>
+            </a>
+            <i class="ri-arrow-down-s-line arrow"></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a href="{% url 'tutors' %}" class="link_name">Tutors</a></li>
+            <li><a href="{% url 'sciencetut' %}">Science</a></li>
+            <li><a href="{% url 'artstut' %}">Arts</a></li>
+            <li><a href="{% url 'universitytut' %}">University</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'discuss' %}">
+            <i class="ri-chat-1-fill"></i>
+            <span class="link_name">Discussions</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'discuss' %}" class="link_name">Discussions</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="{% url 'iqlink' %}">
+            <i class="fa-solid fa-circle-nodes"></i>
+            <span class="link_name">IQlink</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a href="{% url 'iqlink' %}" class="link_name">IQlink</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'settings' %}">
+            <i class="ri-settings-fill"></i>
+            <span class="link_name">Settings</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a href="{% url 'settings' %}" class="link_name">Settings</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="{% url 'support' %}">
+            <i class="ri-question-fill"></i>
+            <span class="link_name">Support</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a href="{% url 'support' %}" class="link_name">Support</a></li>
+          </ul>
+        </li>
+        <!--Profile details-->
+        {% include 'profile_area.html' %}
+      </ul>
+    </div>
+    <section class="home-section header">
+      <div class="home-content">
+        <i class="ri-menu-3-line ham_menu" id="but_small"></i>
+        <div class="flex">
+          <form action="" method="post" class="search-form">
+            <input
+              type="text"
+              name="search_box"
+              placeholder="Search..."
+              required
+              maxlength="100"
+            />
+            <button type="submit" class="ri-search-line"></button>
+          </form>
+          <div class="icons">
+            <div id="search-btn" class="ri-search-line"></div>
+            <div id="feed-btn" class="ri-notification-4-fill"></div>
+            <div id="user-btn" class="ri-user-5-fill"></div>
+          </div>
+
+          <div class="profile-2">
+            <img src="{% static 'images/4.png' %}" alt="profile" />
+            <h3>Fred Joe</h3>
+            <span>Student | UB</span>
+            <a href="{% url 'profile' %}" class="btn">View profile</a>
+            <div class="flex-btn">
+              <a href="{% url 'login' %}" class="option-btn">Log out</a>
+              <a href="{% url 'login' %}" class="btn">Share</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="course_home">
+        <div class="section" id="section2">
+          <a href="{% url 'htusidec' %}" class="home-btn"
+            ><i class="ri-arrow-left-line"></i> Home
+          </a>
+          <!-- Content for the second section goes here -->
+          <div class="card">
+            <div class="body">
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                massa ipsum, laoreet quis mollis nec, feugiat in dui.
+                Suspendisse et enim pretium, ullamcorper enim laoreet.
+              </p>
+              <span class="username"> @Sidec</span>
+              <div class="footer">
+                <div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-linejoin="round"
+                          stroke-linecap="round"
+                          stroke-width="1.5"
+                          d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"
+                        ></path>
+                      </g></svg
+                    >28
+                  </div>
+                  <div>
+                    <svg
+                      fill="#000000"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      viewBox="-2.5 0 32 32"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <g id="icomoon-ignore"></g>
+                        <path
+                          fill="#000000"
+                          d="M0 10.284l0.505 0.36c0.089 0.064 0.92 0.621 2.604 0.621 0.27 0 0.55-0.015 0.836-0.044 3.752 4.346 6.411 7.472 7.060 8.299-1.227 2.735-1.42 5.808-0.537 8.686l0.256 0.834 7.63-7.631 8.309 8.309 0.742-0.742-8.309-8.309 7.631-7.631-0.834-0.255c-2.829-0.868-5.986-0.672-8.686 0.537-0.825-0.648-3.942-3.3-8.28-7.044 0.11-0.669 0.23-2.183-0.575-3.441l-0.352-0.549-8.001 8.001zM1.729 10.039l6.032-6.033c0.385 1.122 0.090 2.319 0.086 2.334l-0.080 0.314 0.245 0.214c7.409 6.398 8.631 7.39 8.992 7.546l-0.002 0.006 0.195 0.058 0.185-0.087c2.257-1.079 4.903-1.378 7.343-0.836l-13.482 13.481c-0.55-2.47-0.262-5.045 0.837-7.342l0.104-0.218-0.098-0.221-0.031 0.013c-0.322-0.632-1.831-2.38-7.498-8.944l-0.185-0.215-0.282 0.038c-0.338 0.045-0.668 0.069-0.981 0.069-0.595 0-1.053-0.083-1.38-0.176z"
+                        ></path>
+                      </g></svg
+                    >9
+                  </div>
+                  <div>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          opacity="0.1"
+                          d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z"
+                          fill="#323232"
+                        ></path>
+                        <path
+                          opacity="0.1"
+                          d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z"
+                          fill="#323232"
+                        ></path>
+                        <path
+                          opacity="0.1"
+                          d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z"
+                          fill="#323232"
+                        ></path>
+                        <path
+                          d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z"
+                          stroke-width="2"
+                        ></path>
+                        <path
+                          d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z"
+                          stroke-width="2"
+                        ></path>
+                        <path
+                          d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z"
+                          stroke-width="2"
+                        ></path>
+                        <path
+                          d="M8.7207 10.6397L15.0001 7.5"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M8.70605 13.353L15 16.5"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </g></svg
+                    >2
+                  </div>
+                </div>
+
+                <div class="viewer">
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
+                        ></path>
+                      </g></svg
+                  ></span>
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
+                        ></path>
+                      </g></svg
+                  ></span>
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
+                        ></path>
+                      </g></svg
+                  ></span>
+                  <span>+20</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="body">
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                massa ipsum, laoreet quis mollis nec, feugiat in dui.
+                Suspendisse et enim pretium, ullamcorper enim laoreet.
+              </p>
+              <span class="username"> @Josh</span>
+              <div class="footer">
+                <div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-linejoin="round"
+                          stroke-linecap="round"
+                          stroke-width="1.5"
+                          d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"
+                        ></path>
+                      </g></svg
+                    >9
+                  </div>
+                  <div>
+                    <svg
+                      fill="#000000"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      viewBox="-2.5 0 32 32"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <g id="icomoon-ignore"></g>
+                        <path
+                          fill="#000000"
+                          d="M0 10.284l0.505 0.36c0.089 0.064 0.92 0.621 2.604 0.621 0.27 0 0.55-0.015 0.836-0.044 3.752 4.346 6.411 7.472 7.060 8.299-1.227 2.735-1.42 5.808-0.537 8.686l0.256 0.834 7.63-7.631 8.309 8.309 0.742-0.742-8.309-8.309 7.631-7.631-0.834-0.255c-2.829-0.868-5.986-0.672-8.686 0.537-0.825-0.648-3.942-3.3-8.28-7.044 0.11-0.669 0.23-2.183-0.575-3.441l-0.352-0.549-8.001 8.001zM1.729 10.039l6.032-6.033c0.385 1.122 0.090 2.319 0.086 2.334l-0.080 0.314 0.245 0.214c7.409 6.398 8.631 7.39 8.992 7.546l-0.002 0.006 0.195 0.058 0.185-0.087c2.257-1.079 4.903-1.378 7.343-0.836l-13.482 13.481c-0.55-2.47-0.262-5.045 0.837-7.342l0.104-0.218-0.098-0.221-0.031 0.013c-0.322-0.632-1.831-2.38-7.498-8.944l-0.185-0.215-0.282 0.038c-0.338 0.045-0.668 0.069-0.981 0.069-0.595 0-1.053-0.083-1.38-0.176z"
+                        ></path>
+                      </g></svg
+                    >7
+                  </div>
+                  <div>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          opacity="0.1"
+                          d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z"
+                          fill="#323232"
+                        ></path>
+                        <path
+                          opacity="0.1"
+                          d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z"
+                          fill="#323232"
+                        ></path>
+                        <path
+                          opacity="0.1"
+                          d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z"
+                          fill="#323232"
+                        ></path>
+                        <path
+                          d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z"
+                          stroke-width="2"
+                        ></path>
+                        <path
+                          d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z"
+                          stroke-width="2"
+                        ></path>
+                        <path
+                          d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z"
+                          stroke-width="2"
+                        ></path>
+                        <path
+                          d="M8.7207 10.6397L15.0001 7.5"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M8.70605 13.353L15 16.5"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </g></svg
+                    >2
+                  </div>
+                </div>
+
+                <div class="viewer">
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
+                        ></path>
+                      </g></svg
+                  ></span>
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
+                        ></path>
+                      </g></svg
+                  ></span>
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        id="SVGRepo_tracerCarrier"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-width="2"
+                          stroke="#ffffff"
+                          d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
+                        ></path>
+                      </g></svg
+                  ></span>
+                  <span>+10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="messageBox">
+            <div class="fileUploadWrapper">
+              <label for="file">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 337 337"
+                >
+                  <circle
+                    stroke-width="20"
+                    stroke="#6c6c6c"
+                    fill="none"
+                    r="158.5"
+                    cy="168.5"
+                    cx="168.5"
+                  ></circle>
+                  <path
+                    stroke-linecap="round"
+                    stroke-width="25"
+                    stroke="#6c6c6c"
+                    d="M167.759 79V259"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-width="25"
+                    stroke="#6c6c6c"
+                    d="M79 167.138H259"
+                  ></path>
+                </svg>
+                <span class="tooltip">Add an image</span>
+              </label>
+              <input type="file" id="file" name="file" />
+            </div>
+            <input
+              required=""
+              placeholder="Enter Feedback..."
+              type="text"
+              id="messageInput"
+            />
+            <button id="sendButton">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 664 663"
+              >
+                <path
+                  fill="none"
+                  d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                ></path>
+                <path
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="33.67"
+                  stroke="#6c6c6c"
+                  d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="section" id="section4">
+          <div class="other_links">
+            <ul>
+              <li>
+                <a href="{% url 'notes' %}"
+                  >Notes<i class="ri-arrow-right-line"></i
+                ></a>
+              </li>
+              <li>
+                <a href="{% url 'discussions' %}"
+                  >Discussions <i class="ri-arrow-right-line"></i
+                ></a>
+              </li>
+              <li>
+                <a href="{% url 'resources' %}"
+                  >Resources <i class="ri-arrow-right-line"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="ratings">
+            <h1>Rate this course:</h1>
+            <form class="rating">
+              <div class="rating__stars">
+                <input
+                  id="rating-1"
+                  class="rating__input rating__input-1"
+                  type="radio"
+                  name="rating"
+                  value="1"
+                />
+                <input
+                  id="rating-2"
+                  class="rating__input rating__input-2"
+                  type="radio"
+                  name="rating"
+                  value="2"
+                />
+                <input
+                  id="rating-3"
+                  class="rating__input rating__input-3"
+                  type="radio"
+                  name="rating"
+                  value="3"
+                />
+                <input
+                  id="rating-4"
+                  class="rating__input rating__input-4"
+                  type="radio"
+                  name="rating"
+                  value="4"
+                />
+                <input
+                  id="rating-5"
+                  class="rating__input rating__input-5"
+                  type="radio"
+                  name="rating"
+                  value="5"
+                />
+                <label class="rating__label" for="rating-1">
+                  <svg
+                    class="rating__star"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                  >
+                    <g transform="translate(16,16)">
+                      <circle
+                        class="rating__star-ring"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="16"
+                        r="8"
+                        transform="scale(0)"
+                      />
+                    </g>
+                    <g
+                      stroke="#000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <g transform="translate(16,16) rotate(180)">
+                        <polygon
+                          class="rating__star-stroke"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="none"
+                        />
+                        <polygon
+                          class="rating__star-fill"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="#000"
+                        />
+                      </g>
+                      <g
+                        transform="translate(16,16)"
+                        stroke-dasharray="12 12"
+                        stroke-dashoffset="12"
+                      >
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(0)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(72)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(144)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(216)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(288)"
+                          points="0 4,0 16"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                  <span class="rating__sr">1 star—Terrible</span>
+                </label>
+                <label class="rating__label" for="rating-2">
+                  <svg
+                    class="rating__star"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                  >
+                    <g transform="translate(16,16)">
+                      <circle
+                        class="rating__star-ring"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="16"
+                        r="8"
+                        transform="scale(0)"
+                      />
+                    </g>
+                    <g
+                      stroke="#000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <g transform="translate(16,16) rotate(180)">
+                        <polygon
+                          class="rating__star-stroke"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="none"
+                        />
+                        <polygon
+                          class="rating__star-fill"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="#000"
+                        />
+                      </g>
+                      <g
+                        transform="translate(16,16)"
+                        stroke-dasharray="12 12"
+                        stroke-dashoffset="12"
+                      >
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(0)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(72)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(144)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(216)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(288)"
+                          points="0 4,0 16"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                  <span class="rating__sr">2 stars—Bad</span>
+                </label>
+                <label class="rating__label" for="rating-3">
+                  <svg
+                    class="rating__star"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                  >
+                    <g transform="translate(16,16)">
+                      <circle
+                        class="rating__star-ring"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="16"
+                        r="8"
+                        transform="scale(0)"
+                      />
+                    </g>
+                    <g
+                      stroke="#000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <g transform="translate(16,16) rotate(180)">
+                        <polygon
+                          class="rating__star-stroke"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="none"
+                        />
+                        <polygon
+                          class="rating__star-fill"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="#000"
+                        />
+                      </g>
+                      <g
+                        transform="translate(16,16)"
+                        stroke-dasharray="12 12"
+                        stroke-dashoffset="12"
+                      >
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(0)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(72)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(144)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(216)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(288)"
+                          points="0 4,0 16"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                  <span class="rating__sr">3 stars—OK</span>
+                </label>
+                <label class="rating__label" for="rating-4">
+                  <svg
+                    class="rating__star"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                  >
+                    <g transform="translate(16,16)">
+                      <circle
+                        class="rating__star-ring"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="16"
+                        r="8"
+                        transform="scale(0)"
+                      />
+                    </g>
+                    <g
+                      stroke="#000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <g transform="translate(16,16) rotate(180)">
+                        <polygon
+                          class="rating__star-stroke"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="none"
+                        />
+                        <polygon
+                          class="rating__star-fill"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="#000"
+                        />
+                      </g>
+                      <g
+                        transform="translate(16,16)"
+                        stroke-dasharray="12 12"
+                        stroke-dashoffset="12"
+                      >
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(0)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(72)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(144)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(216)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(288)"
+                          points="0 4,0 16"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                  <span class="rating__sr">4 stars—Good</span>
+                </label>
+                <label class="rating__label" for="rating-5">
+                  <svg
+                    class="rating__star"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    aria-hidden="true"
+                  >
+                    <g transform="translate(16,16)">
+                      <circle
+                        class="rating__star-ring"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="16"
+                        r="8"
+                        transform="scale(0)"
+                      />
+                    </g>
+                    <g
+                      stroke="#000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <g transform="translate(16,16) rotate(180)">
+                        <polygon
+                          class="rating__star-stroke"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="none"
+                        />
+                        <polygon
+                          class="rating__star-fill"
+                          points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                          fill="#000"
+                        />
+                      </g>
+                      <g
+                        transform="translate(16,16)"
+                        stroke-dasharray="12 12"
+                        stroke-dashoffset="12"
+                      >
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(0)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(72)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(144)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(216)"
+                          points="0 4,0 16"
+                        />
+                        <polyline
+                          class="rating__star-line"
+                          transform="rotate(288)"
+                          points="0 4,0 16"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                  <span class="rating__sr">5 stars—Excellent</span>
+                </label>
+                <p class="rating__display" data-rating="1" hidden>Terrible</p>
+                <p class="rating__display" data-rating="2" hidden>Bad</p>
+                <p class="rating__display" data-rating="3" hidden>OK</p>
+                <p class="rating__display" data-rating="4" hidden>Good</p>
+                <p class="rating__display" data-rating="5" hidden>Excellent</p>
+              </div>
+            </form>
+
+            <div class="container mt-5">
+              <h1 class="ratings_title">Explore Other courses:</h1>
+              <div class="form-group">
+                <select id="product-select" class="form-control custom-select">
+                  <option value="0" disabled selected>Select Course</option>
+                  <option value="htusidec">How to Navigate Sidec</option>
+                  <option value="procast">Navigating Procastination</option>
+                  <option value="curio">Curiosity</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="rating-control"
+                  class="form-control"
+                  step="0.1"
+                  max="5"
+                  placeholder="Rate 1 - 5"
+                  disabled
+                />
+              </div>
+
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="htusidec">
+                    <td>How to Navigate Sidec</td>
+                    <td>
+                      <div class="stars-outer">
+                        <div class="stars-inner"></div>
+                      </div>
+                      <span class="number-rating"></span>
+                    </td>
+                  </tr>
+                  <tr class="procast">
+                    <td>Procastination</td>
+                    <td>
+                      <div class="stars-outer">
+                        <div class="stars-inner"></div>
+                      </div>
+                      <span class="number-rating"></span>
+                    </td>
+                  </tr>
+                  <tr class="curio">
+                    <td>Curiosity</td>
+                    <td>
+                      <div class="stars-outer">
+                        <div class="stars-inner"></div>
+                      </div>
+                      <span class="number-rating"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Quick select-->
+
+    <script src="{% static 'Javascript/dashboard.js' %}"></script>
+    <script src="{% static 'Javascript/coursedata.js' %}"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const starRating = new StarRating("form");
+      });
+
+      class StarRating {
+        constructor(qs) {
+          this.ratings = [
+            { id: 1, name: "Terrible" },
+            { id: 2, name: "Bad" },
+            { id: 3, name: "OK" },
+            { id: 4, name: "Good" },
+            { id: 5, name: "Excellent" },
+          ];
+          this.rating = null;
+          this.el = document.querySelector(qs);
+
+          this.init();
+        }
+        init() {
+          this.el?.addEventListener("change", this.updateRating.bind(this));
+
+          // stop Firefox from preserving form data between refreshes
+          try {
+            this.el?.reset();
+          } catch (err) {
+            console.error("Element isn’t a form.");
+          }
+        }
+        updateRating(e) {
+          // clear animation delays
+          Array.from(this.el.querySelectorAll(`[for*="rating"]`)).forEach(
+            (el) => {
+              el.className = "rating__label";
+            }
+          );
+
+          const ratingObject = this.ratings.find(
+            (r) => r.id === +e.target.value
+          );
+          const prevRatingID = this.rating?.id || 0;
+
+          let delay = 0;
+          this.rating = ratingObject;
+          this.ratings.forEach((rating) => {
+            const { id } = rating;
+
+            // add the delays
+            const ratingLabel = this.el.querySelector(`[for="rating-${id}"]`);
+
+            if (id > prevRatingID + 1 && id <= this.rating.id) {
+              ++delay;
+              ratingLabel.classList.add(`rating__label--delay${delay}`);
+            }
+
+            // hide ratings to not read, show the one to read
+            const ratingTextEl = this.el.querySelector(`[data-rating="${id}"]`);
+
+            if (this.rating.id !== id)
+              ratingTextEl.setAttribute("hidden", true);
+            else ratingTextEl.removeAttribute("hidden");
+          });
+        }
+      }
+      // Initial Ratings
+      const ratings = {
+        htusidec: 4.7,
+        procast: 3.4,
+        curio: 2.3,
+      };
+
+      // Total Stars
+      const starsTotal = 5;
+
+      // Run getRatings when DOM loads
+      document.addEventListener("DOMContentLoaded", getRatings);
+
+      // Form Elements
+      const productSelect = document.getElementById("product-select");
+      const ratingControl = document.getElementById("rating-control");
+
+      // Init product
+      let product;
+
+      // Product select change
+      productSelect.addEventListener("change", (e) => {
+        product = e.target.value;
+        // Enable rating control
+        ratingControl.disabled = false;
+        ratingControl.value = ratings[product];
+      });
+
+      // Rating control change
+      ratingControl.addEventListener("blur", (e) => {
+        const rating = e.target.value;
+
+        // Make sure 5 or under
+        if (rating > 5) {
+          alert("Please rate 1 - 5");
+          return;
+        }
+
+        // Change rating
+        ratings[product] = rating;
+
+        getRatings();
+      });
+
+      // Get ratings
+      function getRatings() {
+        for (let rating in ratings) {
+          // Get percentage
+          const starPercentage = (ratings[rating] / starsTotal) * 100;
+
+          // Round to nearest 10
+          const starPercentageRounded = `${
+            Math.round(starPercentage / 10) * 10
+          }%`;
+
+          // Set width of stars-inner to percentage
+          document.querySelector(`.${rating} .stars-inner`).style.width =
+            starPercentageRounded;
+
+          // Add number rating
+          document.querySelector(`.${rating} .number-rating`).innerHTML =
+            ratings[rating];
+        }
+      }
+    </script>
+  </body>
+</html>
