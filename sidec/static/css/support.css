@@ -1374,6 +1374,13 @@ border-radius: 25px;
 .flag_button i:hover {
     color: #404660;
 }
+
+.saved {
+    background-color: #9936ff !important;
+}
+.saved * {
+    color: yellow !important;
+}
 /* Default styles for heart and flag icons */
 
 

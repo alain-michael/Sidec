@@ -149,8 +149,16 @@ def update_student_info(request):
             new_pass = request.POST['new_password']
             confirm_pass = request.POST['confirm_password']
             current_pass = request.POST['current_password']
-            if(confirm_pass == new_pass):
-                print('same')
+            auth_user = authenticate(email=request.user.email, password=current_pass)
+            if(confirm_pass == new_pass and auth_user is not None):
+                auth_user.set_password(confirm_pass)
+                messages.success(request, 'Password successfully changed.')
+            elif auth_user is not None:
+                messages.error(request, 'Your new password does not match the confirm password.')
+            else:
+                messages.error(request, 'Incorrect current password.')
+        else:
+            messages.error(request, 'Fill in all fields.')
 
         student.save()
         student.user.save()
@@ -158,11 +166,27 @@ def update_student_info(request):
     else:
         return JsonResponse({'status': 'error', 'message': 'Method not allowed'})
 
+def save_course(request):
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        student = Student.objects.get(id=int(body['student_id']))
+        course = Course.objects.get(id=int(body['course']))
+        if course in student.saved_courses.all():
+            student.saved_courses.remove(course)
+        else:
+            student.saved_courses.add(course)
+        student.save()
+        return JsonResponse({'status': 'success'})
+    else:
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+
+
 def course_page(request, id):
     course = Course.objects.get(id=id)
     student = Student.objects.get(user=request.user)
     if request.method == 'POST':
         student.enrolled_courses.add(course)
+        student.save()
         return redirect('course', course_id=id)
     return HttpResponse('Course Page')
 

@@ -329,6 +329,35 @@ function myFunction3() {
     }})
   }
 
+  function save_course(element, url, student_id, course_id){
+    const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute('value')
+    const options = {
+      'method': "POST",
+      'headers': {
+        'Content-type': 'application/json',
+        'X-Csrftoken': csrftoken
+      },
+      'body': JSON.stringify({'student_id': student_id, 'course': course_id})
+    }
+    fetch(url, options)
+    .then(function(response) {
+      if (response.ok) {
+        element.classList.toggle('saved')
+        let span = element.querySelector('span')
+        if(element.classList.contains('saved')){
+          span.innerText = 'Saved'
+        }
+        else {
+          span.innerText = 'Save course'
+        }
+      } else {
+        console.error('Error:', response.statusText);
+      }
+    })
+    .catch(error => console.log('Error: ', error))
+  }
+
+
   function delete_comment(event) {
     const csrftoken = document.querySelector('meta[name="csrf-token"]').getAttribute('value');
     let url = event.currentTarget.dataset.url

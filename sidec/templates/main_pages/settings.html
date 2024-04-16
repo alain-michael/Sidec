@@ -33,6 +33,7 @@
     />
   </head>
   <body>
+
     <div class="sidebar">
       <div class="logo-details">
         <img src="{% static 'images/Asset 6.png' %}" alt="sidec org" />
@@ -221,6 +222,14 @@
             ><span class="icon-only">Notifications</span>
           </button>
         </div>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
         <div id="general" class="tabcontent">
           <div class="content-settings">
