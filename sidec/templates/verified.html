@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/verifyemail.css" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/03ca4ba95f.js" crossorigin="anonymous"></script>
+    <title>verify email</title>
+    <link rel="icon" href="{% static "images/Asset 6.png" %}" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="img_container">
+            <img src="{% static "images/sidec logo.png" %}" alt="">
+        </div>
+        <div class="box">
+           <div class="header">
+            <h1>Welcome to Sidec</h1>
+           </div>
+           <div class="body">
+            <div class="img-container">
+                <img src="{% static "images/image_processing20220720-3385-rn9716.gif" %}" alt="">
+            </div>
+            <div class="text">
+                <h2>Hey, <span>Fred Joe</span></h2>
+                <p>Howdy, your email is now verified!</p>
+                
+            </div>
+            <button class="verify-btn">Login</button>
+           
+           
+           </div>
+              
+        </div>
+       
+    <div class="copyright">
+    <p>Sent by <span>Sidec</span> • Follow us • @sidecedu</p>
+    <p>Kg st 601, Suite 200, Kigali, RW 94107</p>
+    </div>
+    </div>
+    <div class="toast-notification">
+        <p>Email Verified!</p>
+    </div>
+    
+   
+    <script src="{% static "Javascript/login.js" %}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    var verifyBtn = document.querySelector(".verify-btn");
+    var toastNotification = document.querySelector(".toast-notification");
+
+    verifyBtn.addEventListener("click", function() {
+        toastNotification.style.display = "block";
+        setTimeout(function() {
+            toastNotification.style.display = "none";
+        }, 3000); // Hide the notification after 3 seconds
+    });
+});
+
+    </script>
+   
+    
+</body>
+</html>

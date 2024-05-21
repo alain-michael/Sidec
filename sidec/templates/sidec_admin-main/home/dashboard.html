@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
+    <!-- FullCalendar JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- FullCalendar JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.11/chartjs-plugin-annotation.min.js"></script>
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/6e6052b8-a209-4509-8860-8e0dbac7b0e1/webchat/config.js" defer></script>
+    <title>Dashboard</title>
+    <link rel="icon" href="/images/Asset 6.png" type="image/png">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="/images/Asset 6.png" alt="sidec org">
+            <span class="logo_name">Sidec</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="dashboard.html" class="active">
+                    <i class="ri-layout-grid-fill"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="dashboard.html" class="link_name">Dashboard</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="link_name">My schedule</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="dashboard.html" class="link_name">My schedule</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="link_name">My Courses</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="dashboard.html" class="link_name">My Courses</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="discuss.html">
+                    <i class="ri-chat-1-fill"></i>
+                    <span class="link_name">Discussions</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="discuss.html" class="link_name">Discussions</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="discuss.html">
+                    <i class="ri-bar-chart-box-fill"></i>
+                    <span class="link_name">My status</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="discuss.html" class="link_name">My Status</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="discuss.html">
+                    <i class="ri-feedback-fill"></i>
+                    <span class="link_name">Reviews</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="discuss.html" class="link_name">Reviews</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    <i class="ri-user-fill"></i>
+                    <span class="link_name">My Account</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="settings.html" class="link_name">My Account</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="support.html">
+                    <i class="ri-question-fill"></i>
+                    <span class="link_name">Support</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="support.html" class="link_name">Support</a></li>
+                </ul>
+            </li>
+            <!--Profile details-->
+            <li>
+                <div class="profile-details">
+                    <i class="ri-shield-check-fill"></i>
+                    <div class="content">
+                        Gain more with sidec pro! <a href="#" class="learn">Learn more</a>
+                        <a href="#" class="upgrade_1">Upgrade</a>
+                    </div>
+                    <a href="#" class="upgrade_2"><i class="ri-medal-2-line"></i></a>
+
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <section class="home-section header">
+        <div class="home-content">
+            <i class="ri-menu-3-line ham_menu" id="but_small"></i>
+            <div class="flex">
+                <form action="" method="post" class="search-form">
+                    <input type="text" name="search_box" placeholder="Search..." required maxlength="100">
+                    <button type="submit" class="ri-search-line"></button>
+                </form>
+                <div class="icons">
+                    <div id="search-btn" class="ri-search-line"></div>
+                    <div id="feed-btn" class="ri-notification-4-fill"></div>
+                    <div id="user-btn" class="ri-user-5-fill"></div>
+              
+                </div>
+
+                <div class="profile-2">
+                    <img src="images/Biologyyyy.png" alt="profile">
+                    <h3>Bisong Solange</h3>
+                    <span>Tutor</span>
+                    <a href="profile.html" class="btn">View profile</a>
+                    <div class="flex-btn">
+                        <a href="login.html" class="option-btn">Log out</a>
+                        <a href="login.html" class="btn">Share</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="dashboard_home">
+       
+            <div class="half-width">
+                <div id="quick-select_dash">
+                    <div class="hello">
+                        <p>Hello,</p>
+                        <h5>Solange</h5>
+                    </div>
+                    <div class="upload"><button class="up-l" onclick="window.location.href = 'new-course.html';">New Course <i class="ri-add-circle-fill"></i></button></div>
+                </div>
+                <div id="about_dash">
+                    <div class="box-container">
+                        <div class="box">
+                            <div class="detail_rev">
+                                <h1 class="head1">Total Revenue</h1>
+                                <i class="fa-solid fa-money-bill-trend-up"></i>
+                            </div>
+                            <div class="detail_rev2">
+                                <h1>Balance up</h1>
+                                <h3>65,500 XAF</h3>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="detail_rev">
+                                <h1 class="head1">Average Rating</h1>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="detail_rev2">
+                                <h1>Total Rating</h1>
+                                <h3 style="color: #ff9800;">4.8/5</h3>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="detail_rev">
+                                <h1 class="head1">Total enrolled</h1>
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+                            <div class="detail_rev2">
+                                <h1>Students</h1>
+                                <h3>67</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="data">
+                    <div id="course-statistics" class="pie">
+                        <h2 class="heading">Course Statistics <i class="ri-chart-pie-fill"></i></h2>
+                        <canvas id="courseDonutChart" width="400" height="400"></canvas>
+                    </div>
+                    <div class="table1">
+                        <h2 class="heading">Weekly Sales Stats</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Sales</th>
+                                <th>Earnings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="ri-html5-fill"></i>HTML Basics</td>
+                                <td>15</td>
+                                <td class="price">25000xaf</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-brands fa-css3-alt"></i>CSS Fundamentals</td>
+                                <td>14</td>
+                                <td class="price">23000xaf</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-brands fa-js"></i>JavaScript Mastery</td>
+                                <td>20</td>
+                                <td class="price">12000xaf</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                <div class="data">
+                    <div id="chartContainer">
+                        <h2 class="heading">Revenue</h2>
+                        <canvas id="lineChart" style="height: 250px;width: 450px;"></canvas>
+
+                    </div>
+                </div>
+               
+            </div>
+       
+
+
+            <div class="column">
+                <div class="earning">
+                    <div class="detail_rev">
+                        <h2 class="heading">Your Earnings</h2>
+                        <h3>65,500xaf</h3>
+                    </div>
+                    <div class="detail_rev2">
+                        <div class="content">
+                            <h3>40,000xaf</h3>
+                            <p>Available</p>
+                        </div>
+                        <div class="content">
+                            <h3>10,500xaf</h3>
+                            <p class="pending">Pending</p>
+                        </div>
+                        <div class="content">
+                            <h3>10,000xaf</h3>
+                            <p>In Review</p>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-btn1">Withdraw</a>
+                  
+                  
+                </div>
+
+                <div class="perfomance">
+                    <h2 class="heading">Top performing Courses</h2>
+                    <div class="content most_per">
+                        <h3><i class="fa-solid fa-flask"></i>Chemistry Alevel</h3>
+                        <p><i class="ri-eye-fill"></i>345</p>
+                    </div>
+                    <div class="content">
+                        <h3><i class="fa-brands fa-html5"></i>HTML Basics</h3>
+                        <p><i class="ri-eye-fill"></i>216</p>
+                    </div>
+                    <div class="content">
+                        <h3><i class="fa-brands fa-figma"></i>UI/UX</h3>
+                        <p><i class="ri-eye-fill"></i>110</p>
+                    </div>
+                    <i class="ri-more-line"></i>
+                </div>
+                <div class="location_container">
+                    <h2 class="heading">Top student locations</h2>
+                    <canvas id="myPieChart" width="100" height="100"></canvas>
+                </div>
+
+            </div>
+        
+
+        </div>
+
+
+
+
+    </section>
+
+    <!--Quick select-->
+
+    <script src="/respond.js"></script>
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Sample data for the two-line chart
+    var data = {
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August"],
+        datasets: [
+            {
+                label: "Current performance",
+                borderColor: "rgb(152, 53, 255)",
+                data: [65, 59, 80, 81, 56, 67, 84, 98],
+                fill: false,
+                lineTension: 0.4, // Set the line tension for the first dataset
+            },
+            {
+                label: "2021",
+                borderColor: "rgb(220, 220, 220)",
+                data: [45, 70, 60, 85, 75, 68, 75, 69],
+                fill: false,
+                lineTension: 0.4, // Set the line tension for the second dataset
+            }
+        ]
+    };
+
+    // Chart options
+    var options = {
+        responsive: true,
+    };
+
+    // Get the canvas element
+    var ctx = document.getElementById('lineChart').getContext('2d');
+
+    // Create the line chart
+    var lineChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: options
+    });
+});
+
+//piechart
+document.addEventListener("DOMContentLoaded", function() {
+        // Sample data for the donut chart
+        var courseData = {
+            labels: ['Completed', 'In Progress'],
+            datasets: [{
+                data: [30, 70], // Assuming 30% completed and 70% in progress
+                backgroundColor: ['#36A2EB', '#9538ff'],
+                borderWidth: 1, // Set border width to create the donut effect
+            }],
+        };
+
+        // Get the canvas element for the donut chart
+        var ctxDonutChart = document.getElementById('courseDonutChart').getContext('2d');
+
+        // Create the donut chart
+        var courseDonutChart = new Chart(ctxDonutChart, {
+            type: 'doughnut', // Set the chart type to doughnut
+            data: courseData,
+            options: {
+                responsive: true,
+                cutout: '70%', // Adjust the cutout percentage to control the size of the hole
+            },
+        });
+    });
+
+    //script for location chart
+    document.addEventListener("DOMContentLoaded", function () {
+    // Data
+    var data = {
+      labels: ["Buea", "Kigali", "Lagos"],
+      datasets: [
+        {
+          data: [75, 15, 10], // Assuming the rest is 10%
+          backgroundColor: ["#3498db", "#2ecc71", "#e74c3c"],
+        },
+      ],
+    };
+
+    // Configuration
+    var config = {
+      type: "pie",
+      data: data,
+      options: {
+        title: {
+          display: true,
+          text: "Top Student Locations",
+        },
+      },
+    };
+
+    // Get the context of the canvas element
+    var ctx = document.getElementById("myPieChart").getContext("2d");
+
+    // Create the pie chart
+    var myPieChart = new Chart(ctx, config);
+  });
+  </script>
+
+</body>
+</html>

@@ -322,31 +322,39 @@
           </div>
         </form>
 
-        <div id="info" class="tabcontent">
-          <div class="input-settings">
-            <label for="bio">Bio</label>
-            <textarea
-              rows="4"
-              cols="50"
-              placeholder="Start writing, Keep it short..."
-            ></textarea>
-            <label for="dob">Birthday</label>
-            <input type="date" id="dob" name="dob" />
-            <label for="country">Country</label>
-            <select name="Country" id="country">
-              <option>Cameroon</option>
-              <option>Nigeria</option>
-              <option selected>Rwanda</option>
-              <option>Kenya</option>
-              <option>Zambia</option>
-            </select>
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" value="+250 798654693" />
-            <label for="git">Github</label>
-            <input type="url" id="git" name="git" />
+        <form
+          id="contact_information"
+          action="{% url 'update_student_info' %}"
+          method="POST"
+        >
+        {% csrf_token %}
+          <div id="info" class="tabcontent">
+            <div class="input-settings">
+              <label for="bio">Bio</label>
+              <textarea
+                rows="4"
+                cols="50"
+                name="bio"
+                placeholder="Start writing, Keep it short..."
+              ></textarea>
+              <label for="dob">Birthday</label>
+              <input type="date" id="dob" name="dob" />
+              <label for="country">Country</label>
+              <select name="Country" id="country">
+                <option {% if student.country == 'Cameroon'%} selected {% endif %}>Cameroon</option>
+                <option {% if student.country == 'Nigeria'%} selected {% endif %}>Nigeria</option>
+                <option {% if student.country == 'Rwanda'%} selected {% endif %}>Rwanda</option>
+                <option {% if student.country == 'Kenya'%} selected {% endif %}>Kenya</option>
+                <option {% if student.country == 'Zambia'%} selected {% endif %}>Zambia</option>
+              </select>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" value="{{student.socials.number}}" />
+              <label for="git">Github</label>
+              <input type="url" id="git" name="git" />
+            </div>
+            <button class="inline-btn">Save</button>
           </div>
-          <a href="#" class="inline-btn">Save</a>
-        </div>
+        </form>
 
         <div id="links" class="tabcontent">
           <div class="input-settings">

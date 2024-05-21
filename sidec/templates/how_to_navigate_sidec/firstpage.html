@@ -38,7 +38,7 @@
  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Navigating sidec</title>
+    <title>{% firstof material.title quiz.title %} | Sidec</title>
     <link rel="stylesheet" href="{% static 'css/coursecontent.css' %}">
     <link rel="icon" href="{% static 'images/Asset 6.png' %}" type="image/png">
 </head>
@@ -198,85 +198,37 @@
 
        
         <div class="course_home">
-            <div class="section" id="section1">
-                <div class="hero_btn">
-                    <button onclick="window.location.href='{% url 'htusidec' %}'"><i class="ri-home-6-line"></i> Home</button>
-                </div>
 
-
-                <div class="first_links">
-                    <a href="#" class="topic_link"> <h1 class="topic_title">Setting up</h1></a>
-             
-              
-              <!--Course content subjects-->
-                 
-                      <button class="tablinks active" onclick="openCourse(event, 'firstpage')" id="defaultOpen"> <span class="check"></span><i class="ri-play-circle-line"></i> Introduction to Sidec</button>
-                      <button class="tablinks" onclick="openCourse(event, 'secondpage')"> <span class="check"></span><i class="ri-book-read-line"></i> Getting started</button>
-                      <button class="tablinks" onclick="openCourse(event, 'thirdpage')"> <span class="check"></span><i class="ri-book-read-line"></i> Understanding Your User Profile</button>
-                  
-                      <!-- Add more buttons for additional subjects as needed -->
-                  
-                </div>
-                
-                <div class="first_links">
-                    <a href="#" class="topic_link"> <h1 class="topic_title">Navigating Sidec</h1></a>
-             
-              
-              <!--Course content subjects-->
-                 
-                      <button class="tablinks active" onclick="openCourse(event, 'fourthpage')" id="defaultOpen"> <span class="check"></span><i class="ri-book-read-line"></i> Navigation tips</button>
-                      <button class="tablinks" onclick="openCourse(event, 'fifthpage')"> <span class="check"></span><i class="ri-play-circle-line"></i> Exploring Course Catalog</button>
-                      <button class="tablinks" onclick="openCourse(event, 'sixthpage')"> <span class="check"></span><i class="ri-book-read-line"></i> Tracking your learning progress</button>
-                  
-                      <!-- Add more buttons for additional subjects as needed -->
-                  
-                </div>
-
-                <div class="first_links">
-                    <a href="#" class="topic_link"> <h1 class="topic_title">Explore</h1></a>
-             
-              
-              <!--Course content subjects-->
-                 
-                      <button class="tablinks active" onclick="openCourse(event, 'seventhpage')" id="defaultOpen"> <span class="check"></span><i class="ri-play-circle-line"></i> Course contents</button>
-                      <button class="tablinks" onclick="openCourse(event, 'eightpage')"> <span class="check"></span><i class="ri-book-read-line"></i> Utilizing additional resources</button>
-                      <button class="tablinks" onclick="openCourse(event, 'question_page')"> <span class="check"></span><i class="ri-question-line"></i> Test your Understanding</button>
-                  
-                      <!-- Add more buttons for additional subjects as needed -->
-                  
-                </div>
-              
-                  
-            </div>
            
             <div class="section" id="section2">
                 <!-- Content for the second section goes here -->
+                {% if material.material_type == 'video' %}
                 <div id="firstpage" class="tabcontent">
                     <div class="accordion">
                         <div class="tab">
                             <input type="checkbox" name="accordion-1" id="cb1-1" checked>
-                            <label for="cb1-1" class="tab__label">Discover Sidec</label>
+                            <label for="cb1-1" class="tab__label">{{material}}</label>
                             <div class="tab__content">
                             <div class="video_container">
                                 <video controls>
-                                    <source src="{% static 'images/landing.mp4' %}" type="video/mp4">
+                                    <source src={{material.video.url}} type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <h1 class="video_title">Introduction to Sidec</h1>
+                            <h1 class="video_title">{{material}}</h1>
                             <div class="tool_bar">
                                 <div class="sub_tab">
-                                    <button class="tablink" onclick="openToolBar(event, 'Transcript')">Transcipt</button>
+                                    {% comment %} <button class="tablink" onclick="openToolBar(event, 'Transcript')">Transcipt</button> {% endcomment %}
                                     <button class="tablink" onclick="openToolBar(event, 'Notes')">Notes</button>
                                     <button class="tablink" onclick="openToolBar(event, 'Downloads')">Downloads</button>
                                   </div>
 
                                     
-                                  <div id="Transcript" class="sub_tabcontent">
+                                  {% comment %} <div id="Transcript" class="sub_tabcontent">
                                     <p><span><i class="ri-play-circle-line"></i>0:00</span>This video provides an introduction to Sidec, an innovative platform designed to streamline workflow processes and enhance productivity.</p>
                                     <p><span><i class="ri-play-circle-line"></i>0:13</span>You'll learn how to navigate the Sidec interface, access key features, and leverage its tools to optimize your workflow.</p>
                                     <p><span><i class="ri-play-circle-line"></i>0:18</span>Whether you're a new user or looking to enhance your skills, this video will help you get started with Sidec and make the most out of its capabilities.</p>
-                                </div>
+                                </div> {% endcomment %}
                                 
                                 <div id="Notes" class="sub_tabcontent">
                                     <div class="editor-container"></div>
@@ -288,7 +240,7 @@
                                     <ul>
                                         <li><a href="video_url_720p.mp4"><i class="ri-download-cloud-2-line"></i>Lecture Video 720p</a></li>
                                         <li><a href="video_url_480p.mp4"><i class="ri-download-cloud-2-line"></i>Lecture Video 480p</a></li>
-                                        <li><a href="video_url_360p.mp4"><i class="ri-download-cloud-2-line"></i>Transcript (English) txt</a></li>
+                                        {% comment %} <li><a href="video_url_360p.mp4"><i class="ri-download-cloud-2-line"></i>Transcript (English) txt</a></li> {% endcomment %}
                                     </ul>
                                 </div>
                                 
@@ -305,378 +257,60 @@
                     </div>
                 </div>
             
-                <div id="secondpage" class="tabcontent">
+                {% elif material.material_type == 'text' %}
+                <div id="firstpage" class="tabcontent">
                     <div class="accordion">
                         <div class="tab">
                             <input type="checkbox" name="accordion-2" id="cb2-1" checked>
                             <label for="cb2-1" class="tab__label">Get started</label>
                             <div class="tab__content">
-                               <h1><h1 class="video_title">How to Navigate sidec</h1>
+                               <h1><h1 class="video_title">{{material}}</h1>
                                <div class="page_content">
-                                <h1 class="module_title">Lorem Ipsum</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, erat nec auctor rhoncus, erat magna bibendum tortor, vel tempus arcu elit vitae orci. Curabitur rhoncus mattis metus, a hendrerit lacus sagittis laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean nec sagittis purus. Quisque leo ligula, vestibulum vitae nibh ut, mattis consequat nunc. Pellentesque molestie scelerisque massa nec porttitor. Fusce at sapien finibus, viverra lectus volutpat, luctus metus. Integer non sapien non tortor convallis iaculis. In ut volutpat lacus. </p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                    <li>Item 5</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                               </div>
-                            
-                               <div class="blog_container-img">
-                                <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                               </div>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Isidior</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                </ul>
-                                <div class="blog_container-img">
-                                    <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                                   </div>
-                                <p>Etiam sed est et dui elementum condimentum. Phasellus cursus sodales varius. Morbi mattis magna ut dolor finibus faucibus. Nullam lobortis ullamcorper risus eu accumsan. Sed sagittis nisi quam, id pretium mi suscipit quis. Nam ut dolor non arcu rutrum posuere. Nulla non dolor suscipit, faucibus eros vulputate, mollis ex. Phasellus consequat vehicula augue, vitae vehicula diam pulvinar vel. Fusce aliquam orci sed augue sodales viverra nec at mi.</p>
-                                <h1 class="module_title">Never stop learning</h1>
-                                <p>There's always more to learn in IT, and that's probably the best thing about it. It's the very thing that makes it fun and provides an opportunity for each developer to get ahead in their career.</p>
-                               </div>
+                                <p>{{material.text}}</p>
                               <button id="MarkAsComplete">Mark as Complete</button>
                               
                               </div>
                         </div>
                     </div>
                 </div>
-                <div id="thirdpage" class="tabcontent">
-                    <div class="accordion">
-                        <div class="tab">
-                            <input type="checkbox" name="accordion-3" id="cb3-1" checked>
-                            <label for="cb3-1" class="tab__label">Get started</label>
-                            <div class="tab__content">
-                               <h1><h1 class="video_title">Understanding your user profile</h1>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Ipsum</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, erat nec auctor rhoncus, erat magna bibendum tortor, vel tempus arcu elit vitae orci. Curabitur rhoncus mattis metus, a hendrerit lacus sagittis laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean nec sagittis purus. Quisque leo ligula, vestibulum vitae nibh ut, mattis consequat nunc. Pellentesque molestie scelerisque massa nec porttitor. Fusce at sapien finibus, viverra lectus volutpat, luctus metus. Integer non sapien non tortor convallis iaculis. In ut volutpat lacus. </p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                    <li>Item 5</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                               </div>
-                            
-                               <div class="blog_container-img">
-                                <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                               </div>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Isidior</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                </ul>
-                                <div class="blog_container-img">
-                                    <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                                   </div>
-                                <p>Etiam sed est et dui elementum condimentum. Phasellus cursus sodales varius. Morbi mattis magna ut dolor finibus faucibus. Nullam lobortis ullamcorper risus eu accumsan. Sed sagittis nisi quam, id pretium mi suscipit quis. Nam ut dolor non arcu rutrum posuere. Nulla non dolor suscipit, faucibus eros vulputate, mollis ex. Phasellus consequat vehicula augue, vitae vehicula diam pulvinar vel. Fusce aliquam orci sed augue sodales viverra nec at mi.</p>
-                                <h1 class="module_title">Never stop learning</h1>
-                                <p>There's always more to learn in IT, and that's probably the best thing about it. It's the very thing that makes it fun and provides an opportunity for each developer to get ahead in their career.</p>
-                               </div>
-                              <button id="MarkAsComplete">Mark as Complete</button>
-                              
-                              </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="fourthpage" class="tabcontent">
-                    <div class="accordion">
-                        <div class="tab">
-                            <input type="checkbox" name="accordion-4" id="cb4-1" checked>
-                            <label for="cb4-1" class="tab__label">Get started</label>
-                            <div class="tab__content">
-                               <h1><h1 class="video_title">Navigation tips</h1>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Ipsum</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, erat nec auctor rhoncus, erat magna bibendum tortor, vel tempus arcu elit vitae orci. Curabitur rhoncus mattis metus, a hendrerit lacus sagittis laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean nec sagittis purus. Quisque leo ligula, vestibulum vitae nibh ut, mattis consequat nunc. Pellentesque molestie scelerisque massa nec porttitor. Fusce at sapien finibus, viverra lectus volutpat, luctus metus. Integer non sapien non tortor convallis iaculis. In ut volutpat lacus. </p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                    <li>Item 5</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                               </div>
-                            
-                               <div class="blog_container-img">
-                                <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                               </div>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Isidior</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                </ul>
-                                <div class="blog_container-img">
-                                    <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                                   </div>
-                                <p>Etiam sed est et dui elementum condimentum. Phasellus cursus sodales varius. Morbi mattis magna ut dolor finibus faucibus. Nullam lobortis ullamcorper risus eu accumsan. Sed sagittis nisi quam, id pretium mi suscipit quis. Nam ut dolor non arcu rutrum posuere. Nulla non dolor suscipit, faucibus eros vulputate, mollis ex. Phasellus consequat vehicula augue, vitae vehicula diam pulvinar vel. Fusce aliquam orci sed augue sodales viverra nec at mi.</p>
-                                <h1 class="module_title">Never stop learning</h1>
-                                <p>There's always more to learn in IT, and that's probably the best thing about it. It's the very thing that makes it fun and provides an opportunity for each developer to get ahead in their career.</p>
-                               </div>
-                              <button id="MarkAsComplete">Mark as Complete</button>
-                              
-                              </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="fifthpage" class="tabcontent">
-                    <div class="accordion">
-                        <div class="tab">
-                            <input type="checkbox" name="accordion-5" id="cb5-1" checked>
-                            <label for="cb5-1" class="tab__label">Course Catalog</label>
-                            <div class="tab__content">
-                            <div class="video_container">
-                                <video controls>
-                                    <source src="{% static 'images/Food science course.mp4' %}" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <h1 class="video_title">Exploring Course Catalog</h1>
-                            <div class="tool_bar">
-                                <div class="sub_tab">
-                                    <button class="tablink" onclick="openToolBar(event, 'Transcript_2')">Transcipt</button>
-                                    <button class="tablink" onclick="openToolBar(event, 'Notes_2')">Notes</button>
-                                    <button class="tablink" onclick="openToolBar(event, 'Downloads_2')">Downloads</button>
-                                  </div>
-
-                                    
-                                  <div id="Transcript_2" class="sub_tabcontent">
-                                    <p><span><i class="ri-play-circle-line"></i>0:00</span>This video provides an introduction to Sidec, an innovative platform designed to streamline workflow processes and enhance productivity.</p>
-                                    <p><span><i class="ri-play-circle-line"></i>0:13</span>You'll learn how to navigate the Sidec interface, access key features, and leverage its tools to optimize your workflow.</p>
-                                    <p><span><i class="ri-play-circle-line"></i>0:18</span>Whether you're a new user or looking to enhance your skills, this video will help you get started with Sidec and make the most out of its capabilities.</p>
-                                </div>
-                                
-                                <div id="Notes_2" class="sub_tabcontent">
-                                    <div class="editor-container"></div>
-                                    <button type="button" id="saveButton">Save</button>
-                                    <button type="button" id="viewAllButton">View All Notes <i class="ri-arrow-right-line"></i></button>
-                                </div>
-                              
-                                <div id="Downloads_2" class="sub_tabcontent">
-                                    <ul>
-                                        <li><a href="video_url_720p.mp4"><i class="ri-download-cloud-2-line"></i>Lecture Video 720p</a></li>
-                                        <li><a href="video_url_480p.mp4"><i class="ri-download-cloud-2-line"></i>Lecture Video 480p</a></li>
-                                        <li><a href="video_url_360p.mp4"><i class="ri-download-cloud-2-line"></i>Transcript (English) txt</a></li>
-                                    </ul>
-                                </div>
-                                
-                              <div class="tool_links">
-                               <button><i class="ri-thumb-up-line"></i> Like</button>
-                               <button><i class="ri-flag-line"></i> Report Issue</button>
-                               <button><i class="ri-share-forward-2-fill"></i>Share</button>
-                              </div>
-                            </div>
-                          
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="sixthpage" class="tabcontent">
-                    <div class="accordion">
-                        <div class="tab">
-                            <input type="checkbox" name="accordion-6" id="cb6-1" checked>
-                            <label for="cb6-1" class="tab__label">Course Catalog</label>
-                            <div class="tab__content">
-                               <h1><h1 class="video_title">Tracking your learning progress</h1>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Ipsum</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, erat nec auctor rhoncus, erat magna bibendum tortor, vel tempus arcu elit vitae orci. Curabitur rhoncus mattis metus, a hendrerit lacus sagittis laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean nec sagittis purus. Quisque leo ligula, vestibulum vitae nibh ut, mattis consequat nunc. Pellentesque molestie scelerisque massa nec porttitor. Fusce at sapien finibus, viverra lectus volutpat, luctus metus. Integer non sapien non tortor convallis iaculis. In ut volutpat lacus. </p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                    <li>Item 5</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                               </div>
-                            
-                               <div class="blog_container-img">
-                                <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                               </div>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Isidior</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                </ul>
-                                <div class="blog_container-img">
-                                    <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                                   </div>
-                                <p>Etiam sed est et dui elementum condimentum. Phasellus cursus sodales varius. Morbi mattis magna ut dolor finibus faucibus. Nullam lobortis ullamcorper risus eu accumsan. Sed sagittis nisi quam, id pretium mi suscipit quis. Nam ut dolor non arcu rutrum posuere. Nulla non dolor suscipit, faucibus eros vulputate, mollis ex. Phasellus consequat vehicula augue, vitae vehicula diam pulvinar vel. Fusce aliquam orci sed augue sodales viverra nec at mi.</p>
-                                <h1 class="module_title">Never stop learning</h1>
-                                <p>There's always more to learn in IT, and that's probably the best thing about it. It's the very thing that makes it fun and provides an opportunity for each developer to get ahead in their career.</p>
-                               </div>
-                              <button id="MarkAsComplete">Mark as Complete</button>
-                              
-                              </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="seventhpage" class="tabcontent">
-                    <div class="accordion">
-                        <div class="tab">
-                            <input type="checkbox" name="accordion-7" id="cb7-1" checked>
-                            <label for="cb7-1" class="tab__label">Exploring Courses</label>
-                            <div class="tab__content">
-                            <div class="video_container">
-                                <video controls>
-                                    <source src="{% static 'images/landing.mp4' %}" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <h1 class="video_title">Course Contents</h1>
-                            <div class="tool_bar">
-                                <div class="sub_tab">
-                                    <button class="tablink" onclick="openToolBar(event, 'Transcript_3')">Transcipt</button>
-                                    <button class="tablink" onclick="openToolBar(event, 'Notes_3')">Notes</button>
-                                    <button class="tablink" onclick="openToolBar(event, 'Downloads_3')">Downloads</button>
-                                  </div>
-
-                                    
-                                  <div id="Transcript_3" class="sub_tabcontent">
-                                    <p><span><i class="ri-play-circle-line"></i>0:00</span>This video provides an introduction to Sidec, an innovative platform designed to streamline workflow processes and enhance productivity.</p>
-                                    <p><span><i class="ri-play-circle-line"></i>0:13</span>You'll learn how to navigate the Sidec interface, access key features, and leverage its tools to optimize your workflow.</p>
-                                    <p><span><i class="ri-play-circle-line"></i>0:18</span>Whether you're a new user or looking to enhance your skills, this video will help you get started with Sidec and make the most out of its capabilities.</p>
-                                </div>
-                                
-                                <div id="Notes_3" class="sub_tabcontent">
-                                    <div class="editor-container"></div>
-                                    <button type="button" id="saveButton">Save</button>
-                                    <button type="button" id="viewAllButton">View All Notes <i class="ri-arrow-right-line"></i></button>
-                                </div>
-                              
-                                <div id="Downloads_3" class="sub_tabcontent">
-                                    <ul>
-                                        <li><a href="video_url_720p.mp4"><i class="ri-download-cloud-2-line"></i>Lecture Video 720p</a></li>
-                                        <li><a href="video_url_480p.mp4"><i class="ri-download-cloud-2-line"></i>Lecture Video 480p</a></li>
-                                        <li><a href="video_url_360p.mp4"><i class="ri-download-cloud-2-line"></i>Transcript (English) txt</a></li>
-                                    </ul>
-                                </div>
-                                
-                              <div class="tool_links">
-                               <button><i class="ri-thumb-up-line"></i> Like</button>
-                               <button><i class="ri-flag-line"></i> Report Issue</button>
-                               <button><i class="ri-share-forward-2-fill"></i>Share</button>
-                              </div>
-                            </div>
-                          
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="eightpage" class="tabcontent">
-                    <div class="accordion">
-                        <div class="tab">
-                            <input type="checkbox" name="accordion-8" id="cb8-1" checked>
-                            <label for="cb8-1" class="tab__label">Course Catalog</label>
-                            <div class="tab__content">
-                               <h1><h1 class="video_title">Utilizing additional resources </h1>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Ipsum</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, erat nec auctor rhoncus, erat magna bibendum tortor, vel tempus arcu elit vitae orci. Curabitur rhoncus mattis metus, a hendrerit lacus sagittis laoreet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean nec sagittis purus. Quisque leo ligula, vestibulum vitae nibh ut, mattis consequat nunc. Pellentesque molestie scelerisque massa nec porttitor. Fusce at sapien finibus, viverra lectus volutpat, luctus metus. Integer non sapien non tortor convallis iaculis. In ut volutpat lacus. </p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                    <li>Item 5</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                               </div>
-                            
-                               <div class="blog_container-img">
-                                <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                               </div>
-                               <div class="page_content">
-                                <h1 class="module_title">Lorem Isidior</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <ul>
-                                    <li>Item 1</li>
-                                    <li>Item 2</li>
-                                    <li>Item 3</li>
-                                    <li>Item 4</li>
-                                </ul>
-                                <div class="blog_container-img">
-                                    <img src="{% static 'assets/Screenshot 2024-02-03 093729.png' %}" alt="">
-                                   </div>
-                                <p>Etiam sed est et dui elementum condimentum. Phasellus cursus sodales varius. Morbi mattis magna ut dolor finibus faucibus. Nullam lobortis ullamcorper risus eu accumsan. Sed sagittis nisi quam, id pretium mi suscipit quis. Nam ut dolor non arcu rutrum posuere. Nulla non dolor suscipit, faucibus eros vulputate, mollis ex. Phasellus consequat vehicula augue, vitae vehicula diam pulvinar vel. Fusce aliquam orci sed augue sodales viverra nec at mi.</p>
-                                <h1 class="module_title">Never stop learning</h1>
-                                <p>There's always more to learn in IT, and that's probably the best thing about it. It's the very thing that makes it fun and provides an opportunity for each developer to get ahead in their career.</p>
-                               </div>
-                              <button id="MarkAsComplete">Mark as Complete</button>
-                              
-                              </div>
-                        </div>
-                    </div>
-                </div>
-
+                {% endif %}
+                {% if material.material_type == 'Quiz' %}
                 <div id="question_page" class="tabcontent">
                     <div class="accordion">
                         <div class="tab">
                             <input type="checkbox" name="accordion-9" id="cb9-1" checked>
                             <label for="cb9-1" class="tab__label">Quiz</label>
-                           <div class="tab__content">
-                            <h1 class="video_title">Self Review - Test how well you know sidec</h1>
-                            <div class="question_wrapper">
-                                <a href="#" class="read_more">Review Learning Objectives</a>
-                                <div class="container">
-                                    <h1>Submit your assignment</h1>
-                                    <a href="{% url 'quizesone' %}">Start Quiz</a>
-                                </div>
-                                <div class="grade_container">
-                                    <div class="grade_info">
-                                        <h1>Receive grade</h1>
-                                        <p>To Pass <span>80% or higher</span></p>
+                            <div class="tab__content">
+                                <h1 class="video_title">{{quiz.title}}</h1>
+                                <div style="padding: 0 40px;" class="description">{{quiz.description}}</div>
+                                <div class="question_wrapper">
+                                    <div class="container">
+                                        <h1>Submit your assignment</h1>
+                                        <a href="{% url 'questions_page' course.id quiz.id %}">Start Quiz</a>
                                     </div>
-                                    <div class="received_grade">
-                                        <h1>Your grade</h1>
-                                        <p>--</p>
+                                    <div class="grade_container">
+                                        <div class="grade_info">
+                                            <h1>Receive grade</h1>
+                                            <p>To Pass <span>80% or higher</span></p>
+                                        </div>
+                                        <div class="received_grade">
+                                            <h1>Your latest grade</h1>
+                                            <p>{% firstof percentage "--" %}/100</p>
+                                        </div>
                                     </div>
+                                    
                                 </div>
-                              
+                                <div class="tool_links question_tools">
+                                    <button><i class="ri-thumb-up-line"></i> Like</button>
+                                    <button><i class="ri-flag-line"></i> Report Issue</button>
+                                    <button><i class="ri-share-forward-2-fill"></i>Share</button>
+                                </div>
+                                
                             </div>
-                            <div class="tool_links question_tools">
-                                <button><i class="ri-thumb-up-line"></i> Like</button>
-                                <button><i class="ri-flag-line"></i> Report Issue</button>
-                                <button><i class="ri-share-forward-2-fill"></i>Share</button>
-                               </div>
-    
-                           </div>
                         </div>
                     </div>
                 </div>
+                {% endif %}
             
 
             

@@ -243,10 +243,9 @@
               </div>
             </div>
             {% if course in student.enrolled_courses.all %}
-            <form action="{% url 'course_page' course.id %}" method="GET">
-              {% csrf_token %}
+            <a href="{% url 'course_page' course.id %}">
                 <button style="border: none;" class="inline-btn">Go To Page</button>
-            </form>
+            </a>
             {% else %}
             <form action="{% url 'course_page' course.id %}" method="POST">
               {% csrf_token %}

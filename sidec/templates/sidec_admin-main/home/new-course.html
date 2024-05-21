@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
+    <!-- FullCalendar JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- FullCalendar JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.11/chartjs-plugin-annotation.min.js"></script>
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/6e6052b8-a209-4509-8860-8e0dbac7b0e1/webchat/config.js" defer></script>
+    <title>New Course</title>
+    <link rel="icon" href="/images/Asset 6.png" type="image/png">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="/images/Asset 6.png" alt="sidec org">
+            <span class="logo_name">Sidec</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="dashboard.html" class="active">
+                    <i class="ri-layout-grid-fill"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="dashboard.html" class="link_name">Dashboard</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="link_name">My schedule</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="dashboard.html" class="link_name">My schedule</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="link_name">My Courses</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="dashboard.html" class="link_name">My Courses</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="discuss.html">
+                    <i class="ri-chat-1-fill"></i>
+                    <span class="link_name">Discussions</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="discuss.html" class="link_name">Discussions</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="discuss.html">
+                    <i class="ri-bar-chart-box-fill"></i>
+                    <span class="link_name">My status</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="discuss.html" class="link_name">My Status</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="discuss.html">
+                    <i class="ri-feedback-fill"></i>
+                    <span class="link_name">Reviews</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="discuss.html" class="link_name">Reviews</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    <i class="ri-user-fill"></i>
+                    <span class="link_name">My Account</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="settings.html" class="link_name">My Account</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="support.html">
+                    <i class="ri-question-fill"></i>
+                    <span class="link_name">Support</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a href="support.html" class="link_name">Support</a></li>
+                </ul>
+            </li>
+            <!--Profile details-->
+            <li>
+                <div class="profile-details">
+                    <i class="ri-shield-check-fill"></i>
+                    <div class="content">
+                        Gain more with sidec pro! <a href="#" class="learn">Learn more</a>
+                        <a href="#" class="upgrade_1">Upgrade</a>
+                    </div>
+                    <a href="#" class="upgrade_2"><i class="ri-medal-2-line"></i></a>
+
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <section class="home-section header">
+        <div class="home-content">
+            <i class="ri-menu-3-line ham_menu" id="but_small"></i>
+            <div class="flex">
+                <form action="" method="post" class="search-form">
+                    <input type="text" name="search_box" placeholder="Search..." required maxlength="100">
+                    <button type="submit" class="ri-search-line"></button>
+                </form>
+                <div class="icons">
+                    <div id="search-btn" class="ri-search-line"></div>
+                    <div id="feed-btn" class="ri-notification-4-fill"></div>
+                    <div id="user-btn" class="ri-user-5-fill"></div>
+              
+                </div>
+
+                <div class="profile-2">
+                    <img src="images/Biologyyyy.png" alt="profile">
+                    <h3>Bisong Solange</h3>
+                    <span>Tutor</span>
+                    <a href="profile.html" class="btn">View profile</a>
+                    <div class="flex-btn">
+                        <a href="login.html" class="option-btn">Log out</a>
+                        <a href="login.html" class="btn">Share</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="dashboard_home">
+       <div class="half-width">
+        <div class="container_form">
+            <header>Create a new course</header>
+            <div class="progress-bar">
+                <div class="step">
+                    <p>Basic</p>
+                    <div class="bullet">
+                        <span>1</span>
+                    </div>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>Duration</p>
+                    <div class="bullet">
+                        <span>2</span>
+                    </div>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>Week one</p>
+                    <div class="bullet">
+                        <span>3</span>
+                    </div>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>Week details</p>
+                    <div class="bullet">
+                        <span>4</span>
+                    </div>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>Adress</p>
+                    <div class="bullet">
+                        <span>5</span>
+                    </div>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <p>Submit</p>
+                    <div class="bullet">
+                        <span>6</span>
+                    </div>
+                    <div class="check fas fa-check"></div>
+                </div>
+            </div>
+            <div class="form-outer">
+                <form action="#">
+                    <div class="page slide-page">
+                        <div class="title">Course Details:</div>
+                        <div class="field">
+                            <div class="label">Course Title</div>
+                            <input type="text" required />
+                        </div>
+
+                        <div class="field">
+                            <div class="label">Course Duration</div>
+                            <input type="text" required />
+                        </div>  
+                        
+                        <div class="field">
+                            <div class="label">Course Description</div>
+                            <textarea required></textarea>
+                        </div>
+  
+                        <div class="field option_main">
+                            <div class="label">Course Category</div>
+                            <select required>
+                                <option>Programming</option>
+                                <option>Design</option>
+                                <option>Marketing</option>
+                                <option>Business</option>
+                                <option>Mathematics</option>
+                                <option>Science</option>
+                                <option>Literature</option>
+                                <option>History</option>
+                                <option>Art</option>
+                                <option>Music</option>
+                                <option>Physical Education</option>
+                                <option>Agriculture</option>
+                                <option>Life Skills</option>
+                                <option>Technology</option>
+                                <option>Languages</option>
+
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        
+                        <div class="field">
+                            <button class="firstNext next">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="page">
+                        
+                        <div class="title">Course Duration and Weeks</div>
+                        <div class="field">
+                            <div class="label">Select number of weeks</div>
+                            <select id="weeksSelect" required>
+                                <option value="1">1 week</option>
+                                <option value="2">2 weeks</option>
+                                <option value="3">3 weeks</option>
+                                <option value="4">4 weeks</option>
+                                <option value="5">5 weeks</option>
+                                <option value="6">6 weeks</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <div class="label">Course Start Date</div>
+                            <input type="date" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">Course End Date</div>
+                            <input type="date" required />
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-1 prev">Previous</button>
+                            <button class="next-1 next">Next</button>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="title">Week 1 Details:</div>
+                        <div class="field">
+                            <div class="label">Number of Topics</div>
+                            <input type="number" id="numTopicsWeek1" min="1" required />
+                        </div>
+                        <div id="topicsContainerWeek1"></div>
+                      
+                        <div class="field btns">
+                            <button class="prev-2 prev">Previous</button>
+                            <button class="next-2 next">Next</button>
+                        </div>
+                    </div>
+                    <div class="page" id="contentPage">
+                        <div class="title">Content Details:</div>
+                        <div class="field">
+                            <div class="label">Content Title</div>
+                            <input type="text" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">Content Description</div>
+                            <textarea required></textarea>
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-3 prev">Previous</button>
+                            <button class="submit">Next</button>
+                        </div>
+                    </div>
+                    
+
+                    <div class="page">
+                        <div class="title">Date of Birth:</div>
+                        <div class="field">
+                            <div class="label">Date</div>
+                            <input type="text" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">Gender</div>
+                            <select required>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-4 prev">Previous</button>
+                            <button class="next-4 next">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="page">
+                        <div class="title">Login Details:</div>
+                        <div class="field">
+                            <div class="label">Username</div>
+                            <input type="text" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">Password</div>
+                            <input type="password" required />
+                        </div>
+                        <div class="field btns">
+                            <button class="prev-5 prev">Previous</button>
+                            <button class="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+       </div>
+          <!-- MultiStep Form -->
+      
+<!-- /.MultiStep Form -->
+<div class="column">
+    <h1>New Course</h1>
+</div>
+
+
+
+        </div>
+       
+
+    </section>
+
+    <!--Quick select-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  
+    <script src="/respond.js"></script>
+    <script src="/js/newcourse.js"></script>
+    <script>
+        initMultiStepForm();
+
+function initMultiStepForm() {
+    const progressNumber = document.querySelectorAll(".step").length;
+    const slidePage = document.querySelector(".slide-page");
+    const submitBtn = document.querySelector(".submit");
+    const progressText = document.querySelectorAll(".step p");
+    const progressCheck = document.querySelectorAll(".step .check");
+    const bullet = document.querySelectorAll(".step .bullet");
+    const pages = document.querySelectorAll(".page");
+    const nextButtons = document.querySelectorAll(".next");
+    const prevButtons = document.querySelectorAll(".prev");
+    const stepsNumber = pages.length;
+
+    if (progressNumber !== stepsNumber) {
+        console.warn(
+            "Error, number of steps in progress bar do not match number of pages"
+        );
+    }
+
+    document.documentElement.style.setProperty("--stepNumber", stepsNumber);
+
+    let current = 1;
+
+    for (let i = 0; i < nextButtons.length; i++) {
+        nextButtons[i].addEventListener("click", function (event) {
+            event.preventDefault();
+
+            inputsValid = validateInputs(this);
+            // inputsValid = true;
+
+            if (inputsValid) {
+                slidePage.style.marginLeft = `-${
+                    (100 / stepsNumber) * current
+                }%`;
+                bullet[current - 1].classList.add("active");
+                progressCheck[current - 1].classList.add("active");
+                progressText[current - 1].classList.add("active");
+                current += 1;
+            }
+        });
+    }
+
+    for (let i = 0; i < prevButtons.length; i++) {
+        prevButtons[i].addEventListener("click", function (event) {
+            event.preventDefault();
+            slidePage.style.marginLeft = `-${
+                (100 / stepsNumber) * (current - 2)
+            }%`;
+            bullet[current - 2].classList.remove("active");
+            progressCheck[current - 2].classList.remove("active");
+            progressText[current - 2].classList.remove("active");
+            current -= 1;
+        });
+    }
+    submitBtn.addEventListener("click", function () {
+        bullet[current - 1].classList.add("active");
+        progressCheck[current - 1].classList.add("active");
+        progressText[current - 1].classList.add("active");
+        current += 1;
+        setTimeout(function () {
+            alert("Your Form Successfully Signed up");
+            location.reload();
+        }, 800);
+    });
+
+    function validateInputs(ths) {
+        let inputsValid = true;
+
+        const inputs =
+            ths.parentElement.parentElement.querySelectorAll("input");
+        for (let i = 0; i < inputs.length; i++) {
+            const valid = inputs[i].checkValidity();
+            if (!valid) {
+                inputsValid = false;
+                inputs[i].classList.add("invalid-input");
+            } else {
+                inputs[i].classList.remove("invalid-input");
+            }
+        }
+        return inputsValid;
+    }
+}
+
+    </script>
+    <script>
+        document.getElementById('numTopicsWeek1').addEventListener('input', function() {
+    const numTopics = parseInt(this.value);
+    const topicsContainer = document.getElementById('topicsContainerWeek1');
+
+    // Clear previous inputs
+    topicsContainer.innerHTML = '';
+
+    // Generate inputs for each topic
+    for (let i = 1; i <= numTopics; i++) {
+        const topicInput = document.createElement('div');
+        topicInput.classList.add('field');
+        topicInput.innerHTML = `
+            <div class="label">Topic ${i}</div>
+            <input type="text" required />
+        `;
+        topicsContainer.appendChild(topicInput);
+    }
+});
+
+    </script> 
+  
+
+
+</body>
+</html>

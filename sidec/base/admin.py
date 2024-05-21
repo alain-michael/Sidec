@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from .models import User, Student, Course, Tutor, Grade, WeekStatus, CourseWeek, Quiz, CourseComment
+from .models import User, Student, Course, Tutor, Grade, WeekStatus, CourseWeek, Quiz, CourseComment, CourseMaterial, Question, Answer, QuizGrade, Resource
 
 
 @admin.register(User)
@@ -27,4 +27,4 @@ class UserAdmin(DjangoUserAdmin):
     ordering = ('email',)
 
 # Register your models here.
-admin.site.register([Student, Course, Tutor, Grade, WeekStatus, CourseWeek, Quiz, CourseComment])
+admin.site.register([Student, Course, Tutor, Grade, WeekStatus, CourseWeek, Quiz, Question, Answer, CourseMaterial, QuizGrade, Resource])

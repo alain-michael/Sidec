@@ -606,14 +606,14 @@ a.inline-option-btn {
     border-radius: 8px;
     color: #9835ff;
 }
-.column .cards .card a {
+.column .cards .card span {
     text-decoration: none;
     margin-top: 10px;
     font-size: 14px;
     font-weight: 500;
     color: #9835ff;
 }
-.column .cards .card:hover a {
+.column .cards .card:hover span {
     color: #404660;
 }
 

@@ -923,7 +923,8 @@ a.inline-option-btn {
 .quick_links:hover {
     background-color: #eee;
 }
-.quick_links a {
+.quick_links a,
+.quick_links .title {
     text-decoration: none;
     color: #9835ff;
     font-size: 16px;

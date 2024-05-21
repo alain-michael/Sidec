@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin Login</title>
+    <link rel="shortcut icon" href="images/Asset 6.png" type="image/x-icon">
+</head>
+<body>
+    <section>
+        <div class="logo">
+            <img src="images/sidec logo.png" alt="">
+            <h1>Admin</h1>
+        </div>
+    </section>
+   
+    <section class="login_section">
+        <div class='box'>
+            <div class='box-form'>
+              <div class='box-login-tab'></div>
+              <div class='box-login-title'>
+                <div class='i i-login'></div><h2>LOGIN</h2>
+              </div>
+              <div class='box-login'>
+                <div class='fieldset-body' id='login_form'>
+                  <button onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></button>
+                      <p class='field'>
+                    <label for='user'>Email</label>
+                    <input type='text' id='user' name='user' title='Username' />
+                    <span id='valida' class='i i-warning'></span>
+                  </p>
+                      <p class='field'>
+                    <label for='pass'>Password</label>
+                    <input type='password' id='pass' name='pass' title='Password' />
+                    <span id='valida' class='i i-close'></span>
+                  </p>
+          
+                    <label class='checkbox'>
+                      <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+                    </label>
+          
+                      <input type='submit' id='do_login' value='Login' title='Login' />
+                </div>
+              </div>
+            </div>
+            <div class='box-info'>
+                                  <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>Need Help?</h3>
+              </p>
+                                  <div class='line-wh'></div>
+                                  <button onclick="" class='b-support' title='Forgot Password?'> Forgot Password?</button>
+              <button onclick="" class='b-support' title='Contact Support'> Contact Support</button>
+                                  <div class='line-wh'></div>
+              <button onclick="" class='b-cta' title='Sign up now!'> Apply now</button>
+                            </div>
+          </div> 
+    </section>
+    <footer>
+        <p>Copyright © Sidec 2024. All rights reserved.</p>
+    </footer>
+
+   
+
+      <script src="index.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</body>
+</html>

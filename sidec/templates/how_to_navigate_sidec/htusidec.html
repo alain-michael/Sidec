@@ -50,7 +50,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Connect and learn</title>
+    <title>{{course}} | Sidec</title>
     <link rel="stylesheet" href="{% static 'css/sideccourses.css' %}" />
     <link
       rel="icon"
@@ -231,8 +231,13 @@
             />
           </div>
           <div class="course_host">
-            <h1 class="course_title">How to navigate Sidec</h1>
-            <p class="host">Sidec<i class="ri-verified-badge-fill"></i></p>
+            <h1 class="course_title">{{course}}</h1>
+            <p class="host">
+              {{course.course_tutor}}{% if course.course_tutor.verified %}<i
+                class="ri-verified-badge-fill"
+              ></i
+              >{% endif %}
+            </p>
           </div>
 
           <div class="dropdown">
@@ -246,7 +251,7 @@
                 onclick="openCourse(event, 'weekone')"
                 id="defaultOpen"
               >
-                <span class="check"></span> Week One
+                <span class="check"></span> Week {{full_weeks | length}}
               </button>
               <button class="tablinks" onclick="openCourse(event, 'weektwo')">
                 <span class="check"></span> Week Two
@@ -268,12 +273,13 @@
 
         <div class="section" id="section2">
           <!-- Content for the second section goes here -->
-          <div id="weekone" class="tabcontent">
+          {% for full_week in full_weeks %}
+          <div id="week{{full_week.week.week_number}}" class="tabcontent">
             <div class="accordion">
               <div class="tab">
                 <input type="checkbox" name="accordion-1" id="cb1-1" checked />
                 <label for="cb1-1" class="tab__label"
-                  >Getting Started with Sidec platform</label
+                  >{{full_week.week.topic}}</label
                 >
                 <div class="tab__content">
                   <div class="info">
@@ -284,11 +290,17 @@
                       </div>
                       <div class="info1">
                         <i class="ri-book-read-fill"></i>
-                        <p><span>1hr 20m</span> of readings left</p>
+                        <p>
+                          <span>{{full_week.total_time}}</span> of readings
+                          left
+                        </p>
                       </div>
                       <div class="info1">
                         <i class="ri-bubble-chart-fill"></i>
-                        <p><span>2</span> graded assignments</p>
+                        <p>
+                          <span>{{full_week.quizzes | length}}</span> graded
+                          assignments
+                        </p>
                       </div>
                     </div>
                     <div class="module_info">
@@ -327,440 +339,54 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="sub_accordions">
-                        <div class="accordion_sub">
-                          <div class="tab">
-                            <input
-                              type="checkbox"
-                              name="accordion-1-1"
-                              id="cb-1-1"
-                            />
-                            <label for="cb-1-1" class="tab__label"
-                              >Setting up</label
+                      <div class="course_links">
+                        {% for material in full_week.materials %}
+                        <div class="quick_links">
+                          {% if material.material_type == 'text' %}
+                          <i class="ri-book-read-fill"></i>
+                          {% endif %} {% if material.material_type == 'video' %}
+                          <i class="ri-play-circle-line"></i>
+                          {% endif %}
+
+                          <div class="link">
+                            <a href="{% url 'material_page' course.id material.id %}"
+                              >{{material}}</a
                             >
-                            <div class="tab__content">
-                              <!--Links to course page-->
-                              <div class="course_links">
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-
-                                  <div class="link">
-                                    <a href="{% url 'firstpage' %}#firstpage"
-                                      >Introduction to Sidec</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Video ・ <span>26 secs</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="{% url 'firstpage' %}#secondpage"
-                                      >Getting started</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="{% url 'firstpage' %}#thirdpage"
-                                      >Understanding Your User Profile</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Video ・ <span>3 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                            <div class="lenght">
+                              <p class="link_para">
+                                {% if material.material_type == 'text' %}
+                                Reading 
+                                {% endif %} 
+                                {% if material.material_type == 'video' %} 
+                                Video 
+                                {% endif %} ・
+                                <span>{{material.time_to_complete}} mins</span>
+                              </p>
                             </div>
                           </div>
                         </div>
-                        <div class="accordion_sub">
-                          <div class="tab">
-                            <input
-                              type="checkbox"
-                              name="accordion-1-2"
-                              id="cb-1-2"
-                            />
-                            <label for="cb-1-2" class="tab__label"
-                              >Navigating sidec Part 1</label
-                            >
-                            <div class="tab__content">
-                              <div class="course_links">
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-
-                                  <div class="link">
-                                    <a href="#">Navigation tips </a>
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="{% url 'firstpage' %}"
-                                      >Exploring the Course Catalog</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#"
-                                      >Managing Your Learning Progress</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>10 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                        {% endfor %}
+                        {% for quiz in full_week.quizzes %}
+                        <a style="text-decoration: none" href="{% url 'quiz_page' course.id quiz.id %}">
+                        <div class="quick_links">
+                          <i class="ri-question-line"></i>
+                          <!--Links to course page-->
+                          <div class="link">
+                            <span class="title">{{quiz.title}}</span>
+                            <div style="color: black" class="lenght">
+                              <p class="link_para">Quiz ・ <span>{{quiz.time_to_complete}} mins</span></p>
                             </div>
                           </div>
                         </div>
-                        <div class="accordion_sub">
-                          <div class="tab">
-                            <input
-                              type="checkbox"
-                              name="accordion-1-3"
-                              id="cb-1-3"
-                            />
-                            <label for="cb-1-3" class="tab__label"
-                              >Exploring the Course Catalog</label
-                            >
-                            <div class="tab__content">
-                              <!--Links to course page-->
-                              <div class="course_links">
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Engaging with Course Content</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Video ・ <span>2min 29secs</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Utilizing Additional
-                                      Features(Optional)</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Test your Understanding</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Quiz ・ <span>15 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      </a>
+                        {% endfor %}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div id="weektwo" class="tabcontent">
-            <div class="accordion">
-              <div class="tab">
-                <input type="checkbox" name="accordion-2" id="cb2-1" />
-                <label for="cb2-1" class="tab__label"
-                  >Additional resources</label
-                >
-                <div class="tab__content">
-                  <div class="info">
-                    <div class="home_info">
-                      <div class="info1">
-                        <i class="ri-play-circle-line"></i>
-                        <p><span>23m</span> of videos left</p>
-                      </div>
-                      <div class="info1">
-                        <i class="ri-book-read-fill"></i>
-                        <p><span>1hr 20m</span> of readings left</p>
-                      </div>
-                      <div class="info1">
-                        <i class="ri-bubble-chart-fill"></i>
-                        <p><span>2</span> graded assignments</p>
-                      </div>
-                    </div>
-                    <div class="module_info">
-                      <p>
-                        In this module, you will learn how to navigate our
-                        e-learning app effectively. You will understand the
-                        different features and functionalities available within
-                        the app and how to use them to enhance your learning
-                        experience.
-                      </p>
-                      <div class="read_container-btn">
-                        <button onclick="myFunction()" class="read_more">
-                          Learning Objectives</button
-                        ><i class="ri-arrow-drop-down-line"></i>
-                      </div>
-
-                      <div id="ReadMore" class="read_more_container">
-                        <p>
-                          By the end of this module, you will be confident in
-                          navigating through the various sections of the app and
-                          accessing the content you need.
-                        </p>
-                        <ul>
-                          <li>
-                            <i class="ri-checkbox-circle-fill"></i>
-                            Understanding the different features and
-                            functionalities available within the app
-                          </li>
-                          <li>
-                            <i class="ri-checkbox-circle-fill"></i> How to use
-                            them to enhance your e-learning experience
-                          </li>
-                          <li>
-                            <i class="ri-checkbox-circle-fill"></i> Accessing
-                            the content you need
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="sub_accordions">
-                        <div class="accordion_sub">
-                          <div class="tab">
-                            <input
-                              type="checkbox"
-                              name="accordion2-1-1"
-                              id="cb2-1-1"
-                            />
-                            <label for="cb2-1-1" class="tab__label"
-                              >Setting up</label
-                            >
-                            <div class="tab__content">
-                              <!--Links to course page-->
-                              <div class="course_links">
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Introduction to Sidec</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Video ・ <span>26 secs</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Getting started</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Understanding Your User Profile</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Video ・ <span>3 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion_sub">
-                          <div class="tab">
-                            <input
-                              type="checkbox"
-                              name="accordion2-1-2"
-                              id="cb2-1-2"
-                            />
-                            <label for="cb2-1-2" class="tab__label"
-                              >Navigating sidec Part 1</label
-                            >
-                            <div class="tab__content">
-                              <div class="course_links">
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Navigation tips
-                                    </a>
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Exploring the Course Catalog</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Managing Your Learning Progress</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>10 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion_sub">
-                          <div class="tab">
-                            <input
-                              type="checkbox"
-                              name="accordion2-1-3"
-                              id="cb2-1-3"
-                            />
-                            <label for="cb2-1-3" class="tab__label"
-                              >Exploring the Course Catalog</label
-                            >
-                            <div class="tab__content">
-                              <!--Links to course page-->
-                              <div class="course_links">
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Engaging with Course Content</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Video ・ <span>2min 29secs</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="quick_links">
-                                  <i class="ri-book-read-fill"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Utilizing Additional
-                                      Features(Optional)</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Reading ・ <span>5 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="quick_links">
-                                  <i class="ri-play-circle-line"></i>
-                                  <!--Links to course page-->
-                                  <div class="link">
-                                    <a href="#" target="_blank"
-                                      >Test your Understanding</a
-                                    >
-                                    <div class="lenght">
-                                      <p class="link_para">
-                                        Quiz ・ <span>15 mins</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
 

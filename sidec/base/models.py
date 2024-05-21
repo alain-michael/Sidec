@@ -1,7 +1,9 @@
+from random import choices
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.forms import ValidationError
 from django.utils.translation import gettext_lazy as _
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator, FileExtensionValidator
 
 # Create your models here.
 
@@ -84,6 +86,7 @@ class Student(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_pic = models.ImageField(upload_to="profile_pics", default="profile_pics/Default_pfp.svg") # Should also change this to imagefield
+    profile_views = models.IntegerField(validators=[MaxValueValidator(100)], default=0)
     level = models.CharField(max_length=100, choices=Level.choices)
     country = models.CharField(max_length=100, choices=Country.choices)
     bio = models.TextField(blank=True, null=True)
@@ -92,6 +95,7 @@ class Student(models.Model):
     enrolled_courses = models.ManyToManyField('Course', related_name='enrolled_students')
     saved_courses = models.ManyToManyField('Course', related_name='saved_students')
     created_at = models.DateField(auto_now_add=True)
+    socials = models.OneToOneField('Socials', on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.user.first_name
@@ -102,7 +106,7 @@ class Socials(models.Model):
     linkedin = models.URLField(max_length=200, blank=True, null=True)
     facebook = models.URLField(max_length=200, blank=True, null=True)
     twitter = models.URLField(max_length=200, blank=True, null=True) 
-    number = models.IntegerField(blank=True, null=True)
+    number = models.CharField(max_length=20, blank=True, null=True)
 
 
 class Tutor(models.Model):
@@ -141,13 +145,16 @@ class Course(models.Model):
         created_at (DateField): The date when the course record was created.
     """
     course_name = models.CharField(max_length=100)
-    course_image = models.TextField()
+    course_image = models.TextField() # Should change to imagefield
     course_description = models.TextField()
     course_category = models.TextField() # Should change to textchoices
     course_tutor = models.ForeignKey(Tutor, on_delete=models.SET_DEFAULT, default=1)
     time_to_complete = models.CharField(max_length=100)
     price = models.DecimalField(blank=True, validators=[MinValueValidator(0)], decimal_places=2, max_digits=10, default=0.0)
     created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.course_name
 
 class CourseWeek(models.Model):
     """
@@ -160,12 +167,57 @@ class CourseWeek(models.Model):
         week_videos (TextField): The video content of the week.
     """
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    topic = models.CharField(max_length=100)
     week_number = models.IntegerField()
-    week_text = models.TextField(blank=True, null=True)
-    week_videos = models.TextField(blank=True, null=True)
-
     class Meta:
         unique_together = ("course", "week_number")
+
+    def __str__(self):
+        return 'Course: ' + str(self.course) + ', Week: ' + str(self.week_number)
+
+class CourseMaterial(models.Model):
+    """
+    Model representing course materials for a course week.
+
+    Attributes:
+        week (ForeignKey): The week associated with the material.
+        material_type (CharField): The type of material (text or video).
+        text (TextField): The text content (if material_type is text).
+        video (FileField): The video file (if material_type is video).
+    """
+    TEXT = 'text'
+    VIDEO = 'video'
+    MATERIAL_TYPE_CHOICES = [
+        (TEXT, 'Text'),
+        (VIDEO, 'Video'),
+    ]
+
+    week = models.ForeignKey(CourseWeek, on_delete=models.CASCADE, related_name='materials')
+    material_type = models.CharField(max_length=5, choices=MATERIAL_TYPE_CHOICES)
+    title = models.CharField(max_length=200)
+    text = models.TextField(blank=True, null=True)
+    time_to_complete = models.IntegerField()
+    video = models.FileField(upload_to='videos_uploaded', null=True, blank=True,
+                             validators=[FileExtensionValidator(
+                                 allowed_extensions=['MOV', 'avi', 'mp4', 'webm', 'mkv'])])
+    completed = models.BooleanField(default=False)
+    
+
+    def clean(self):
+        if self.material_type == self.TEXT and not self.text:
+            raise ValidationError("Text content must be provided for text material.")
+        elif self.material_type == self.VIDEO and not self.video:
+            raise ValidationError("Video file must be provided for video material.")
+        elif self.material_type == self.TEXT and self.video:
+            raise ValidationError("Only one type of material (text or video) can be entered.")
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+
 
 class WeekStatus(models.Model):
     """
@@ -238,8 +290,11 @@ class Quiz(models.Model):
         description (str): The description of the quiz.
         created_at (DateTime): The date and time when the quiz was created.
     """
+    week = models.ForeignKey(CourseWeek, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
+    time_to_complete = models.IntegerField()
+    due_date = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -258,8 +313,8 @@ class Question(models.Model):
     """
     QUIZ_QUESTION_TYPE_CHOICES = [
         ('MCQ', 'Multiple Choice'),
-        ('SA', 'Short Answer'),
-        ('TF', 'True/False'),
+        ('SAN', 'Short Answer'),
+        ('MCA', 'Multiple Correct Answers'),
     ]
     
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
@@ -286,6 +341,21 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.answer_text
+    
+class QuizGrade(models.Model):
+    """
+    Represents a grade for a quiz.
+
+    Attributes:
+        quiz (Quiz): The quiz associated with this grade.
+        student (Student): The student who took the quiz.
+        marks_obtained (int): The marks obtained by the student.
+    """
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    marks_obtained = models.IntegerField()
+    total_marks = models.IntegerField()
+    modified_at = models.DateTimeField(auto_now=True)
 
 class CourseComment(models.Model):
     """
@@ -301,3 +371,26 @@ class CourseComment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     comment = models.TextField()
     added_at = models.DateTimeField(auto_now=True)
+
+class Resource(models.Model):
+    """
+    Represents a resource for a course.
+
+    Attributes:
+        title (str): The name of the resource.
+        subject (str): The subject of the resource.
+        pdf_file (file): The file path to the resource.
+    """
+    RESOURCE_TYPES = [
+        ('QNS', 'Questions'),
+        ('SOL', 'Solutions'),
+    ]
+    title = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255, blank=True, null=True)
+    level = models.CharField(max_length=255, blank=True, null=True)
+    year = models.CharField(max_length=4, blank=True, null=True)
+    resource_type = models.CharField(max_length=3, choices=RESOURCE_TYPES)
+    pdf_file = models.FileField(upload_to='resources')
+
+    def __str__(self):
+        return self.title

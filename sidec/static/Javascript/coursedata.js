@@ -37,9 +37,6 @@ function openCourse(evt, courseName) {
   evt.currentTarget.className += " active";
 }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
 function myFunction() {
   var x = document.getElementById("ReadMore");
   if (x.style.display === "none") {

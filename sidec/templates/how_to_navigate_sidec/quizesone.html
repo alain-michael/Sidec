@@ -234,15 +234,19 @@
             <a href="#" class="topic_link"> <h1 class="topic_title">MCQ</h1></a>
 
             <!--Course content subjects-->
-
+            {% for question in questions %}
+            <a href="#question_{{question.id}}">
             <button
-              class="tablinks active"
+            class="tablinks"
               onclick="openCourse(event, 'firstpage')"
               id="defaultOpen"
             >
-              <span class="check"></span><i class="ri-question-line"></i> Page
-              one
+            
+              <span class="check"></span><i class="ri-question-line"></i> Question
+              {{ forloop.counter }}
             </button>
+            </a>
+            {% endfor %}
             <button class="tablinks" onclick="openCourse(event, 'secondpage')">
               <span class="check"></span><i class="ri-question-line"></i> Page
               two
@@ -283,8 +287,79 @@
           <!-- Content for the second section goes here -->
           <div id="firstpage" class="tabcontent">
             <div class="questions_container">
-              <form action="">
-                <div class="question__data">
+              <form action="{% url 'mark_quiz' questions.0.quiz.id %}" method="post">
+                {% csrf_token %}
+              {% for question in questions %}
+              <div class="question__data" id="question_{{question.id}}">
+                <h1 class="question_title"><span>{{ forloop.counter }}.</span> {{question.question_text}}</h1>
+                {% if question.question_type == 'MCQ' %}
+                    {% for answer in question.answer_set.all %}
+                      <input
+                      type="radio"
+                      id="answer_{{answer.id}}"
+                      name="question_{{question.id}}"
+                      value="{{answer.id}}"
+                    />
+                    <label for="answer_{{answer.id}}">{{answer.answer_text}}</label><br />
+                    {% endfor %}
+                    <p class="points">{{question.marks}} {% if question.marks == 1 %}point {% else %} points{% endif %}</p>
+                  </div>
+                {% endif %}
+                {% if question.question_type == 'MCA' %}
+                    {% for answer in question.answer_set.all %}
+                      <input
+                      type="checkbox"
+                      id="answer_{{answer.id}}"
+                      name="question_{{question.id}}"
+                      value="{{answer.id}}"
+                    />
+                    <label for="answer_{{answer.id}}">{{answer.answer_text}}</label><br />
+                    {% endfor %}
+                    <p class="points">{{question.marks}} {% if question.marks == 1 %}point {% else %} points{% endif %}</p>
+                  </div>
+                {% endif %}
+                {% if question.question_type == 'SAN' %}
+                    {% for answer in question.answer_set.all %}
+                    <input type="text" name="question_{{question.id}}" id="answer_{{answer.id}}" />
+                  {% comment %} <p id="wordCount">
+                    Word count: <span class="wordcount_span">0</span>
+                  </p> {% endcomment %}
+                  {% comment %} <div class="submit_btns">
+                    <button type="submit">Submit</button>
+                    <button type="submit" id="saveDraft">Save Draft</button>
+                  </div> {% endcomment %}
+                    {% endfor %}
+                    <p class="points">{{question.marks}} {% if question.marks == 1 %}point {% else %} points{% endif %}</p>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                  <p class="honor_text">
+                    Sidec Honor code
+                    <a href="#"
+                      >Learn More <i class="ri-external-link-fill"></i
+                    ></a>
+                  </p>
+                  <div class="honor">
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="vehicle1"
+                      value="Bike"
+                      required
+                    />
+                    <label for="vehicle1">
+                      I, <span>{{student.user.first_name}} {{student.user.last_name}}</span> understand that submitting work
+                      that isn't my own may lead permanent failure of this course
+                      or deactivation of my sidec acount</label
+                    ><br />
+                  </div>
+                  <div class="submit_btns">
+                    <button type="submit">Submit</button>
+                    <button type="submit" id="saveDraft">Save Draft</button>
+                  </div>
+                </form>
+                  <form action="">
+                {% comment %} <div class="question__data">
                   <h1 class="question_title"><span>1.</span> What is Sidec?</h1>
                   <input
                     type="radio"
@@ -367,35 +442,13 @@
                   />
                   <label for="css">No</label><br />
                   <p class="points">1 point</p>
-                </div>
-                <p class="honor_text">
-                  Sidec Honor code
-                  <a href="#"
-                    >Learn More <i class="ri-external-link-fill"></i
-                  ></a>
-                </p>
-                <div class="honor">
-                  <input
-                    type="checkbox"
-                    id="vehicle1"
-                    name="vehicle1"
-                    value="Bike"
-                  />
-                  <label for="vehicle1">
-                    I, <span>Fred Joe</span> understand that submitting work
-                    that isn't my own may lead permanent failure of this course
-                    or deactivation of my sidec acount</label
-                  ><br />
-                </div>
-                <div class="submit_btns">
-                  <button type="submit">Submit</button>
-                  <button type="submit" id="saveDraft">Save Draft</button>
-                </div>
+                </div> {% endcomment %}
+                
               </form>
             </div>
           </div>
 
-          <div id="secondpage" class="tabcontent">
+          {% comment %} <div id="secondpage" class="tabcontent">
             <div class="questions_container">
               <form action="">
                 <div class="question__data">
@@ -857,7 +910,7 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div> {% endcomment %}
         </div>
       </div>
 

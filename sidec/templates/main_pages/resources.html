@@ -180,7 +180,7 @@
                         <div id="myDropdown" class="dropdown-content">
                           <a href="{% url 'questions' %}">Questions</a>
                           <a href="{% url 'solutions' %}">Solutions</a>
-                          <a href="{% url 'tests' %}">Test</a>
+                          <a href="{% url 'test' %}">Test</a>
                         </div>
                       </div>
                 </div>
@@ -216,41 +216,18 @@
             <div id="resources_0">
                 <h1 class="heading hd2">Popular</h1>
                 <div class="box-container">
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="{% static 'images/Questions.jpg' %}" class="thumb" alt="food & science">
-                            <h3 class="title">Mathematics paper one</h3>
-                            <h3 style="color: #9875ff; font-weight: 500;">GCE Alevel 2023</h3>
-                            <a href="{% url 'play2' %}" class="inline-btn">View <i class="ri-eye-fill"></i></a>
-                           
+                    {% for resource in resources %}
+                    <a href="{% url 'resource_material' resource.id %}" style="text-decoration: none;">
+                        <div class="box">
+                            <div class="tutor">
+                                <img src="{% if resource.resource_type == 'QNS' %}{% static 'images/Questions.jpg' %}{% else %}{% static 'images/question_1055391.png' %}{% endif %}" style="object-fit: contain;" class="thumb" alt="food & science">
+                                <h3 class="title">{% if resource.resource_type == 'QNS' %}[Questions]{% else %}[Solutions]{% endif %} {{resource}}</h3>
+                                <h3 style="color: #9875ff; font-weight: 500;">{{resource.level}} {{resource.year}}</h3>
+                                <span class="inline-btn" style="margin-top: 10px;">View <i class="ri-eye-fill"></i></span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="{% static 'images/Questions.jpg' %}" class="thumb" alt="food & science">
-                            <h3 class="title">Mathematics paper two</h3>
-                            <h3 style="color: #9875ff; font-weight: 500;">GCE Alevel 2023</h3>
-                            <a href="{% url 'play2' %}" class="inline-btn">View <i class="ri-eye-fill"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="{% static 'images/test.png' %}" class="thumb" alt="food & science">
-                            <h3 class="title">Mock test | Alevel</h3>
-                            <h3 style="color: #9875ff; font-weight: 500;">Maths, Physics & Chemistry</h3>
-                            <a href="{% url 'play2' %}" class="inline-btn">Test</a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="tutor">
-                            <img src="{% static 'images/Questions.jpg' %}" class="thumb" alt="food & science">
-                            <h3 class="title">Chemistry paper two</h3>
-                            <h3 style="color: #9875ff; font-weight: 500;">GCE Alevel 2015</h3>
-                            <a href="{% url 'play2' %}" class="inline-btn">View <i class="ri-eye-fill"></i></a>
-                        </div>
-                    </div>
+                    </a>
+                    {% endfor %}
     
                 </div>
                 <div class="more-btn">

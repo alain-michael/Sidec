@@ -94,9 +94,9 @@
             <li>
               <a href="{% url 'resources' %}" class="link_name">Resources</a>
             </li>
-            <li><a href="{% url 'questions' %}">Questions</a></li>
+            <li><a href="{% url 'questions' %}" {% if questions %}class="active"{% endif %}>Questions</a></li>
             <li>
-              <a href="{% url 'solutions' %}" class="active">Solutions</a>
+              <a href="{% url 'solutions' %}" {% if solutions %}class="active"{% endif %}>Solutions</a>
             </li>
             <li><a href="{% url 'test' %}">Test</a></li>
           </ul>
@@ -198,7 +198,7 @@
         </div>
       </div>
       <div id="quick-select-3">
-        <h1 class="heading">Find solutions with search</h1>
+        <h1 class="heading">Find {% if solutions %}solutions{% else %}questions{% endif %} with search</h1>
         <input
           type="text"
           id="mySearch"
@@ -206,21 +206,34 @@
           placeholder="Enter keyword.."
           title="Type in a category"
         />
-        <ul id="myMenu">
-          <li><a href="#">GCE Alevel 2023</a></li>
-          <li><a href="#">WAEC 2020</a></li>
-          <li><a href="#">GCE Alevel 2012</a></li>
-          <li><a href="#">GCE Alevel 2014</a></li>
-          <li><a href="#">Maths 1996</a></li>
-          <li><a href="#">GCE Olevel 2023</a></li>
-          <li><a href="#">GCE Alevel 2022</a></li>
-          <li><a href="#">GCE Alevel 2012</a></li>
-          <li><a href="#">JAMB 2019</a></li>
-        </ul>
       </div>
       <div id="resources_1">
         <h1 class="heading hd2">Popular<i class="fa-solid fa-bolt"></i></h1>
         <div class="box-container">
+          {% for resource in solutions %}
+          <a href="{% url 'resource_material' resource.id %}" style="text-decoration: none;">
+              <div class="box">
+                  <div class="tutor">
+                      <img src="{% static 'images/question_1055391.png' %}" style="object-fit: contain;" class="thumb" alt="food & science">
+                      <h3 class="title">[Solutions] {{resource}}</h3>
+                      <h3 style="color: #9875ff; font-weight: 500;">{{resource.level}} {{resource.year}}</h3>
+                      <span class="inline-btn" style="margin-top: 10px;">View <i class="ri-eye-fill"></i></span>
+                  </div>
+              </div>
+          </a>
+          {% endfor %}
+          {% for resource in questions %}
+          <a href="{% url 'resource_material' resource.id %}" style="text-decoration: none;">
+              <div class="box">
+                  <div class="tutor">
+                      <img src="{% static 'images/Questions.jpg' %}" class="thumb" alt="food & science">
+                      <h3 class="title">[Questions] {{resource}}</h3>
+                      <h3 style="color: #9875ff; font-weight: 500;">{{resource.level}} {{resource.year}}</h3>
+                      <span class="inline-btn" style="margin-top: 10px;">View <i class="ri-eye-fill"></i></span>
+                  </div>
+              </div>
+          </a>
+          {% endfor %}
           <div class="box">
             <div class="tutor">
               <img
