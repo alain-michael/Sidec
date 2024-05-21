@@ -502,7 +502,7 @@ body {
 }
 #quick-select_dash .box-container  {
     border-radius: 4px;
-    background: url("images/dashbac.png");
+    background: url("/sidec/static/images/dashbac.png");
     background-position: top 40% right 25%;
     background-size: cover;
     border: 1px solid #eee;

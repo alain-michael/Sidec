@@ -160,7 +160,6 @@ def dashboard(request):
     not_completed = []
     enrolled_courses = Course.objects.filter(enrolled_students__in=[student])
     upcoming_quizzes = Quiz.objects.filter(week__course__in=enrolled_courses, due_date__gte=timezone.now()).order_by('due_date')
-    print(upcoming_quizzes)
     for course in enrolled_courses:
         student_grade = QuizGrade.objects.filter(student=student, quiz__week__course=course)
         all_quizzes = Quiz.objects.filter(week__course=course)
@@ -175,8 +174,8 @@ def dashboard(request):
     week_grades = QuizGrade.objects.filter(student=student, modified_at__gte=datetime_one_week_ago)
     user_achievements = UserAchievement.objects.filter(student=student)
     if len(week_grades) > 0:
-        labels = [str(grade.modified_at.date()) for grade in week_grades]
-        grades = [(grade.marks_obtained * 100 / grade.total_marks) for grade in week_grades]
+        labels = [str(grade.modified_at.date()) for grade in full_grades]
+        grades = [(grade.marks_obtained * 100 / grade.total_marks) for grade in full_grades]
         avg_week_grade = avg(grades)
     else:
         grades = []
