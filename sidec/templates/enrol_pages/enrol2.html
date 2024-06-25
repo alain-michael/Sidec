@@ -281,8 +281,7 @@
           />
         </form>
         <h1 class="heading">
-          15 comments + <span id="comment_count">{{comments|length}}</span> real
-          comments
+          <span id="comment_count">{{comments|length}}</span> {% if comments|length == 1 %}comment{% else %}comments{% endif %}
         </h1>
         <div class="show-comments">
           {% for comment in comments %}
@@ -319,66 +318,6 @@
             {% endif %}
           </div>
           {% endfor %}
-
-          <div class="box">
-            <div class="user">
-              <img src="{% static 'images/avamale.png' %}" alt="" />
-              <div>
-                <h3>Mac Ja</h3>
-                <span>21-09-2023</span>
-              </div>
-            </div>
-            <p class="text">This is a test comment from sidec team</p>
-            <form action="" method="post" class="flex-btn">
-              {% csrf_token %}
-              <button
-                type="submit"
-                name="edit_comment"
-                class="inline-option-btn-2"
-              >
-                <i class="fa-solid fa-pen-to-square"></i>
-              </button>
-              <button
-                type="submit"
-                name="delete_comment"
-                class="inline-delete-btn-2"
-              >
-                <i class="ri-delete-bin-6-fill"></i>
-              </button>
-            </form>
-          </div>
-
-          <div class="box">
-            <div class="user">
-              <img src="{% static 'images/avafemale.png' %}" alt="" />
-              <div>
-                <h3>Rose</h3>
-                <span>25-08-2023</span>
-              </div>
-            </div>
-            <p class="text">This is nice, I loved the course</p>
-          </div>
-
-          <div class="box">
-            <div class="user">
-              <img src="{% static 'images/avafemale.png' %}" alt="" />
-              <div>
-                <h3>Rose</h3>
-                <span>25-08-2023</span>
-              </div>
-            </div>
-            <p class="text">Great job from the team</p>
-          </div>
-          <div class="box">
-            <div class="user">
-              <img src="{% static 'images/avafemale.png' %}" alt="" />
-              <div>
-                <h3>Rose</h3>
-                <span>25-08-2023</span>
-              </div>
-            </div>
-            <p class="text">Awesome course, I recommend</p>
-          </div>
         </div>
       </div>
     </section>

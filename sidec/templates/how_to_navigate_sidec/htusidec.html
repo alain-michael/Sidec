@@ -240,7 +240,7 @@
             </p>
           </div>
 
-          <div class="dropdown">
+          {% comment %} <div class="dropdown">
             <button class="dropbtn" onclick="toggleDropdown()">
               Course Materials
               <i id="arrowIcon" class="ri-arrow-down-s-line"></i>
@@ -259,10 +259,10 @@
 
               <!-- Add more buttons for additional weeks as needed -->
             </div>
-          </div>
+          </div> {% endcomment %}
           <div class="other_links">
             <ul>
-              <li><a href="{% url 'grades' %}">Grades</a></li>
+              <li><a href="{% url 'grades' course.id %}">Grades</a></li>
               <li><a href="{% url 'notes' %}">Notes</a></li>
               <li><a href="{% url 'feedback' %}">Feedbacks</a></li>
               <li><a href="#">Discussions</a></li>
@@ -433,7 +433,7 @@
               </div>
               <div class="other_links">
                 <ul>
-                  <li><a href="{% url 'grades' %}">Grades</a></li>
+                  <li><a href="{% url 'grades' course.id %}">Grades</a></li>
                   <li><a href="{% url 'notes' %}">Notes</a></li>
                   <li><a href="{% url 'feedback' %}">Feedbacks</a></li>
                   <li><a href="#">Discussions</a></li>

@@ -223,14 +223,6 @@
           </button>
         </div>
 
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-
         <div id="general" class="tabcontent">
           <div class="content-settings">
             <form
@@ -356,39 +348,41 @@
           </div>
         </form>
 
-        <div id="links" class="tabcontent">
-          <div class="input-settings">
-            <label for="Twitter">Twitter</label>
-            <input
-              type="url"
-              id="Twitter"
-              name="links"
-              placeholder="https://twitter.com/user"
-            />
-            <label for="facebook">Facebook</label>
-            <input
-              type="url"
-              id="facebook"
-              name="links"
-              placeholder="https://www.facebook.com/user"
-            />
-            <label for="linked">Linkedin</label>
-            <input
-              type="url"
-              id="linked"
-              name="links"
-              placeholder="https://www.linkedin.com/user"
-            />
-            <label for="instagram">Instagram</label>
-            <input
-              type="url"
-              id="instagram"
-              name="links"
-              placeholder="https://www.instagram.com/user"
-            />
+        <form>
+          <div id="links" class="tabcontent">
+            <div class="input-settings">
+              <label for="Twitter">Twitter</label>
+              <input
+                type="url"
+                id="Twitter"
+                name="twitter"
+                placeholder="https://twitter.com/user"
+              />
+              <label for="facebook">Facebook</label>
+              <input
+                type="url"
+                id="facebook"
+                name="facebook"
+                placeholder="https://www.facebook.com/user"
+              />
+              <label for="linked">Linkedin</label>
+              <input
+                type="url"
+                id="linked"
+                name="linkedin"
+                placeholder="https://www.linkedin.com/user"
+              />
+              <label for="instagram">Instagram</label>
+              <input
+                type="url"
+                id="instagram"
+                name="instagram"
+                placeholder="https://www.instagram.com/user"
+              />
+            </div>
+            <button class="inline-btn">Save</button>
           </div>
-          <a href="#" class="inline-btn">Save</a>
-        </div>
+        </form>
         <div id="connect" class="tabcontent">
           <div class="alert" id="emailAlert">
             <i class="ri-error-warning-fill"></i>

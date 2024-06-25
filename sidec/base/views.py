@@ -134,7 +134,7 @@ def register(request):
                 'domain': current_site.domain,  
                 'uid':urlsafe_base64_encode(force_bytes(new_user.pk)),  
                 'token':generate_token.make_token(new_user),  
-            })
+                })
                 plain_message = strip_tags(html_message)
                 email = EmailMultiAlternatives(
                     from_email=EMAIL_HOST_USER,
@@ -431,3 +431,19 @@ def settings(request):
     student = Student.objects.get(user=request.user)
     context = {'student': student}
     return render(request, 'main_pages/settings.html', context)
+
+def science(request):
+    return render(request, 'sub_pages/science.html')
+
+def grades(request, course_id):
+    student = Student.objects.get(user=request.user)
+    course = Course.objects.get(id=course_id)
+    grades = QuizGrade.objects.filter(student=student, quiz__week__course=course)
+    total = {'obtained': sum([i.marks_obtained for i in grades]), 'possible': sum([i.total_marks for i in grades])}
+    context = {'student': student, 'grades': grades, 'course': course, 'total': total}
+    return render(request, 'how_to_navigate_sidec/grades.html', context)
+
+def category_page(request, category):
+    courses = Course.objects.filter(category=category)
+    context = {'courses': courses}
+    return render(request, 'main_pages/courses.html', context)

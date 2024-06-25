@@ -1,5 +1,6 @@
-EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtp.titan.email'
-EMAIL_HOST_USER = 'support@sidecedu.com'
-EMAIL_HOST_PASSWORD = 's2Fb2ZRWzq//%y3'
-EMAIL_PORT = 465
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'sidecedu@gmail.com'
+EMAIL_HOST_PASSWORD = 'ymgn bbxy aozp vbrn'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
