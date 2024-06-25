@@ -425,7 +425,7 @@ def forgotpass(request):
     return render(request, 'resetpass.html')
 
 def default(request):
-    return HttpResponse('hip')
+    return render(request, '404.html')
 
 def settings(request):
     student = Student.objects.get(user=request.user)
